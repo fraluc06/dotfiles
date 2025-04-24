@@ -27,8 +27,10 @@ end
 set -gx SDKMAN_DIR $HOME/.sdkman
 if test -s "$SDKMAN_DIR/bin/sdkman-init.sh"
     bass source "$SDKMAN_DIR/bin/sdkman-init.sh"
-    set -gx CURRENT_JAVA_VERSION (sdk current java | awk '{print $NF}')
-    set -gx JAVA_HOME "$HOME/.sdkman/candidates/java/current"
+    if type -q sdk
+        set -gx CURRENT_JAVA_VERSION (sdk current java | awk '{print $NF}')
+        set -gx JAVA_HOME "$HOME/.sdkman/candidates/java/current"
+    end
 end
 
 # Add custom directories to PATH
