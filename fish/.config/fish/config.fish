@@ -3,8 +3,9 @@
 # ========================
 
 # Fisher: Plugin manager for Fish
-if not functions -q fisher
-    curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+if not type -q fisher
+    echo "Fisher non trovato, lo installo con Homebrew..."
+    brew install fisher
 end
 
 # Install plugins via Fisher
@@ -42,6 +43,11 @@ end
 # Starship prompt initialization
 if type -q starship
     starship init fish | source
+end
+
+# Zoxide: smarter cd
+if type -q zoxide
+    zoxide init fish | source
 end
 
 # ========================
