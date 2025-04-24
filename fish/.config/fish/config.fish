@@ -20,7 +20,7 @@ end
 # Java via SDKMAN!
 set -gx SDKMAN_DIR $HOME/.sdkman
 if test -s "$SDKMAN_DIR/bin/sdkman-init.sh"
-    bass source "$SDKMAN_DIR/bin/sdkman-init.sh"
+    replay source "$SDKMAN_DIR/bin/sdkman-init.sh"
     if type -q sdk
         set -gx CURRENT_JAVA_VERSION (sdk current java | awk '{print $NF}')
         set -gx JAVA_HOME "$HOME/.sdkman/candidates/java/current"
@@ -47,7 +47,7 @@ end
 
 # Wrapper per usare SDKMAN! in Fish
 function sdk
-    bass source "$HOME/.sdkman/bin/sdkman-init.sh" ';' sdk $argv
+    replay source "$HOME/.sdkman/bin/sdkman-init.sh" ';' sdk $argv
 end
 
 # ========================
