@@ -52,7 +52,12 @@ set -g fish_greeting ''
 
 # Wrapper per usare SDKMAN! in Fish
 function sdk
-    replay source "$HOME/.sdkman/bin/sdkman-init.sh" ';' sdk $argv
+    # Se non passo argomenti, mostro la guida
+    if test (count $argv) -eq 0
+        replay "source \$HOME/.sdkman/bin/sdkman-init.sh && sdk help"
+    else
+        replay "source \$HOME/.sdkman/bin/sdkman-init.sh && sdk $argv"
+    end
 end
 
 # ========================
