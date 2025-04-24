@@ -1,6 +1,8 @@
 # ========================
 # Plugin Configuration
 # ========================
+# Aggiunge homebrew al path
+fish_add_path "/opt/homebrew/bin/"
 
 # Fisher: Plugin manager for Fish
 # if not type -q fisher
