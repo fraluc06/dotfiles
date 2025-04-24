@@ -9,10 +9,10 @@
 # end
 
 # Install plugins via Fisher
-fisher install \
-    PatrickF1/fzf.fish \
-    PatrickF1/fish-autosuggestions \
-    PatrickF1/fish-highlight
+# fisher install \
+#    PatrickF1/fzf.fish \
+#    PatrickF1/fish-autosuggestions \
+#    PatrickF1/fish-highlight
 
 # ========================
 # Environment Configuration
