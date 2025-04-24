@@ -1,14 +1,59 @@
+# ========================
+# Plugin Configuration
+# ========================
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if test -f /opt/miniconda3/bin/conda
-    eval /opt/miniconda3/bin/conda "shell.fish" "hook" $argv | source
-else
-    if test -f "/opt/miniconda3/etc/fish/conf.d/conda.fish"
-        . "/opt/miniconda3/etc/fish/conf.d/conda.fish"
-    else
-        set -x PATH "/opt/miniconda3/bin" $PATH
-    end
+# Fisher: Plugin manager for Fish
+if not functions -q fisher
+    curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 end
-# <<< conda initialize <<<
 
+# Install plugins via Fisher
+fisher install \
+    PatrickF1/fzf.fish \
+    PatrickF1/fish-autosuggestions \
+    PatrickF1/fish-highlight
+
+# ========================
+# Environment Configuration
+# ========================
+
+# Node.js via FNM (Fast Node Manager)
+if type -q fnm
+    fnm env --use-on-cd | source
+end
+
+# Java via SDKMAN!
+set -gx SDKMAN_DIR $HOME/.sdkman
+if test -s "$SDKMAN_DIR/bin/sdkman-init.sh"
+    bass source "$SDKMAN_DIR/bin/sdkman-init.sh"
+    set -gx CURRENT_JAVA_VERSION (sdk current java | awk '{print $NF}')
+    set -gx JAVA_HOME "$HOME/.sdkman/candidates/java/current"
+end
+
+# Add custom directories to PATH
+fish_add_path $HOME/.filen-cli/bin
+fish_add_path /opt/homebrew/opt/file-formula/bin
+
+# Rust toolchain integration
+if type -q rustup
+    rustup toolchain link system (brew --prefix rust)
+end
+
+# Starship prompt initialization
+if type -q starship
+    starship init fish | source
+end
+
+# ========================
+# Aliases
+# ========================
+
+# Update all Homebrew packages
+function update-all
+    brew update; and brew upgrade; and brew cleanup
+end
+
+# Uninstall Spyder
+function uninstall-spyder
+    $HOME/Library/spyder-6/uninstall-spyder.sh
+end
