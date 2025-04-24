@@ -41,6 +41,9 @@ if type -q starship
     starship init fish | source
 end
 
+# Disattiva greeting
+set -g fish_greeting ''
+
 # ========================
 # Functions
 # ========================
