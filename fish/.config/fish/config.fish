@@ -3,16 +3,10 @@
 # ========================
 
 # Fisher: Plugin manager for Fish
-# if not type -q fisher
-#    echo "Fisher non trovato, lo installo con Homebrew..."
-#    brew install fisher
-# end
-
-# Install plugins via Fisher
-# fisher install \
-#    PatrickF1/fzf.fish \
-#    PatrickF1/fish-autosuggestions \
-#    PatrickF1/fish-highlight
+if not type -q fisher
+    echo "Fisher non trovato, lo installo con Homebrew..."
+    brew install fisher
+end
 
 # ========================
 # Environment Configuration
@@ -33,7 +27,7 @@ if test -s "$SDKMAN_DIR/bin/sdkman-init.sh"
     end
 end
 
-# Add custom directories to PATH
+# Aggiungi directory personalizzate alla variabile PATH
 fish_add_path $HOME/.filen-cli/bin
 fish_add_path /opt/homebrew/opt/file-formula/bin
 
@@ -47,9 +41,13 @@ if type -q starship
     starship init fish | source
 end
 
-# Zoxide: smarter cd
-if type -q zoxide
-    zoxide init fish | source
+# ========================
+# Functions
+# ========================
+
+# Wrapper per usare SDKMAN! in Fish
+function sdk
+    bass source "$HOME/.sdkman/bin/sdkman-init.sh" ';' sdk $argv
 end
 
 # ========================
@@ -64,4 +62,9 @@ end
 # Uninstall Spyder
 function uninstall-spyder
     $HOME/Library/spyder-6/uninstall-spyder.sh
+end
+
+# Zoxide initialization
+if type -q zoxide
+    zoxide init fish | source
 end
