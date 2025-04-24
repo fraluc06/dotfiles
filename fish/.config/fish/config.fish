@@ -3,10 +3,10 @@
 # ========================
 
 # Fisher: Plugin manager for Fish
-if not type -q fisher
-    echo "Fisher non trovato, lo installo con Homebrew..."
-    brew install fisher
-end
+# if not type -q fisher
+#    echo "Fisher non trovato, lo installo con Homebrew..."
+#    brew install fisher
+# end
 
 # ========================
 # Environment Configuration
