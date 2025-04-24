@@ -1,0 +1,5 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR _fisher_plugins:patrickf1/fzf\x2efish\x1epatrickf1/fish\x2dautosuggestions\x1epatrickf1/fish\x2dhighlight
+SETUVAR _fisher_upgraded_to_4_4:\x1d
+SETUVAR fish_user_paths:/opt/homebrew/opt/file\x2dformula/bin\x1e/Users/francescolucarelli/\x2efilen\x2dcli/bin

@@ -24,6 +24,9 @@ rustup toolchain link system "$(brew --prefix rust)"
 # Starship prompt
 eval "$(starship init zsh)"
 
+# Zoxide - smarter cd
+eval "$(zoxide init zsh)"
+
 # -- ALIASES --
 alias update-all='brew update && brew upgrade && brew cleanup'
 # Spyder alias
