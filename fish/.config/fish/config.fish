@@ -40,6 +40,8 @@ end
 if type -q starship
     starship init fish | source
 end
+# Attiva i suggerimenti
+source (status --is-interactive; and echo $fish_function_path[1]/fish_autosuggestions.fish)
 
 # ========================
 # Functions
