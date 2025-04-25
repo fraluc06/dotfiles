@@ -32,8 +32,8 @@ export SDKMAN_DIR="${HOME}/.sdkman"
 export CURRENT_JAVA_VERSION=$(sdk current java | awk '{print $NF}')
 export JAVA_HOME="${SDKMAN_DIR}/candidates/java/current"
 
-# Python via uv
-export PATH="/Users/francescolucarelli/.local/bin:$PATH"
+# Python PATH
+export PATH="$HOME/.local/share/uv/python/cpython-3.13.3-macos-aarch64-none/bin:$PATH"
 
 # CLI Tools
 export PATH="${PATH}:${HOME}/.filen-cli/bin"
