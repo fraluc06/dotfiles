@@ -1,62 +1,65 @@
+Here’s the `README.md` translated into English, with key tool mentions linked to their documentation:
 
 ---
 
 ## 📁 Dotfiles by fraluc06
-Configurazioni personali per una shell moderna, produttiva e minimale.
-Questa repository contiene i file di configurazione che uso quotidianamente su macOS/Linux, inclusi:
 
-- ⚡ **Zsh** con plugin e prompt personalizzato
-- 📝 **Neovim** come editor principale
-- 🪞 **Ghostty** come terminale
-- 🛠️ Altri strumenti CLI (SDKMAN, fnm, starship, ecc.)
-- 🍺 **Homebrew** e gestione pacchetti tramite `Brewfile`
+Personal configurations for a modern, productive, and minimal shell.
+This repository contains the configuration files I use daily on macOS/Linux, including:
+
+- ⚡ **Zsh** with custom plugins and prompt  ([Z shell - Wikipedia](https://en.wikipedia.org/wiki/Z_shell?utm_source=chatgpt.com))
+- 📝 **Neovim** as my primary editor  ([Neovim: Home](https://neovim.io/?utm_source=chatgpt.com))
+- 🪞 **Ghostty** as terminal emulator
+- 🛠️ Other CLI tools (SDKMAN, fnm, Starship, etc.)
+- 🍺 **Homebrew** package management via `Brewfile`  ([Homebrew Bundle, brew bundle and Brewfile](https://docs.brew.sh/Brew-Bundle-and-Brewfile?utm_source=chatgpt.com))
 
 ---
 
-## 📸 Anteprima terminale
+## 📸 Terminal Preview
 
 ![Ghostty Preview](./preview.png)
 
 ---
 
-## 🗂 Struttura
+## 🗂 Repository Structure
 
 ```bash
 .config/
-├── nvim/                 # Configurazione di Neovim (init.lua o init.vim)
-├── ghostty/              # Config di Ghostty terminal
-├── starship.toml         # Prompt personalizzato
-.zshrc                    # Configurazione Zsh
-Brewfile                  # File per la gestione dei pacchetti con Homebrew
+├── nvim/                 # Neovim configuration (init.lua or init.vim)
+├── ghostty/              # Ghostty terminal config
+├── starship.toml         # Starship prompt configuration
+.zshrc                    # Zsh configuration
+Brewfile                  # Homebrew package list for Brew Bundle
 ```
 
 ---
 
-## 🚀 Setup rapido
+## 🚀 Quick Setup
 
-### Requisiti
-Assicurati di avere installato:
+### Prerequisites
+
+Make sure you have installed:
 - **Git**
 - **Zsh**
 - **Neovim**
-- **Homebrew** (macOS) o un package manager equivalente
-- **GNU Stow** (per la gestione dei dotfiles)
+- **Homebrew** (on macOS) or an equivalent package manager
+- **GNU Stow** for dotfile management  ([Stow - GNU Project - Free Software Foundation](https://www.gnu.org/software/stow/?utm_source=chatgpt.com))
 
-### Passaggi di installazione
+### Installation Steps
 
-1. Clona i dotfiles nella home:
+1. Clone your dotfiles repository into your home directory:
 
     ```bash
     git clone https://github.com/fraluc06/dotfiles.git ~/.dotfiles
     ```
 
-2. Entra nella directory dei dotfiles:
+2. Change into the dotfiles directory:
 
     ```bash
     cd ~/.dotfiles
     ```
 
-3. Usa **GNU Stow** per creare i symlink automaticamente:
+3. Use **GNU Stow** to symlink your configs automatically:
 
     ```bash
     stow zsh
@@ -64,7 +67,7 @@ Assicurati di avere installato:
     stow ghostty
     ```
 
-4. Installa i pacchetti con Homebrew usando il `Brewfile`:
+4. Install all Homebrew packages and casks from your `Brewfile`:
 
     ```bash
     brew bundle --file=~/.dotfiles/Brewfile
@@ -72,35 +75,33 @@ Assicurati di avere installato:
 
 ---
 
-## 🧩 Plugin & Tools inclusi
+## 🧩 Included Plugins & Tools
 
 ### **Zsh**
-- [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions)
-- [`zsh-syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting)
-- [`starship`](https://starship.rs)
+- `zsh-autosuggestions`
+- `zsh-syntax-highlighting`
+- `starship`
 
 ### **Neovim**
-- LSP, autocompletamento, snippets, ecc. (specifica i plugin se vuoi)
+- LSP support, autocompletion, snippets, etc.
 
-### **Terminale**
-- **Ghostty** con tema e font personalizzati
+### **Terminal**
+- **Ghostty** with custom themes and fonts
 
 ### **Homebrew**
-- Gestione dei pacchetti tramite `Brewfile` (installazione automatica di pacchetti e cask)
+- Declarative package management with `Brewfile` (via `brew bundle`)  ([Homebrew Bundle, brew bundle and Brewfile](https://docs.brew.sh/Brew-Bundle-and-Brewfile?utm_source=chatgpt.com))
 
 ---
 
-## 🔄 Sync & Aggiornamenti
+## 🔄 Sync & Updates
 
-Se usi più macchine, puoi:
-- Forkare questa repo e mantenerla privata
-- Scrivere uno script di sync/backup
-- Usare strumenti come `chezmoi`, `yadm` o `stow` per una gestione avanzata dei dotfiles
-
----
-
-## 📜 Licenza
-
-MIT – sentiti libero di copiarla, modificarla, migliorare!
+If you use multiple machines, you can:
+- Fork this repo and keep it private
+- Write a sync/backup script
+- Use tools like `chezmoi`, `yadm`, or `stow` for advanced dotfile management
 
 ---
+
+## 📜 License
+
+MIT – feel free to copy, modify, and improve!
