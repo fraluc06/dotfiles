@@ -1,7 +1,7 @@
+
 ---
 
 ## 📁 Dotfiles by fraluc06
-
 Configurazioni personali per una shell moderna, produttiva e minimale.
 Questa repository contiene i file di configurazione che uso quotidianamente su macOS/Linux, inclusi:
 
