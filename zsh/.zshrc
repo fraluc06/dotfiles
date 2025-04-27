@@ -2,22 +2,17 @@
 # User Configuration
 # ========================
 
-# --- Zplug Initialization ---
-export ZPLUG_HOME="${HOME}/.zplug"
-source "${ZPLUG_HOME}/init.zsh"
+# --- Plugin Configuration via Homebrew ---
 
-# --- Plugin Management ---
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "junegunn/fzf", use:"shell/*.zsh", defer:1
+# Zsh Autosuggestions
+source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
-# Install plugins if not already installed
-if ! zplug check --verbose; then
-  zplug install
-fi
+# Zsh Syntax Highlighting
+# (IMPORTANTE: deve essere caricato per ultimo tra i plugin)
+source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-# Load plugins
-zplug load
+# FZF (Keybindings + Completion)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # ========================
 # Environment Configuration
@@ -32,13 +27,13 @@ export SDKMAN_DIR="${HOME}/.sdkman"
 export CURRENT_JAVA_VERSION=$(sdk current java | awk '{print $NF}')
 export JAVA_HOME="${SDKMAN_DIR}/candidates/java/current"
 
-# Python PATH
+# Python PATH (uv)
 export PATH="$HOME/.local/share/uv/python/cpython-3.13.3-macos-aarch64-none/bin:$PATH"
 
-# CLI Tools
+# CLI Tools (Filen CLI)
 export PATH="${PATH}:${HOME}/.filen-cli/bin"
 
-# Rust Toolchain
+# Rust Toolchain (linked to Homebrew's Rust)
 rustup toolchain link system "$(brew --prefix rust)"
 
 # ========================
