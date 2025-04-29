@@ -1,5 +1,6 @@
 tap "th-ch/youtube-music"
 brew "aria2"
+brew "bat"
 brew "btop"
 brew "ente-cli"
 brew "fastfetch"
