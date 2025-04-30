@@ -21,7 +21,10 @@ zinit light zsh-users/zsh-autosuggestions
 zinit load wfxr/forgit
 
 # Plugin per navigare rapidamente tra directory visitate spesso, basato su frequenza e "frecency"
-zinit load agkozak/zsh-z
+zinit ice from"gh-r" as"program"
+zinit load ajeetdsouza/zoxide
+
+eval "$(zoxide init zsh)"
 
 # Plugin che sostituisce il completamento standard con un'interfaccia interattiva tramite fzf
 zinit light Aloxaf/fzf-tab
