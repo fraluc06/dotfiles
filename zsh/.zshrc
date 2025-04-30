@@ -23,6 +23,9 @@ zinit load wfxr/forgit
 # Plugin per navigare rapidamente tra directory visitate spesso, basato su frequenza e "frecency"
 zinit load agkozak/zsh-z
 
+# Plugin che sostituisce il completamento standard con un'interfaccia interattiva tramite fzf
+zinit light Aloxaf/fzf-tab
+
 # Zsh Syntax Highlighting: Evidenzia la sintassi (deve essere caricato per ultimo)
 zinit light zdharma-continuum/fast-syntax-highlighting
 
