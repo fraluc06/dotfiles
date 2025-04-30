@@ -1,54 +1,78 @@
-# ========================
-# User Configuration
-# ========================
+# ================================
+# === Plugin Manager Setup =======
+# ================================
+# Verifica se Zinit è già presente, altrimenti lo scarica
+if [[ ! -f "${ZDOTDIR:-$HOME}/.zinit/bin/zinit.zsh" ]]; then
+  mkdir -p "${ZDOTDIR:-$HOME}/.zinit" && \
+  git clone https://github.com/zdharma-continuum/zinit.git "${ZDOTDIR:-$HOME}/.zinit/bin"
+fi
 
-# --- Plugin Configuration via Homebrew ---
+# Carica il plugin manager Zinit
+source "${ZDOTDIR:-$HOME}/.zinit/bin/zinit.zsh"
 
-# Zsh Autosuggestions
-source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
-# Zsh Syntax Highlighting
-# (IMPORTANTE: deve essere caricato per ultimo tra i plugin)
-source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+# ================================
+# === Plugin Configuration =======
+# ================================
+# Zsh Autosuggestions: Suggerimenti dinamici durante la digitazione
+zinit light zsh-users/zsh-autosuggestions
 
-# FZF (Keybindings + Completion)
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Zsh Syntax Highlighting: Evidenzia la sintassi (deve essere caricato per ultimo)
+zinit light zsh-users/zsh-syntax-highlighting
 
-# ========================
-# Environment Configuration
-# ========================
 
-# Node.js via FNM (used with `cd`)
+# ================================
+# === External Tools Setup =======
+# ================================
+# FZF: Verifica se è installato e carica le configurazioni
+if command -v fzf >/dev/null 2>&1; then
+  [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+else
+  echo "⚠️ fzf non trovato. Installa con 'brew install fzf' o seguendo la guida su https://github.com/junegunn/fzf"
+fi
+
+# Zoxide: Verifica se è installato e inizializzalo per la navigazione rapida
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+else
+  echo "⚠️ zoxide non trovato. Installa con 'brew install zoxide' o 'cargo install zoxide'"
+fi
+
+# Starship: Verifica se è installato e inizializzalo per il prompt personalizzato
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init zsh)"
+else
+  echo "⚠️ starship non trovato. Installa con 'brew install starship' o seguendo la guida su https://starship.rs"
+fi
+
+
+# ================================
+# === Environment Configuration ==
+# ================================
+# Configura FNM (Fast Node Manager) per gestire le versioni di Node.js
 eval "$(fnm env --use-on-cd)"
 
-# Java via SDKMAN!
+# Configura SDKMAN! per gestire le versioni di Java
 export SDKMAN_DIR="${HOME}/.sdkman"
 [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
 export CURRENT_JAVA_VERSION=$(sdk current java | awk '{print $NF}')
 export JAVA_HOME="${SDKMAN_DIR}/candidates/java/current"
 
-# Python PATH (uv)
-export PATH="$HOME/.local/share/uv/python/cpython-3.13.3-macos-aarch64-none/bin:$PATH"
+# Aggiungi Python al PATH (gestito con uv)
+export PATH="$HOME/.local/share/uv/python/cpython-3.13.3-*/bin:$PATH"
 
-# CLI Tools (Filen CLI)
+# Aggiungi strumenti CLI personalizzati al PATH
 export PATH="${PATH}:${HOME}/.filen-cli/bin"
 
-# Rust Toolchain (linked to Homebrew's Rust)
-rustup toolchain link system "$(brew --prefix rust)"
+# Aggiungi Rust al PATH (se utilizzi rustup)
+export PATH="$HOME/.cargo/bin:$PATH"
 
-# ========================
-# Prompt and Navigation
-# ========================
 
-# Starship Prompt (via Homebrew)
-eval "$(starship init zsh)"
-
-# Zoxide (via Homebrew)
-eval "$(zoxide init zsh)"
-
-# ========================
-# Aliases
-# ========================
-
+# ================================
+# === Aliases ====================
+# ================================
+# Alias per aggiornare tutti i pacchetti con Brew
 alias update-all='brew update && brew upgrade && brew cleanup'
+
+# Alias per disinstallare Spyder
 alias uninstall-spyder="${HOME}/Library/spyder-6/uninstall-spyder.sh"
