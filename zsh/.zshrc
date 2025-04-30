@@ -1,6 +1,6 @@
-# ================================
-# === Plugin Manager Setup =======
-# ================================
+# ========================================
+# === Plugin Manager Setup (Zinit) =======
+# ========================================
 # Verifica se Zinit è già presente, altrimenti lo scarica
 if [[ ! -f "${ZDOTDIR:-$HOME}/.zinit/bin/zinit.zsh" ]]; then
   mkdir -p "${ZDOTDIR:-$HOME}/.zinit" && \
@@ -11,73 +11,103 @@ fi
 source "${ZDOTDIR:-$HOME}/.zinit/bin/zinit.zsh"
 
 
-# ================================
-# === Plugin Configuration =======
-# ================================
-# Zsh Autosuggestions: Suggerimenti dinamici durante la digitazione
+# ========================================
+# === Plugin Configuration ===============
+# ========================================
+
+# ➤ Prompt Starship (installato come programma standalone)
+zinit ice from"gh-r" as"program"
+zinit load starship/starship
+eval "$(starship init zsh)"
+
+# ➤ Suggerimenti dinamici durante la digitazione
 zinit light zsh-users/zsh-autosuggestions
 
-# Plugin che aggiunge interfacce interattive per i comandi Git (add, log, diff, etc.) usando fzf
-zinit load wfxr/forgit
+# ==============================================
+# === Programmi standalone da GitHub Releases ===
+# ==============================================
 
-# Plugin per navigare rapidamente tra directory visitate spesso, basato su frequenza e "frecency"
+# ➤ fzf (interfacce fuzzy per ricerche e cronologia)
+zinit ice from"gh-r" as"program"
+zinit load junegunn/fzf
+[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+
+# ➤ zoxide (navigazione intelligente tra directory)
 zinit ice from"gh-r" as"program"
 zinit load ajeetdsouza/zoxide
-
 eval "$(zoxide init zsh)"
 
-# Plugin che sostituisce il completamento standard con un'interfaccia interattiva tramite fzf
+# ➤ fnm (Node.js version manager)
+zinit ice from"gh-r" as"program"
+zinit load Schniz/fnm
+eval "$(fnm env --use-on-cd)"
+
+# ========================================
+# === Plugin Zsh =========================
+# ========================================
+
+# ➤ Interfacce Git interattive con fzf
+zinit load wfxr/forgit
+
+# ➤ Completamento automatico con supporto fzf
 zinit light Aloxaf/fzf-tab
 
-# Zsh Syntax Highlighting: Evidenzia la sintassi (deve essere caricato per ultimo)
+# ➤ Evidenziazione sintattica (caricare per ultimo)
 zinit light zdharma-continuum/fast-syntax-highlighting
 
 
-# ================================
-# === External Tools Setup =======
-# ================================
-# FZF: Verifica se è installato e carica le configurazioni
-if command -v fzf >/dev/null 2>&1; then
-  [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
-else
-  echo "⚠️ fzf non trovato. Installa con 'brew install fzf' o seguendo la guida su https://github.com/junegunn/fzf"
+# ========================================
+# === SDKMAN! Setup ======================
+# ========================================
+
+# ➤ Installa SDKMAN! se non esiste
+if [[ ! -d "$HOME/.sdkman" ]]; then
+  echo "📦 Installazione SDKMAN..."
+  curl -s "https://get.sdkman.io" | bash
 fi
 
-# Starship: Verifica se è installato e inizializzalo per il prompt personalizzato
-if command -v starship >/dev/null 2>&1; then
-  eval "$(starship init zsh)"
-else
-  echo "⚠️ starship non trovato. Installa con 'brew install starship' o seguendo la guida su https://starship.rs"
-fi
-
-
-# ================================
-# === Environment Configuration ==
-# ================================
-# Configura FNM (Fast Node Manager) per gestire le versioni di Node.js
-eval "$(fnm env --use-on-cd)"
-
-# Configura SDKMAN! per gestire le versioni di Java
+# ➤ Inizializza SDKMAN!
 export SDKMAN_DIR="${HOME}/.sdkman"
 [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
-export CURRENT_JAVA_VERSION=$(sdk current java | awk '{print $NF}')
-export JAVA_HOME="${SDKMAN_DIR}/candidates/java/current"
 
-# Aggiungi Python al PATH (gestito con uv)
+# ➤ Imposta JAVA_HOME in modo sicuro
+if command -v sdk >/dev/null 2>&1; then
+  export JAVA_HOME="${SDKMAN_DIR}/candidates/java/current"
+fi
+
+
+# ================================
+# === Filen CLI Setup ===========
+# ================================
+# Aggiunge il percorso a filen-cli (se esiste)
+if [[ -d "$HOME/.filen-cli/bin" ]]; then
+  export PATH="$HOME/.filen-cli/bin:$PATH"
+fi
+
+# Installa filen-cli solo se il comando non è disponibile
+if ! command -v filen >/dev/null 2>&1; then
+  echo "📦 Installazione filen-cli..."
+  curl -sL https://filen.io/cli.sh | bash
+fi
+
+
+# ========================================
+# === Environment Configuration ==========
+# ========================================
+
+# ➤ Python (gestito con uv)
 export PATH="$HOME/.local/share/uv/python/cpython-3.13.3-*/bin:$PATH"
 
-# Aggiungi strumenti CLI personalizzati al PATH
-export PATH="${PATH}:${HOME}/.filen-cli/bin"
-
-# Aggiungi Rust al PATH (se utilizzi rustup)
+# ➤ Rust (via rustup)
 export PATH="$HOME/.cargo/bin:$PATH"
 
 
-# ================================
-# === Aliases ====================
-# ================================
-# Alias per aggiornare tutti i pacchetti con Brew
+# ========================================
+# === Aliases ============================
+# ========================================
+
+# ➤ Aggiorna tutti i pacchetti Homebrew
 alias update-all='brew update && brew upgrade && brew cleanup'
 
-# Alias per disinstallare Spyder
+# ➤ Disinstalla Spyder
 alias uninstall-spyder="${HOME}/Library/spyder-6/uninstall-spyder.sh"
