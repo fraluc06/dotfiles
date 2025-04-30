@@ -17,7 +17,7 @@ source "${ZDOTDIR:-$HOME}/.zinit/bin/zinit.zsh"
 
 # ➤ Prompt Starship (installato come programma standalone)
 zinit ice from"gh-r" as"program"
-zinit load starship/starship
+zinit light starship/starship
 eval "$(starship init zsh)"
 
 # ➤ Suggerimenti dinamici durante la digitazione
@@ -29,17 +29,17 @@ zinit light zsh-users/zsh-autosuggestions
 
 # ➤ fzf (interfacce fuzzy per ricerche e cronologia)
 zinit ice from"gh-r" as"program"
-zinit load junegunn/fzf
+zinit light junegunn/fzf
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 
 # ➤ zoxide (navigazione intelligente tra directory)
 zinit ice from"gh-r" as"program"
-zinit load ajeetdsouza/zoxide
+zinit light ajeetdsouza/zoxide
 eval "$(zoxide init zsh)"
 
 # ➤ fnm (Node.js version manager)
 zinit ice from"gh-r" as"program"
-zinit load Schniz/fnm
+zinit light Schniz/fnm
 eval "$(fnm env --use-on-cd)"
 
 # ========================================
@@ -47,7 +47,7 @@ eval "$(fnm env --use-on-cd)"
 # ========================================
 
 # ➤ Interfacce Git interattive con fzf
-zinit load wfxr/forgit
+zinit light wfxr/forgit
 
 # ➤ Completamento automatico con supporto fzf
 zinit light Aloxaf/fzf-tab
