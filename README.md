@@ -1,4 +1,4 @@
-Here’s the `README.md` translated into English, with key tool mentions linked to their documentation:
+Here's the updated `README.md` with the additional links to **Catppuccin Mocha** theme and **JetBrains Mono Nerd Font**:
 
 ---
 
@@ -7,7 +7,7 @@ Here’s the `README.md` translated into English, with key tool mentions linked 
 Personal configurations for a modern, productive, and minimal shell.
 This repository contains the configuration files I use daily on macOS/Linux, including:
 
-- ⚡ **Zsh** with custom plugins and prompt  ([Z shell - Wikipedia](https://en.wikipedia.org/wiki/Z_shell?utm_source=chatgpt.com))
+- ⚡ **Zsh** with custom plugins and prompt, managed by [Zinit](https://github.com/zdharma-continuum/zinit) ([Z shell - Wikipedia](https://en.wikipedia.org/wiki/Z_shell?utm_source=chatgpt.com))
 - 📝 **Neovim** as my primary editor  ([Neovim: Home](https://neovim.io/?utm_source=chatgpt.com))
 - 🪞 **Ghostty** as terminal emulator
 - 🛠️ Other CLI tools (SDKMAN, fnm, Starship, etc.)
@@ -78,15 +78,17 @@ Make sure you have installed:
 ## 🧩 Included Plugins & Tools
 
 ### **Zsh**
-- `zsh-autosuggestions`
-- `zsh-syntax-highlighting`
-- `starship`
+- Managed with [Zinit](https://github.com/zdharma-continuum/zinit) for optimal plugin loading
+- `zsh-autosuggestions`: Dynamic suggestions while typing
+- `zsh-syntax-highlighting`: Syntax highlighting for commands
 
 ### **Neovim**
 - LSP support, autocompletion, snippets, etc.
 
 ### **Terminal**
-- **Ghostty** with custom themes and fonts
+- **Ghostty** with custom themes and fonts:
+  - **[Catppuccin Mocha](https://github.com/catppuccin/zsh)**: A beautiful dark theme for Zsh and terminal environments
+  - **[JetBrains Mono Nerd Font](https://www.nerdfonts.com/font-downloads)**: A monospaced font with programming ligatures and Nerd Font glyphs for an enhanced coding experience
 
 ### **Homebrew**
 - Declarative package management with `Brewfile` (via `brew bundle`)  ([Homebrew Bundle, brew bundle and Brewfile](https://docs.brew.sh/Brew-Bundle-and-Brewfile?utm_source=chatgpt.com))
@@ -105,3 +107,5 @@ If you use multiple machines, you can:
 ## 📜 License
 
 MIT – feel free to copy, modify, and improve!
+
+---
