@@ -17,8 +17,11 @@ source "${ZDOTDIR:-$HOME}/.zinit/bin/zinit.zsh"
 # Zsh Autosuggestions: Suggerimenti dinamici durante la digitazione
 zinit light zsh-users/zsh-autosuggestions
 
+# Plugin che aggiunge interfacce interattive per i comandi Git (add, log, diff, etc.) usando fzf
+zinit load wfxr/forgit
+
 # Zsh Syntax Highlighting: Evidenzia la sintassi (deve essere caricato per ultimo)
-zinit light zsh-users/zsh-syntax-highlighting
+zinit light zdharma-continuum/fast-syntax-highlighting
 
 
 # ================================
