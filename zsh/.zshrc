@@ -20,6 +20,9 @@ zinit light zsh-users/zsh-autosuggestions
 # Plugin che aggiunge interfacce interattive per i comandi Git (add, log, diff, etc.) usando fzf
 zinit load wfxr/forgit
 
+# Plugin per navigare rapidamente tra directory visitate spesso, basato su frequenza e "frecency"
+zinit load agkozak/zsh-z
+
 # Zsh Syntax Highlighting: Evidenzia la sintassi (deve essere caricato per ultimo)
 zinit light zdharma-continuum/fast-syntax-highlighting
 
@@ -32,13 +35,6 @@ if command -v fzf >/dev/null 2>&1; then
   [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 else
   echo "⚠️ fzf non trovato. Installa con 'brew install fzf' o seguendo la guida su https://github.com/junegunn/fzf"
-fi
-
-# Zoxide: Verifica se è installato e inizializzalo per la navigazione rapida
-if command -v zoxide >/dev/null 2>&1; then
-  eval "$(zoxide init zsh)"
-else
-  echo "⚠️ zoxide non trovato. Installa con 'brew install zoxide' o 'cargo install zoxide'"
 fi
 
 # Starship: Verifica se è installato e inizializzalo per il prompt personalizzato
