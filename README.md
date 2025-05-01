@@ -93,16 +93,11 @@ Make sure you have installed:
 - `fzf-tab`: Replace zsh's default completion selection menu with fzf
 - `fast-syntax-highlighting`: Syntax highlighting for commands
 - `forgit` : A utility tool powered by fzf for using git interactively.
-### **Neovim**
-- LSP support, autocompletion, snippets, etc.
 
 ### **Terminal**
 - **Ghostty** with custom themes and fonts:
   - **[Catppuccin Mocha](https://github.com/catppuccin/)**: Catppuccin is a pastel theme with four warm flavors and 26 eye-candy colors, ideal for coding, designing, and other creative tasks.
   - **[JetBrains Mono Nerd Font](https://www.nerdfonts.com/font-downloads)**: A monospaced font with programming ligatures and Nerd Font glyphs for an enhanced coding experience
-
-### **Homebrew**
-- Declarative package management with `Brewfile` (via `brew bundle`)
 
 ---
 
