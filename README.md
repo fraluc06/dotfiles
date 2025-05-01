@@ -1,26 +1,26 @@
 
 ---
 
-## 📁 Dotfiles by fraluc06
+## 📁 ***My Dotfiles***
 
 Personal configurations for a modern, productive, and minimal shell.
 This repository contains the configuration files I use daily on macOS/Linux, including:
 
-- ⚡ **Zsh** with custom plugins and prompt, managed by [Zinit](https://github.com/zdharma-continuum/zinit) ([Z shell - Wikipedia](https://en.wikipedia.org/wiki/Z_shell?utm_source=chatgpt.com))
-- 📝 **Neovim** as my favourite editor within the terminal ([Neovim: Home](https://neovim.io/?utm_source=chatgpt.com))
+- ⚡ **Zsh** with custom plugins and prompt, managed by Zinit
+- 📝 **Neovim** as my favourite editor within the terminal
 - 🪞 **Ghostty** as terminal emulator
 - 🛠️ Other CLI tools (SDKMAN, fnm, Starship, etc.)
-- 🍺 **Homebrew** package management via `Brewfile`  ([Homebrew Bundle, brew bundle and Brewfile](https://docs.brew.sh/Brew-Bundle-and-Brewfile?utm_source=chatgpt.com))
+- 🍺 **Homebrew** package management via `Brewfile`  **([Homebrew Bundle, brew bundle and Brewfile](https://docs.brew.sh/Brew-Bundle-and-Brewfile))**
 
 ---
 
-## 📸 Terminal Preview
+## 📸 **Terminal Preview**
 
 ![Ghostty Preview](./preview.png)
 
 ---
 
-## 🗂 Repository Structure
+## 🗂 **Repository Structure**
 
 ```bash
 .config/
@@ -34,25 +34,24 @@ Brewfile                  # Homebrew package list for Brew Bundle
 
 ---
 
-## 🚀 Quick Setup
+## 🚀 **Quick Setup**
 
 ### Prerequisites
 
 Make sure you have installed:
 - **Git**
 - **Zsh**
-- **Neovim**
 - **Homebrew** (on macOS) or an equivalent package manager
-- **GNU Stow** for dotfile management  ([Stow - GNU Project - Free Software Foundation](https://www.gnu.org/software/stow/?utm_source=chatgpt.com))
+- **GNU Stow** for dotfile management
 
-### Installation Steps
+### **Installation Steps**
 
-1. Clone your dotfiles repository into your home directory:
+1. Clone your dotfiles repository into a folder in your home directory:
 
     ```bash
     git clone https://github.com/fraluc06/dotfiles.git ~/.dotfiles
     ```
-    or via SSH
+    or via SSH:
 
     ```bash
     git clone git@github.com:fraluc06/dotfiles.git ~/.dotfiles
@@ -70,11 +69,12 @@ Make sure you have installed:
     stow zsh
     stow nvim
     stow ghostty
+    # ...
     ```
     or all with one command
 
     ```bash
-    stow *
+    stow */ # Everything (the '/' ignores the README)
     ```
 
 4. Install all Homebrew packages and casks from your `Brewfile`:
@@ -85,10 +85,10 @@ Make sure you have installed:
 
 ---
 
-## 🧩 Included Plugins & Tools
+## 🧩 **Included Plugins & Tools**
 
 ### **Zsh**
-- Managed with [Zinit](https://github.com/zdharma-continuum/zinit) for optimal plugin loading
+- Managed with Zinit for optimal plugin loading
 - `zsh-autosuggestions`: Dynamic suggestions while typing
 - `fzf-tab`: Replace zsh's default completion selection menu with fzf
 - `fast-syntax-highlighting`: Syntax highlighting for commands
@@ -102,20 +102,19 @@ Make sure you have installed:
   - **[JetBrains Mono Nerd Font](https://www.nerdfonts.com/font-downloads)**: A monospaced font with programming ligatures and Nerd Font glyphs for an enhanced coding experience
 
 ### **Homebrew**
-- Declarative package management with `Brewfile` (via `brew bundle`)  ([Homebrew Bundle, brew bundle and Brewfile](https://docs.brew.sh/Brew-Bundle-and-Brewfile?utm_source=chatgpt.com))
+- Declarative package management with `Brewfile` (via `brew bundle`)
 
 ---
 
-## 🔄 Sync & Updates
+## 🔄 **Sync & Updates**
 
 If you use multiple machines, you can:
 - Fork this repo and keep it private
 - Write a sync/backup script
-- Use tools like `chezmoi`, `yadm`, or `stow` for advanced dotfile management
 
 ---
 
-## 📜 License
+## 📜 **License**
 
 MIT – feel free to copy, modify, and improve!
 
