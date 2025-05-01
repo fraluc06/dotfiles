@@ -88,7 +88,7 @@ Make sure you have installed:
 ## 🧩 **Included Plugins & Tools**
 
 ### **Zsh**
-- Managed with Zinit for optimal plugin loading
+- Managed with `Zinit` for optimal plugin loading
 - `zsh-autosuggestions`: Dynamic suggestions while typing
 - `fzf-tab`: Replace zsh's default completion selection menu with fzf
 - `fast-syntax-highlighting`: Syntax highlighting for commands
