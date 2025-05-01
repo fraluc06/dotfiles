@@ -1,4 +1,3 @@
-Here's the updated `README.md` with the additional links to **Catppuccin Mocha** theme and **JetBrains Mono Nerd Font**:
 
 ---
 
@@ -8,7 +7,7 @@ Personal configurations for a modern, productive, and minimal shell.
 This repository contains the configuration files I use daily on macOS/Linux, including:
 
 - ⚡ **Zsh** with custom plugins and prompt, managed by [Zinit](https://github.com/zdharma-continuum/zinit) ([Z shell - Wikipedia](https://en.wikipedia.org/wiki/Z_shell?utm_source=chatgpt.com))
-- 📝 **Neovim** as my primary editor  ([Neovim: Home](https://neovim.io/?utm_source=chatgpt.com))
+- 📝 **Neovim** as my favourite editor within the terminal ([Neovim: Home](https://neovim.io/?utm_source=chatgpt.com))
 - 🪞 **Ghostty** as terminal emulator
 - 🛠️ Other CLI tools (SDKMAN, fnm, Starship, etc.)
 - 🍺 **Homebrew** package management via `Brewfile`  ([Homebrew Bundle, brew bundle and Brewfile](https://docs.brew.sh/Brew-Bundle-and-Brewfile?utm_source=chatgpt.com))
@@ -25,9 +24,10 @@ This repository contains the configuration files I use daily on macOS/Linux, inc
 
 ```bash
 .config/
-├── nvim/                 # Neovim configuration (init.lua or init.vim)
+├── nvim/                 # Neovim config
 ├── ghostty/              # Ghostty terminal config
-├── starship.toml         # Starship prompt configuration
+├── starship.toml         # Starship prompt config
+├── yazi/                 # yazi terminal file explorer config
 .zshrc                    # Zsh configuration
 Brewfile                  # Homebrew package list for Brew Bundle
 ```
@@ -52,6 +52,11 @@ Make sure you have installed:
     ```bash
     git clone https://github.com/fraluc06/dotfiles.git ~/.dotfiles
     ```
+    or via SSH
+
+    ```bash
+    git clone git@github.com:fraluc06/dotfiles.git ~/.dotfiles
+    ```
 
 2. Change into the dotfiles directory:
 
@@ -65,6 +70,11 @@ Make sure you have installed:
     stow zsh
     stow nvim
     stow ghostty
+    ```
+    or all with one command
+
+    ```bash
+    stow *
     ```
 
 4. Install all Homebrew packages and casks from your `Brewfile`:
@@ -80,14 +90,15 @@ Make sure you have installed:
 ### **Zsh**
 - Managed with [Zinit](https://github.com/zdharma-continuum/zinit) for optimal plugin loading
 - `zsh-autosuggestions`: Dynamic suggestions while typing
-- `zsh-syntax-highlighting`: Syntax highlighting for commands
-
+- `fzf-tab`: Replace zsh's default completion selection menu with fzf
+- `fast-syntax-highlighting`: Syntax highlighting for commands
+- `forgit` : A utility tool powered by fzf for using git interactively.
 ### **Neovim**
 - LSP support, autocompletion, snippets, etc.
 
 ### **Terminal**
 - **Ghostty** with custom themes and fonts:
-  - **[Catppuccin Mocha](https://github.com/catppuccin/zsh)**: A beautiful dark theme for Zsh and terminal environments
+  - **[Catppuccin Mocha](https://github.com/catppuccin/)**: Catppuccin is a pastel theme with four warm flavors and 26 eye-candy colors, ideal for coding, designing, and other creative tasks.
   - **[JetBrains Mono Nerd Font](https://www.nerdfonts.com/font-downloads)**: A monospaced font with programming ligatures and Nerd Font glyphs for an enhanced coding experience
 
 ### **Homebrew**
