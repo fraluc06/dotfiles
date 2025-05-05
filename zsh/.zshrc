@@ -92,17 +92,6 @@ fi
 
 
 # ========================================
-# === Environment Configuration ==========
-# ========================================
-
-# ➤ Python (gestito con uv)
-export PATH="$HOME/.local/share/uv/python/cpython-3.13.3-*/bin:$PATH"
-
-# ➤ Rust (via rustup)
-export PATH="$HOME/.cargo/bin:$PATH"
-
-
-# ========================================
 # === Aliases ============================
 # ========================================
 
