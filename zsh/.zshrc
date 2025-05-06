@@ -1,14 +1,13 @@
 # ========================================
 # === Plugin Manager Setup (Zinit) =======
 # ========================================
-# Verifica se Zinit è già presente, altrimenti lo scarica
-if [[ ! -f "${ZDOTDIR:-$HOME}/.zinit/bin/zinit.zsh" ]]; then
-  mkdir -p "${ZDOTDIR:-$HOME}/.zinit" && \
-  git clone https://github.com/zdharma-continuum/zinit.git "${ZDOTDIR:-$HOME}/.zinit/bin"
+# Verifica se Zinit è già presente, altrimenti lo installa con Homebrew
+if [[ ! -f "/opt/homebrew/opt/zinit/zinit.zsh" ]]; then
+  brew install zinit
 fi
 
 # Carica il plugin manager Zinit
-source "${ZDOTDIR:-$HOME}/.zinit/bin/zinit.zsh"
+source "$HOMEBREW_PREFIX/opt/zinit/zinit.zsh"
 
 
 # ========================================
@@ -94,8 +93,8 @@ fi
 # ========================================
 # === Python =============================
 # ========================================
-# Python installato e gestito da uv
-export PATH="$HOME/.local/share/uv/python/cpython-3.13.3-macos-aarch64-none/bin:$PATH"
+# Python installato con Homebrew
+export PATH="$HOMEBREW_PREFIX/opt/python/libexec/bin:$PATH"
 
 
 # ========================================
