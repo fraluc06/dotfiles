@@ -77,7 +77,7 @@ fi
 
 
 # ================================
-# === Filen CLI Setup ===========
+# === Filen CLI Setup ============
 # ================================
 # Aggiunge il percorso a filen-cli (se esiste)
 if [[ -d "$HOME/.filen-cli/bin" ]]; then
@@ -89,6 +89,13 @@ if ! command -v filen >/dev/null 2>&1; then
   echo "📦 Installazione filen-cli..."
   curl -sL https://filen.io/cli.sh | bash
 fi
+
+
+# ========================================
+# === Python =============================
+# ========================================
+# Python installato e gestito da uv
+export PATH="$HOME/.local/share/uv/python/cpython-3.13.3-macos-aarch64-none/bin:$PATH"
 
 
 # ========================================
