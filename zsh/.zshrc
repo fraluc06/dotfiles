@@ -11,18 +11,11 @@ source "$HOMEBREW_PREFIX/opt/zinit/zinit.zsh"
 
 
 # ========================================
-# === Plugin Configuration ===============
+# === Environment Configuration ===============
 # ========================================
 
-# ➤ Prompt Starship (installato come programma standalone)
+# ➤ Prompt Starship
 eval "$(starship init zsh)"
-
-# ➤ Suggerimenti dinamici durante la digitazione
-zinit light zsh-users/zsh-autosuggestions
-
-# ==============================================
-# === Programmi standalone da GitHub Releases ===
-# ==============================================
 
 # ➤ fzf (interfacce fuzzy per ricerche e cronologia)
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
@@ -37,6 +30,8 @@ eval "$(fnm env --use-on-cd)"
 # === Plugin Zsh =========================
 # ========================================
 
+# ➤ Suggerimenti dinamici durante la digitazione
+zinit light zsh-users/zsh-autosuggestions
 # ➤ Interfacce Git interattive con fzf
 zinit light wfxr/forgit
 
