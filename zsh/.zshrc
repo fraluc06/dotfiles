@@ -15,8 +15,6 @@ source "$HOMEBREW_PREFIX/opt/zinit/zinit.zsh"
 # ========================================
 
 # ➤ Prompt Starship (installato come programma standalone)
-zinit ice from"gh-r" as"program"
-zinit light starship/starship
 eval "$(starship init zsh)"
 
 # ➤ Suggerimenti dinamici durante la digitazione
@@ -27,18 +25,12 @@ zinit light zsh-users/zsh-autosuggestions
 # ==============================================
 
 # ➤ fzf (interfacce fuzzy per ricerche e cronologia)
-zinit ice from"gh-r" as"program"
-zinit light junegunn/fzf
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 
 # ➤ zoxide (navigazione intelligente tra directory)
-zinit ice from"gh-r" as"program"
-zinit light ajeetdsouza/zoxide
 eval "$(zoxide init zsh)"
 
 # ➤ fnm (Node.js version manager)
-zinit ice from"gh-r" as"program"
-zinit light Schniz/fnm
 eval "$(fnm env --use-on-cd)"
 
 # ========================================
