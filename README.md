@@ -4,6 +4,7 @@
 ## 📁 ***My Dotfiles***
 
 Personal configurations for a modern, productive, and minimal shell.
+Meant to be used with my **.zshrc** on macOS.
 This repository contains the configuration files I use daily on macOS/Linux, including:
 
 - ⚡ **Zsh** with custom plugins and prompt, managed by Zinit
@@ -26,9 +27,9 @@ This repository contains the configuration files I use daily on macOS/Linux, inc
 .config/
 ├── nvim/                 # Neovim config
 ├── ghostty/              # Ghostty terminal config
-├── starship.toml         # Starship prompt config
+├── starship/             # Starship prompt config
 ├── yazi/                 # yazi terminal file explorer config
-.zshrc                    # Zsh configuration
+├── zsh/                  # Zsh configuration
 Brewfile                  # Homebrew package list for Brew Bundle
 ```
 
@@ -80,10 +81,34 @@ Make sure you have installed:
 4. Install all Homebrew packages and casks from your `Brewfile`:
 
     ```bash
-    brew bundle --file=~/.dotfiles/Brewfile
+    brew bundle --file=~/dotfiles/Brewfile
     ```
 
 ---
+
+## 🐍 **Python Setup for University**
+
+### Install Python with pyenv
+
+Make sure you have `pyenv` and `pyenv-virtualenv` installed (it should be included in the `Brewfile`)
+**Tip:** You can check the latest available Python version with:
+```bash
+pyenv install --list
+```
+```bash
+brew install pyenv
+pyenv install 3.13.3
+pyenv global 3.13.3
+```
+### Creating the virtual environment for the University
+```bash
+pyenv virtualenv 3.13.3 uni-env
+pyenv activate uni-env
+```
+### Installing required packages
+```bash
+pip install -r ./requirements.txt
+```
 
 ## 🧩 **Included Plugins & Tools**
 
