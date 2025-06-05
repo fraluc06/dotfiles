@@ -1,7 +1,7 @@
 # ========================================
 # === Plugin Manager Setup (Zinit) =======
 # ========================================
-# Verifica se Zinit è già presente, altrimenti lo installa con Homebrew
+# ➤ Verifica se Zinit è già presente, altrimenti lo installa con Homebrew
 if [[ ! -f "/opt/homebrew/opt/zinit/zinit.zsh" ]]; then
   brew install zinit
 fi
@@ -65,12 +65,13 @@ fi
 # ================================
 # === Filen CLI Setup ============
 # ================================
-# Aggiunge il percorso a filen-cli (se esiste)
+
+# ➤ Aggiunge il percorso a filen-cli (se esiste)
 if [[ -d "$HOME/.filen-cli/bin" ]]; then
   export PATH="$HOME/.filen-cli/bin:$PATH"
 fi
 
-# Installa filen-cli solo se il comando non è disponibile
+# ➤ Installa filen-cli solo se il comando non è disponibile
 if ! command -v filen >/dev/null 2>&1; then
   echo "📦 Installazione filen-cli..."
   curl -sL https://filen.io/cli.sh | bash
@@ -80,7 +81,8 @@ fi
 # ========================================
 # === Python =============================
 # ========================================
-# Python installato con pyenv
+
+# ➤ Python installato con pyenv
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
