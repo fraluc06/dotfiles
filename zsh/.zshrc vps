@@ -81,7 +81,3 @@ fi
 
 # ➤ Aggiorna tutti i pacchetti Homebrew
 alias update-all='sudo apt update && sudo apt upgrade && brew cleanup'
-
-
-# filen-cli
-PATH=$PATH:~/.filen-cli/bin
