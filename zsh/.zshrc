@@ -90,14 +90,6 @@ eval "$(/opt/homebrew/bin/pyenv init --path)"
 eval "$(/opt/homebrew/bin/pyenv init -)"
 eval "$(/opt/homebrew/bin/pyenv virtualenv-init -)"
 
-# ========================================
-# === Go =================================
-# ========================================
-
-# ➤ Go installato con goenv
-
-eval "$(goenv init -)"
-
 
 # ========================================
 # === Aliases ============================
