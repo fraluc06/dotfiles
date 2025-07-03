@@ -109,7 +109,9 @@ pyenv activate uni-env
 ```bash
 pip install -r ./requirements.txt
 ```
-
+To make Intellij recognize the virtualenv with the Python plugin, add Python SDK -> Virtualenv Environment -> Existing Environment and select the path to the virtualenv you created, usually something like `~/.pyenv/versions/uni-env/bin/python`.
+N.B. If you haven't installed the Python plugin, you can do so from `File -> Settings -> Plugins` and search for "Python". 
+If it gives an error saying it can't find the SDK when you try to run a .py file, remember to create a module in `Project Structure -> Modules` and add the path to the virtualenv you created, usually something like `~/.pyenv/versions/uni-env/bin/python`.
 ## 🧩 **Included Plugins & Tools**
 
 ### **Zsh**
