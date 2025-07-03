@@ -97,12 +97,12 @@ pyenv install --list
 ```
 ```bash
 brew install pyenv
-pyenv install 3.13.3
-pyenv global 3.13.3
+pyenv install 3.13
+pyenv global 3.13
 ```
 ### Creating the virtual environment for the University
 ```bash
-pyenv virtualenv 3.13.3 uni-env
+pyenv virtualenv 3.13 uni-env
 pyenv activate uni-env
 ```
 ### Installing required packages
