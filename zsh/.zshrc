@@ -97,3 +97,4 @@ alias update-all='brew update && brew upgrade && brew cleanup'
 
 # ➤ Disinstalla Spyder
 alias uninstall-spyder="${HOME}/Library/spyder-6/uninstall-spyder.sh"
+alias ls='eza'
