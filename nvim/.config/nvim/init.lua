@@ -167,6 +167,8 @@ vim.opt.confirm = true
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+-- Toggle Neo-Tree
+vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', { desc = 'Toggle Neo-tree' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
@@ -859,6 +861,37 @@ require('lazy').setup {
         --  Check out: https://github.com/echasnovski/mini.nvim
       end,
     },
+
+    {
+      'nvim-neo-tree/neo-tree.nvim',
+      branch = 'v3.x',
+      dependencies = {
+        'nvim-lua/plenary.nvim',
+        'nvim-tree/nvim-web-devicons', -- icone dei file
+        'MunifTanjim/nui.nvim',
+      },
+      config = function()
+        require('neo-tree').setup {
+          close_if_last_window = true,
+          enable_git_status = true,
+          enable_diagnostics = true,
+          filesystem = {
+            filtered_items = {
+              visible = true, -- mostra i file nascosti
+              hide_dotfiles = false,
+              hide_gitignored = false,
+            },
+          },
+          window = {
+            width = 30,
+            mappings = {
+              ['<space>'] = 'none', -- disabilita spazio per espandere
+            },
+          },
+        }
+      end,
+    },
+
     { -- Highlight, edit, and navigate code
       'nvim-treesitter/nvim-treesitter',
       build = ':TSUpdate',
@@ -895,18 +928,18 @@ require('lazy').setup {
 --  Here are some example plugins that I've included in the Kickstart repository.
 --  Uncomment any of the lines below to enable them (you will need to restart nvim).
 --
-require 'kickstart.plugins.debug'
-require 'kickstart.plugins.indent_line'
-require 'kickstart.plugins.lint'
-require 'kickstart.plugins.autopairs'
-require 'kickstart.plugins.neo-tree'
-require 'kickstart.plugins.gitsigns' -- adds gitsigns recommend keymaps
+-- require 'kickstart.plugins.debug'
+-- require 'kickstart.plugins.indent_line'
+-- require 'kickstart.plugins.lint'
+-- require 'kickstart.plugins.autopairs'
+-- require 'kickstart.plugins.neo-tree'
+-- require 'kickstart.plugins.gitsigns' -- adds gitsigns recommend keymaps
 
 -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
 --    This is the easiest way to modularize your config.
 --
 --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
--- { import = 'custom.plugins' },
+-- { import = 'custom.plugins' }
 --
 -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
 -- Or use telescope!
