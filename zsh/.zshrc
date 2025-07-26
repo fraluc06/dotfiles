@@ -49,6 +49,28 @@ bindkey '^[[Z' reverse-menu-complete
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
 
+
+# ========================================
+# === SDKMAN! Setup ======================
+# ========================================
+
+# ➤ Installa SDKMAN! se non esiste
+if [[ ! -d "$HOME/.sdkman" ]]; then
+  echo "📦 Installazione SDKMAN..."
+  curl -s "https://get.sdkman.io" | bash
+fi
+
+# ➤ Inizializza SDKMAN!
+export SDKMAN_DIR="${HOME}/.sdkman"
+[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
+
+# ➤ Imposta JAVA_HOME in modo sicuro
+if command -v sdk >/dev/null 2>&1; then
+  export JAVA_HOME="${SDKMAN_DIR}/candidates/java/current"
+fi
+
+
+
 # ========================================
 # === Filen CLI Setup ====================
 # ========================================
