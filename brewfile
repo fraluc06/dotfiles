@@ -1,5 +1,4 @@
 brew "xz"
-brew "openssl@3"
 brew "readline"
 brew "sqlite"
 brew "aria2"
@@ -47,7 +46,6 @@ cask "displaybuddy"
 cask "downie"
 cask "filen"
 cask "ghostty"
-cask "handbrake-app"
 cask "iina"
 cask "intellij-idea"
 cask "jetbrains-toolbox"
@@ -69,6 +67,7 @@ cask "shutter-encoder"
 cask "spotify"
 cask "spyder"
 cask "stats"
+cask "steam"
 cask "surfshark"
 cask "telegram"
 cask "transmission"
@@ -76,6 +75,11 @@ cask "visual-studio-code"
 cask "whatsapp"
 cask "wins"
 cask "zed"
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
 mas "PDFgear", id: 6469021132
 vscode "aaron-bond.better-comments"
 vscode "catppuccin.catppuccin-vsc"
