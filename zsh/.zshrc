@@ -40,45 +40,18 @@ zinit light Aloxaf/fzf-tab
 # ➤ Evidenziazione sintattica (caricare per ultimo)
 zinit light zdharma-continuum/fast-syntax-highlighting
 
-# ➤ Inizializzazione completamenti
-autoload -Uz compinit && compinit
-autoload -Uz bashcompinit && bashcompinit  # utile per pyenv
-
-# ➤ Keybindings per autosuggestions
-bindkey '^[[Z' reverse-menu-complete
-bindkey '^[[A' up-line-or-search
-bindkey '^[[B' down-line-or-search
-
 
 # ========================================
 # === SDKMAN! Setup ======================
 # ========================================
 
-# ➤ Installa SDKMAN! se non esiste
-if [[ ! -d "$HOME/.sdkman" ]]; then
-  echo "📦 Installazione SDKMAN..."
-  curl -s "https://get.sdkman.io" | bash
-fi
-
 # ➤ Inizializza SDKMAN!
-export SDKMAN_DIR="${HOME}/.sdkman"
+export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
 [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
 
 # ➤ Imposta JAVA_HOME in modo sicuro
 if command -v sdk >/dev/null 2>&1; then
   export JAVA_HOME="${SDKMAN_DIR}/candidates/java/current"
-fi
-
-
-
-# ========================================
-# === Filen CLI Setup ====================
-# ========================================
-
-# ➤ Installa filen-cli solo se il comando non è disponibile
-if ! command -v filen >/dev/null 2>&1; then
-  echo "📦 Installazione filen-cli..."
-  brew install filen-cli
 fi
 
 
@@ -92,6 +65,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(/opt/homebrew/bin/pyenv init --path)"
 eval "$(/opt/homebrew/bin/pyenv init -)"
 eval "$(/opt/homebrew/bin/pyenv virtualenv-init -)"
+
 
 # ========================================
 # === LM Studio CLI ======================
