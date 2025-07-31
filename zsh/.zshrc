@@ -75,15 +75,10 @@ fi
 # === Filen CLI Setup ====================
 # ========================================
 
-# ➤ Aggiunge il percorso a filen-cli (se esiste)
-if [[ -d "$HOME/.filen-cli/bin" ]]; then
-  export PATH="$HOME/.filen-cli/bin:$PATH"
-fi
-
 # ➤ Installa filen-cli solo se il comando non è disponibile
 if ! command -v filen >/dev/null 2>&1; then
   echo "📦 Installazione filen-cli..."
-  curl -sL https://filen.io/cli.sh | bash
+  brew install filen-cli
 fi
 
 
@@ -117,8 +112,3 @@ alias update-all='brew update && brew upgrade && brew cleanup'
 alias uninstall-spyder="${HOME}/Library/spyder-6/uninstall-spyder.sh"
 # ➤ eza (un'alternativa a ls con colori e icone)
 alias ls='eza'
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/francesco/.lmstudio/bin"
-# End of LM Studio CLI section
-
