@@ -25,8 +25,9 @@ This repository contains the configuration files I use daily on macOS/Linux, inc
 
 ```bash
 .config/
-├── nvim/                 # Neovim config
+├── aerospace/               # Aerospace tiling manager configuration
 ├── ghostty/              # Ghostty terminal config
+├── nvim/                 # Neovim config
 ├── starship/             # Starship prompt config
 ├── yazi/                 # yazi terminal file explorer config
 ├── zsh/                  # Zsh configuration
@@ -56,6 +57,11 @@ Make sure you have installed:
 
     ```bash
     git clone git@github.com:fraluc06/dotfiles.git ~/.dotfiles
+    ```
+   or via gh CLI:
+
+    ```bash
+    gh repo clone git@github.com:fraluc06/dotfiles.git ~/.dotfiles
     ```
 
 2. Change into the dotfiles directory:
@@ -112,6 +118,7 @@ pip install -r ./requirements.txt
 To make Intellij recognize the virtualenv with the Python plugin, add Python SDK -> Virtualenv Environment -> Existing Environment and select the path to the virtualenv you created, usually something like `~/.pyenv/versions/uni-env/bin/python`.
 N.B. If you haven't installed the Python plugin, you can do so from `File -> Settings -> Plugins` and search for "Python". 
 If it gives an error saying it can't find the SDK when you try to run a .py file, remember to create a module in `Project Structure -> Modules` and add the path to the virtualenv you created, usually something like `~/.pyenv/versions/uni-env/bin/python`.
+
 ## 🧩 **Included Plugins & Tools**
 
 ### **Zsh**
@@ -128,16 +135,8 @@ If it gives an error saying it can't find the SDK when you try to run a .py file
 
 ---
 
-## 🔄 **Sync & Updates**
-
-If you use multiple machines, you can:
-- Fork this repo and keep it private
-- Write a sync/backup script
-
----
-
 ## 📜 **License**
 
-MIT – feel free to copy, modify, and improve!
+MIT – Free to use, modify, and distribute with attribution.
 
 ---
