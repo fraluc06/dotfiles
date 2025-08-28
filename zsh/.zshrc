@@ -59,12 +59,6 @@ fi
 # === Python (pyenv) =====================
 # ========================================
 
-# ➤ Python installato con pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(/opt/homebrew/bin/pyenv init --path)"
-eval "$(/opt/homebrew/bin/pyenv init -)"
-eval "$(/opt/homebrew/bin/pyenv virtualenv-init -)"
 
 
 # ========================================
@@ -82,8 +76,6 @@ eval "$(goenv init -)"
 # ➤ Aggiorna tutti i pacchetti Homebrew
 alias update-all='brew update && brew upgrade && brew cleanup'
 
-# ➤ Disinstalla Spyder
-alias uninstall-spyder="${HOME}/Library/spyder-6/uninstall-spyder.sh"
 # ➤ eza (un'alternativa a ls con colori e icone)
 alias ls='eza'
 
@@ -94,10 +86,3 @@ alias ls='eza'
 
 # ➤ Aggiunge LM Studio CLI al PATH
 export PATH="$PATH:/Users/francesco/.lmstudio/bin"
-
-
-# ========================================
-# === Windsurf CLI ======================
-# ========================================
-
-export PATH="$PATH:$HOME/.codeium/windsurf/bin"
