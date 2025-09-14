@@ -40,6 +40,9 @@ zinit light Aloxaf/fzf-tab
 # ➤ Evidenziazione sintattica (caricare per ultimo)
 zinit light zdharma-continuum/fast-syntax-highlighting
 
+# ➤ Atuin (cronologia della shell avanzata)
+zinit load atuinsh/atuin
+
 # ========================================
 # === SDKMAN! Setup ======================
 # ========================================
