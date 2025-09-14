@@ -40,7 +40,6 @@ zinit light Aloxaf/fzf-tab
 # ➤ Evidenziazione sintattica (caricare per ultimo)
 zinit light zdharma-continuum/fast-syntax-highlighting
 
-
 # ========================================
 # === SDKMAN! Setup ======================
 # ========================================
@@ -60,10 +59,10 @@ if command -v sdk >/dev/null 2>&1; then
   export JAVA_HOME="${SDKMAN_DIR}/candidates/java/current"
 fi
 
-
 # ========================================
 # === Python (anaconda) =====================
 # ========================================
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -79,14 +78,12 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-
 # ========================================
 # === Go (goenv) =====================
 # ========================================
 
 # ➤ Go installato con goenv
 eval "$(goenv init -)"
-
 
 # ========================================
 # === Aliases ============================
@@ -98,10 +95,17 @@ alias update-all='brew update && brew upgrade && brew cleanup'
 # ➤ eza (un'alternativa a ls con colori e icone)
 alias ls='eza'
 
-
 # ========================================
 # === LM Studio CLI ======================
 # ========================================
 
 # ➤ Aggiunge LM Studio CLI al PATH
 export PATH="$PATH:/Users/francesco/.lmstudio/bin"
+
+# ========================================
+# === Stow Global Ignore =================
+# ========================================
+# Controlla se ~/.stow-global-ignore esiste, altrimenti lo crea con \.DS_Store
+if [[ ! -f "$HOME/.stow-global-ignore" ]]; then
+    echo '\\.DS_Store' > "$HOME/.stow-global-ignore"
+fi
