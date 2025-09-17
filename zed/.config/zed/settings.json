@@ -7,14 +7,38 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
   "icon_theme": "Catppuccin Mocha",
-  "autosave": "on_focus_change",
-  "base_keymap": "VSCode",
   "ui_font_size": 16,
   "buffer_font_size": 16,
   "theme": {
     "mode": "system",
-    "light": "One Light",
+    "light": "Catppuccin Latte",
     "dark": "Catppuccin Mocha"
+  },
+  "auto_install_extensions": {
+    "astro": true,
+    "basher": true,
+    "catppuccin": true,
+    "catppuccin-icons": true,
+    "codebook": true,
+    "csv": true,
+    "docker-compose": true,
+    "dockerfile": true,
+    "env": true,
+    "git-firefly": true,
+    "html": true,
+    "latex": true,
+    "lua": true,
+    "markdown-oxide": true,
+    "pylsp": true,
+    "rainbow-csv": true,
+    "ruff": true,
+    "toml": true,
+    "xml": true
   }
 }

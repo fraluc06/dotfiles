@@ -82,13 +82,6 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # ========================================
-# === Go (goenv) =====================
-# ========================================
-
-# ➤ Go installato con goenv
-eval "$(goenv init -)"
-
-# ========================================
 # === Aliases ============================
 # ========================================
 
@@ -97,6 +90,9 @@ alias update-all='brew update && brew upgrade && brew cleanup'
 
 # ➤ eza (un'alternativa a ls con colori e icone)
 alias ls='eza'
+alias ll='eza -lA --icons --group-directories-first'
+alias la='eza -A --icons --group-directories-first'
+alias docker='podman'
 
 # ========================================
 # === LM Studio CLI ======================
