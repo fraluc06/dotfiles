@@ -1,0 +1,18 @@
+[user]
+	name = Francesco Lucarelli
+	email = francesco06lucarelli@gmail.com
+	signingkey = /Users/francesco/.ssh/id_ed25519.pub
+[core]
+	autocrlf = input
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[init]
+	defaultBranch = main
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
