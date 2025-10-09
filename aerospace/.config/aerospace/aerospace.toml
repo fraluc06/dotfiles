@@ -102,23 +102,23 @@ cmd-ctrl-alt-shift-l = 'move right'
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-1 = 'workspace 1'
-alt-2 = 'workspace 2'
-alt-3 = 'workspace 3'
-alt-4 = 'workspace 4'
-alt-5 = 'workspace 5'
-alt-6 = 'workspace 6'
-alt-7 = 'workspace 7'
-alt-8 = 'workspace 8'
-alt-9 = 'workspace 9'
-alt-b = 'workspace B' # browser
-alt-d = 'workspace D' # docs
-alt-e = 'workspace E' # finder
-alt-m = 'workspace M' # music
-alt-n = 'workspace N' # notes
-alt-p = 'workspace P' # photo editing
-alt-t = 'workspace T' # terminal
-alt-v = 'workspace V' # video editing
+cmd-alt-1 = 'workspace 1'
+cmd-alt-2 = 'workspace 2'
+cmd-alt-3 = 'workspace 3'
+cmd-alt-4 = 'workspace 4'
+cmd-alt-5 = 'workspace 5'
+cmd-alt-6 = 'workspace 6'
+cmd-alt-7 = 'workspace 7'
+cmd-alt-8 = 'workspace 8'
+cmd-alt-9 = 'workspace 9'
+cmd-alt-b = 'workspace B' # browser
+cmd-alt-d = 'workspace D' # docs
+cmd-alt-e = 'workspace E' # finder
+cmd-alt-m = 'workspace M' # music
+cmd-alt-n = 'workspace N' # notes
+cmd-alt-p = 'workspace P' # photo editing
+cmd-alt-t = 'workspace T' # terminal
+cmd-alt-v = 'workspace V' # video editing
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 cmd-ctrl-alt-shift-1 = 'move-node-to-workspace 1'
