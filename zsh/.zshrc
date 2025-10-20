@@ -92,7 +92,6 @@ alias update-all='brew update && brew upgrade && brew cleanup'
 alias ls='eza'
 alias ll='eza -lA --icons --group-directories-first'
 alias la='eza -A --icons --group-directories-first'
-alias docker='podman'
 
 # ========================================
 # === LM Studio CLI ======================
@@ -108,3 +107,4 @@ export PATH="$PATH:/Users/francesco/.lmstudio/bin"
 if [[ ! -f "$HOME/.stow-global-ignore" ]]; then
     echo '\\.DS_Store' > "$HOME/.stow-global-ignore"
 fi
+export XDG_CONFIG_HOME="$HOME/.config"

@@ -90,6 +90,33 @@ Make sure you have installed:
     brew bundle --file=~/dotfiles/Brewfile
     ```
 
+5. Install npm packages from the JSON file (requires `jq`):
+    ```bash
+    bat npm-global-packages.json | jq -r '.dependencies | keys[]' | xargs npm install -g
+    ```
+
+---
+
+## 📦 Exporting Packages
+
+This section explains how to export the package lists for Homebrew and npm.
+
+### Homebrew
+
+To update the `Brewfile` with all currently installed packages, run:
+
+```bash
+brew bundle dump --file=./Brewfile --force
+```
+
+### NPM
+
+To save a list of globally installed npm packages, run:
+
+```bash
+npm ls -g --json > npm-global-packages.json
+```
+
 ---
 
 ## 🐍 **Python Setup for University**

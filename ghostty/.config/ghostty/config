@@ -56,4 +56,4 @@ auto-update = download
 auto-update-channel = stable
 shell-integration-features = sudo
 keybind = shift+enter=text:\x1b\r
-keybind = cmd+t=new_window
+#keybind = cmd+t=new_window
