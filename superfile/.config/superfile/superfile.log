@@ -1,0 +1,57 @@
+time=2025-09-30T17:11:13.040+02:00 level=INFO msg="Successfully detected terminal cell size via ioctl" pixels_per_column=20 pixels_per_row=43
+time=2025-09-30T17:11:13.040+02:00 level=INFO msg="Terminal cell size detection" pixels_per_column=20 pixels_per_row=43
+time=2025-09-30T17:12:07.551+02:00 level=ERROR msg="Error unexpected file extension type: " error="unsupported operation"
+time=2025-09-30T17:12:08.314+02:00 level=ERROR msg="Error unexpected file extension type: " error="unsupported operation"
+time=2025-09-30T17:12:12.043+02:00 level=ERROR msg="Error unexpected file extension type: " error="unsupported operation"
+time=2025-09-30T17:12:12.418+02:00 level=ERROR msg="Error unexpected file extension type: " error="unsupported operation"
+time=2025-09-30T17:12:13.959+02:00 level=ERROR msg="Error unexpected file extension type: " error="unsupported operation"
+time=2025-09-30T17:12:14.156+02:00 level=ERROR msg="Error unexpected file extension type: " error="unsupported operation"
+time=2025-09-30T17:12:15.238+02:00 level=ERROR msg="Error unexpected file extension type: " error="unsupported operation"
+time=2025-09-30T17:12:19.474+02:00 level=ERROR msg="Error unexpected file extension type: " error="unsupported operation"
+time=2025-09-30T17:12:24.182+02:00 level=ERROR msg="Error unexpected file extension type: " error="unsupported operation"
+time=2025-09-30T17:12:24.629+02:00 level=ERROR msg="Error unexpected file extension type: " error="unsupported operation"
+time=2025-09-30T17:13:10.327+02:00 level=INFO msg="Successfully detected terminal cell size via ioctl" pixels_per_column=20 pixels_per_row=43
+time=2025-09-30T17:13:10.328+02:00 level=INFO msg="Terminal cell size detection" pixels_per_column=20 pixels_per_row=43
+time=2025-09-30T17:13:38.920+02:00 level=INFO msg="Successfully detected terminal cell size via ioctl" pixels_per_column=20 pixels_per_row=43
+time=2025-09-30T17:13:38.920+02:00 level=INFO msg="Terminal cell size detection" pixels_per_column=20 pixels_per_row=43
+time=2025-09-30T17:23:52.931+02:00 level=INFO msg="Successfully detected terminal cell size via ioctl" pixels_per_column=20 pixels_per_row=43
+time=2025-09-30T17:23:52.931+02:00 level=INFO msg="Terminal cell size detection" pixels_per_column=20 pixels_per_row=43
+time=2025-09-30T17:25:41.434+02:00 level=INFO msg="Successfully detected terminal cell size via ioctl" pixels_per_column=20 pixels_per_row=43
+time=2025-09-30T17:25:41.434+02:00 level=INFO msg="Terminal cell size detection" pixels_per_column=20 pixels_per_row=43
+time=2025-09-30T17:28:46.411+02:00 level=INFO msg="Successfully detected terminal cell size via ioctl" pixels_per_column=20 pixels_per_row=43
+time=2025-09-30T17:28:46.412+02:00 level=INFO msg="Terminal cell size detection" pixels_per_column=20 pixels_per_row=43
+time=2025-09-30T17:33:22.159+02:00 level=INFO msg="Successfully detected terminal cell size via ioctl" pixels_per_column=20 pixels_per_row=43
+time=2025-09-30T17:33:22.160+02:00 level=INFO msg="Terminal cell size detection" pixels_per_column=20 pixels_per_row=43
+time=2025-10-20T19:18:45.282+02:00 level=INFO msg="Successfully detected terminal cell size via ioctl" pixels_per_column=20 pixels_per_row=43
+time=2025-10-20T19:18:45.282+02:00 level=INFO msg="Terminal cell size detection" pixels_per_column=20 pixels_per_row=43
+time=2025-10-20T19:20:39.698+02:00 level=ERROR msg="exif error" error=EOF
+time=2025-10-20T19:20:40.059+02:00 level=ERROR msg="Max lines reached" maxLines=16
+time=2025-10-20T19:20:44.434+02:00 level=ERROR msg="Max lines reached" maxLines=16
+time=2025-10-20T19:20:44.859+02:00 level=ERROR msg="Max lines reached" maxLines=16
+time=2025-10-20T19:20:45.209+02:00 level=ERROR msg="Max lines reached" maxLines=16
+time=2025-10-20T19:20:45.544+02:00 level=ERROR msg="Max lines reached" maxLines=16
+time=2025-10-20T19:20:52.363+02:00 level=ERROR msg="Max lines reached" maxLines=18
+time=2025-10-20T19:20:55.198+02:00 level=ERROR msg="exif orientation error" error="exif: tag \"Orientation\" is not present"
+time=2025-10-20T20:05:12.803+02:00 level=INFO msg="Successfully detected terminal cell size via ioctl" pixels_per_column=20 pixels_per_row=44
+time=2025-10-20T20:05:12.803+02:00 level=INFO msg="Terminal cell size detection" pixels_per_column=20 pixels_per_row=44
+time=2025-10-20T20:05:12.804+02:00 level=ERROR msg="Max lines reached" maxLines=0
+time=2025-10-20T20:05:12.804+02:00 level=ERROR msg="Rendered output data" lineCnt=1 totalHeight=0 totalWidth=0 maxW=0
+time=2025-10-20T20:05:33.517+02:00 level=ERROR msg="exif error" error=EOF
+time=2025-10-20T20:05:36.943+02:00 level=ERROR msg="Max lines reached" maxLines=16
+time=2025-10-20T20:05:37.325+02:00 level=ERROR msg="Max lines reached" maxLines=16
+time=2025-10-20T20:05:37.554+02:00 level=ERROR msg="Max lines reached" maxLines=16
+time=2025-10-20T20:05:43.186+02:00 level=ERROR msg="Max lines reached" maxLines=16
+time=2025-10-20T20:05:44.617+02:00 level=ERROR msg="Max lines reached" maxLines=16
+time=2025-10-20T20:05:45.003+02:00 level=ERROR msg="Max lines reached" maxLines=16
+time=2025-10-20T20:05:45.203+02:00 level=ERROR msg="Max lines reached" maxLines=16
+time=2025-10-20T20:05:45.383+02:00 level=ERROR msg="Max lines reached" maxLines=16
+time=2025-10-20T20:05:45.810+02:00 level=ERROR msg="Max lines reached" maxLines=16
+time=2025-10-20T20:05:45.993+02:00 level=ERROR msg="Max lines reached" maxLines=16
+time=2025-10-20T20:05:46.191+02:00 level=ERROR msg="Max lines reached" maxLines=16
+time=2025-10-20T20:05:48.641+02:00 level=ERROR msg="Max lines reached" maxLines=16
+time=2025-10-20T20:05:50.769+02:00 level=ERROR msg="exif orientation error" error="exif: tag \"Orientation\" is not present"
+time=2025-10-20T20:11:16.004+02:00 level=INFO msg="Successfully detected terminal cell size via ioctl" pixels_per_column=20 pixels_per_row=43
+time=2025-10-20T20:11:16.005+02:00 level=INFO msg="Terminal cell size detection" pixels_per_column=20 pixels_per_row=43
+time=2025-10-20T20:23:58.868+02:00 level=ERROR msg="Could not read user's theme file. Falling back to default theme" path=/Users/francesco/.config/superfile/theme/catppuccin.toml error="open /Users/francesco/.config/superfile/theme/catppuccin.toml: no such file or directory"
+time=2025-10-20T20:23:58.871+02:00 level=INFO msg="Successfully detected terminal cell size via ioctl" pixels_per_column=20 pixels_per_row=43
+time=2025-10-20T20:23:58.871+02:00 level=INFO msg="Terminal cell size detection" pixels_per_column=20 pixels_per_row=43
