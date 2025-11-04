@@ -37,7 +37,6 @@
     "markdown-oxide": true,
     "pylsp": true,
     "rainbow-csv": true,
-    "ruff": true,
     "toml": true,
     "xml": true
   }
