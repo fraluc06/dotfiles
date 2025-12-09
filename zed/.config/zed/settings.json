@@ -32,10 +32,12 @@
     "env": true,
     "git-firefly": true,
     "html": true,
+    "kdl": true,
     "latex": true,
     "lua": true,
     "markdown-oxide": true,
     "pylsp": true,
+    "quadlet": true,
     "rainbow-csv": true,
     "toml": true,
     "xml": true
