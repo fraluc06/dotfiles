@@ -20,6 +20,13 @@ eval "$(starship init zsh)"
 
 # ➤ fzf (interfacce fuzzy per ricerche e cronologia)
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+# fzf — Catppuccin Mocha
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8 \
+--color=fg:#CDD6F4,header:#F38BA8,info:#CBA6F7,pointer:#F5E0DC \
+--color=marker:#B4BEFE,fg+:#CDD6F4,prompt:#CBA6F7,hl+:#F38BA8 \
+--color=selected-bg:#45475A \
+--color=border:#6C7086,label:#CDD6F4"
 
 # ➤ zoxide (navigazione intelligente tra directory)
 eval "$(zoxide init zsh)"
@@ -36,6 +43,15 @@ zinit light wfxr/forgit
 
 # ➤ Completamento automatico con supporto fzf
 zinit light Aloxaf/fzf-tab
+
+# fzf-tab — Catppuccin Mocha
+zstyle ':fzf-tab:*' fzf-command fzf
+zstyle ':fzf-tab:*' fzf-flags \
+  --color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8 \
+  --color=fg:#CDD6F4,header:#F38BA8,info:#CBA6F7,pointer:#F5E0DC \
+  --color=marker:#B4BEFE,fg+:#CDD6F4,prompt:#CBA6F7,hl+:#F38BA8 \
+  --color=selected-bg:#45475A \
+  --color=border:#6C7086,label:#CDD6F4
 
 # ➤ Evidenziazione sintattica (caricare per ultimo)
 zinit light zdharma-continuum/fast-syntax-highlighting
@@ -108,3 +124,9 @@ if [[ ! -f "$HOME/.stow-global-ignore" ]]; then
     echo '\\.DS_Store' > "$HOME/.stow-global-ignore"
 fi
 export XDG_CONFIG_HOME="$HOME/.config"
+
+# ${UserConfigDir}/zsh/.zshrc
+export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+source <(carapace _carapace)
+zstyle ':completion:*:git:*' group-order 'main commands' 'alias commands' 'external commands'
