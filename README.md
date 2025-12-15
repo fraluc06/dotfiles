@@ -155,6 +155,45 @@ If it gives an error saying it can't find the SDK when you try to run a .py file
 - `fast-syntax-highlighting`: Syntax highlighting for commands
 - `forgit` : A utility tool powered by fzf for using git interactively.
 
+### **Nushell**
+___**NOTE: replace `francesco` with your `username`**___
+
+- To set Nushell as default shell, run:
+
+```bash
+z Library/LaunchAgents &&
+`echo '<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>me.francesco.environment</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/sh</string>
+        <string>-c</string>
+        <string>
+            launchctl setenv XDG_CONFIG_HOME /Users/francesco/.config/ &&
+            launchctl setenv XDG_CACHE_HOME /Users/francesco/.cache &&
+            launchctl setenv XDG_DATA_HOME /Users/francesco/.local/share &&
+            launchctl setenv XDG_STATE_HOME /Users/francesco/.local/state &&
+            launchctl setenv XDG_RUNTIME_DIR /Users/francesco/.local/run &&
+            launchctl setenv XDG_BIN_HOME /Users/francesco/.local/bin
+        </string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>ServiceIPC</key>
+    <false/>
+</dict>
+</plist>' > ~/Library/LaunchAgents/me.francesco.environment.plist`
+```
+Then run:
+```bash
+chsh -s /opt/homebrew/bin/nu
+```
+and finally reboot your machine.
+
 ### **Terminal**
 - **Ghostty** with custom themes and fonts:
   - **[Catppuccin Mocha](https://github.com/catppuccin/)**: Catppuccin is a pastel theme with four warm flavors and 26 eye-candy colors, ideal for coding, designing, and other creative tasks.
