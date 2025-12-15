@@ -2,8 +2,6 @@
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 
-#  ➤ fzf fuzzy finder configuration
-
 # Catppuccin Mocha theme colors
 $env.FZF_DEFAULT_OPTS = $"
 --color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8
@@ -38,16 +36,17 @@ if not ($"($env.HOME)/.stow-global-ignore" | path exists) {
     "\\.DS_Store" | save -f $"($env.HOME)/.stow-global-ignore"
 }
 
-# Set XDG_CONFIG_HOME
-$env.XDG_CONFIG_HOME = ($env.HOME | path join ".config")
-
 # ➤ Load carapace completions
 source $"($nu.cache-dir)/carapace.nu"
 
 # Disable welcome banner
 $env.config = ($env.config | upsert show_banner false)
 
+# Set default editor to Zed
+$env.config.buffer_editor = 'zed'
+
 # ➤ Load zoxide
 source ~/.zoxide.nu
+
 # ➤ Load atuin
 source ~/.local/share/atuin/init.nu
