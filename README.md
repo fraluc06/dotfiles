@@ -173,12 +173,7 @@ z Library/LaunchAgents &&
         <string>/bin/sh</string>
         <string>-c</string>
         <string>
-            launchctl setenv XDG_CONFIG_HOME /Users/francesco/.config/ &&
-            launchctl setenv XDG_CACHE_HOME /Users/francesco/.cache &&
-            launchctl setenv XDG_DATA_HOME /Users/francesco/.local/share &&
-            launchctl setenv XDG_STATE_HOME /Users/francesco/.local/state &&
-            launchctl setenv XDG_RUNTIME_DIR /Users/francesco/.local/run &&
-            launchctl setenv XDG_BIN_HOME /Users/francesco/.local/bin
+            launchctl setenv XDG_CONFIG_HOME /Users/francesco/.config/
         </string>
     </array>
     <key>RunAtLoad</key>

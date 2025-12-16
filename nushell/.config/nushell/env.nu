@@ -19,13 +19,13 @@ if ($sdkman_init | path exists) {
     # SDKMAN! initialization (simplified for Nushell)
     # SDKMAN! doesn't have native Nushell support, so we set JAVA_HOME manually
     $env.JAVA_HOME = $"($env.SDKMAN_DIR)/candidates/java/current"
-    
+
     # Add SDKMAN! to PATH
     $env.PATH = ($env.PATH | prepend $"($env.SDKMAN_DIR)/bin")
-    
+
     # Set SDKMAN! candidates directory
     $env.SDKMAN_CANDIDATES_DIR = $"($env.SDKMAN_DIR)/candidates"
-    
+
     # Add SDKMAN! candidates to PATH
     let candidates = (ls $"($env.SDKMAN_CANDIDATES_DIR)" | get name)
     for candidate in $candidates {
@@ -47,6 +47,9 @@ if ($conda_path | path exists) {
     $env.CONDA_DEFAULT_ENV = "base"
     $env.CONDA_PROMPT_MODIFIER = "(base) "
 }
+
+# Set default editor to Zed
+$env.EDITOR = 'zed'
 
 # ➤ Add LM Studio CLI to PATH
 let lmstudio_path = "/Users/francesco/.lmstudio/bin"

@@ -7,6 +7,13 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "session": {
+    "restore_unsaved_buffers": true
+  },
   "autosave": {
     "after_delay": {
       "milliseconds": 1000
@@ -36,6 +43,7 @@
     "latex": true,
     "lua": true,
     "markdown-oxide": true,
+    "nu": true,
     "pylsp": true,
     "quadlet": true,
     "rainbow-csv": true,

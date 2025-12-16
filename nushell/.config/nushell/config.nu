@@ -1,7 +1,3 @@
-# ➤ Initialize Starship prompt (official method)
-mkdir ($nu.data-dir | path join "vendor/autoload")
-starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
-
 # Catppuccin Mocha theme colors
 $env.FZF_DEFAULT_OPTS = $"
 --color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8
@@ -42,11 +38,12 @@ source $"($nu.cache-dir)/carapace.nu"
 # Disable welcome banner
 $env.config = ($env.config | upsert show_banner false)
 
-# Set default editor to Zed
-$env.config.buffer_editor = 'zed'
-
 # ➤ Load zoxide
 source ~/.zoxide.nu
 
 # ➤ Load atuin
 source ~/.local/share/atuin/init.nu
+
+# ➤ Load starship prompt
+mkdir ($nu.data-dir | path join "vendor/autoload")
+starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
