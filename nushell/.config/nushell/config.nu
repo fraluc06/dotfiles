@@ -27,6 +27,10 @@ alias gp = git push
 alias gl = git pull
 alias gr = git restore
 
+# Open alias to avoid conflict with nu's open command
+alias nu-open = open
+alias open = ^open
+
 # Create .stow-global-ignore if it doesn't exist
 if not ($"($env.HOME)/.stow-global-ignore" | path exists) {
     "\\.DS_Store" | save -f $"($env.HOME)/.stow-global-ignore"
