@@ -1,3 +1,7 @@
+# ➤ 1. CRITICAL: Convert System PATH string to a List
+# Without this, prepend fails because it receives a string, not a list.
+$env.PATH = ($env.PATH | split row (char esep))
+
 # ➤ Set Homebrew prefix
 $env.HOMEBREW_PREFIX = "/opt/homebrew"
 
@@ -16,8 +20,7 @@ if not ($sdkman_dir | path exists) {
 $env.SDKMAN_DIR = $sdkman_dir
 let sdkman_init = $"($env.SDKMAN_DIR)/bin/sdkman-init.sh"
 if ($sdkman_init | path exists) {
-    # SDKMAN! initialization (simplified for Nushell)
-    # SDKMAN! doesn't have native Nushell support, so we set JAVA_HOME manually
+    # SDKMAN! initialization
     $env.JAVA_HOME = $"($env.SDKMAN_DIR)/candidates/java/current"
 
     # Add SDKMAN! to PATH
@@ -26,10 +29,12 @@ if ($sdkman_init | path exists) {
     # Set SDKMAN! candidates directory
     $env.SDKMAN_CANDIDATES_DIR = $"($env.SDKMAN_DIR)/candidates"
 
-    # Add SDKMAN! candidates to PATH
-    let candidates = (ls $"($env.SDKMAN_CANDIDATES_DIR)" | get name)
+    # FIXED: SDKMAN loop logic
+    # 'ls' returns full paths, so we use 'path basename' to get just the candidate name
+    let candidates = (ls $env.SDKMAN_CANDIDATES_DIR | where type == dir)
     for candidate in $candidates {
-        let current_dir = $"($env.SDKMAN_CANDIDATES_DIR)/($candidate)/current/bin"
+        let candidate_name = ($candidate.name | path basename)
+        let current_dir = $"($env.SDKMAN_CANDIDATES_DIR)/($candidate_name)/current/bin"
         if ($current_dir | path exists) {
             $env.PATH = ($env.PATH | prepend $current_dir)
         }
@@ -37,7 +42,6 @@ if ($sdkman_init | path exists) {
 }
 
 # ➤ conda initialization
-# Note: conda doesn't have native Nushell support, so we set PATH manually
 let conda_path = "/opt/anaconda3/bin"
 if ($conda_path | path exists) {
     $env.PATH = ($env.PATH | prepend $conda_path)
@@ -62,7 +66,7 @@ $env.HISTORY_SIZE = 10000
 $env.HISTORY_FILE_SIZE = 1000000
 
 # ➤ Carapace for advanced completions
-$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
+$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
 mkdir $"($nu.cache-dir)"
 carapace _carapace nushell | save --force $"($nu.cache-dir)/carapace.nu"
 
