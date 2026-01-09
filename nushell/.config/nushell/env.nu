@@ -61,6 +61,7 @@ if ($lmstudio_path | path exists) {
     $env.PATH = ($env.PATH | prepend $lmstudio_path)
 }
 
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/Library/TeX/texbin')
 # History configuration
 $env.HISTORY_SIZE = 10000
 $env.HISTORY_FILE_SIZE = 1000000
@@ -72,3 +73,6 @@ carapace _carapace nushell | save --force $"($nu.cache-dir)/carapace.nu"
 
 # ➤ Load zoxide initialization
 zoxide init nushell | save -f ~/.zoxide.nu
+
+# Aggiunta di rbenv al PATH
+$env.PATH = ($env.PATH | split row (char esep) | prepend '~/.rbenv/shims')
