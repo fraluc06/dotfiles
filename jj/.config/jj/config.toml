@@ -1,0 +1,13 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+
+[user]
+name = "Francesco Lucarelli"
+email = "francesco06lucarelli@gmail.com"
+
+[signing]
+behavior = "own"
+backend = "ssh"
+key = "/Users/francesco/.ssh/id_ed25519.pub"
+
+[git]
+sign-on-push = true
