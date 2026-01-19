@@ -22,6 +22,8 @@
   "icon_theme": "Catppuccin Mocha",
   "ui_font_size": 16,
   "buffer_font_size": 16,
+  "ui_font_family":"JetBrainsMono Nerd Font Mono",
+  "buffer_font_family":"JetBrainsMono Nerd Font Mono",
   "theme": {
     "mode": "system",
     "light": "Catppuccin Latte",
