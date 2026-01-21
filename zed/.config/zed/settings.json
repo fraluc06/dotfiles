@@ -44,9 +44,9 @@
     "kdl": true,
     "latex": true,
     "lua": true,
+    "make":true,
     "markdown-oxide": true,
     "nu": true,
-    "pylsp": true,
     "quadlet": true,
     "rainbow-csv": true,
     "toml": true,
@@ -61,6 +61,7 @@
     "coloring": "indent_aware",
   },
   "vim_mode": true,
+  "relative_line_numbers":"enabled",
 
   "inlay_hints": {
     "enabled": true,
