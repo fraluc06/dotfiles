@@ -7,6 +7,12 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  // ------------------------------------------------------------------
+  // CORE & TELEMETRY
+  // ------------------------------------------------------------------
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
   "telemetry": {
     "diagnostics": false,
     "metrics": false
@@ -19,16 +25,97 @@
       "milliseconds": 1000
     }
   },
-  "icon_theme": "Catppuccin Mocha",
-  "ui_font_size": 16,
-  "buffer_font_size": 16,
-  "ui_font_family":"JetBrainsMono Nerd Font Mono",
-  "buffer_font_family":"JetBrainsMono Nerd Font Mono",
+
+  // ------------------------------------------------------------------
+  // UI, THEME & FONTS
+  // ------------------------------------------------------------------
   "theme": {
     "mode": "system",
     "light": "Catppuccin Latte",
     "dark": "Catppuccin Mocha"
   },
+  "icon_theme": "Catppuccin Mocha",
+  
+  // Font Configuration
+  "ui_font_family": "JetBrainsMono Nerd Font Mono",
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+  "ui_font_size": 18,
+  "buffer_font_size": 16,
+  
+  // Agent (AI Assistant) UI
+  "agent_ui_font_size": 16,
+  "agent_buffer_font_size": 16,
+
+  // ------------------------------------------------------------------
+  // EDITOR BEHAVIOR & KEYMAPS
+  // ------------------------------------------------------------------
+  "base_keymap": "VSCode",
+  "vim_mode": true,
+  
+  // Visuals in Editor
+  "relative_line_numbers": "enabled", // Sintassi moderna per i numeri relativi
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware"
+  },
+  "inlay_hints": {
+    "enabled": true
+  },
+  "tabs": {
+    "show_diagnostics": "errors"
+  },
+  "file_types": {
+    "Dockerfile": ["Dockerfile", "Dockerfile.*"],
+    "JSON": ["json", "jsonc", "*.code-snippets"]
+  },
+
+  // ------------------------------------------------------------------
+  // LANGUAGES & LSP CONFIGURATION
+  // ------------------------------------------------------------------
+  "lsp": {
+    "tailwindcss-language-server": {
+      "settings": {
+        "classAttributes": ["class", "className", "ngClass", "styles"]
+      }
+    }
+  },
+  "languages": {
+    "TypeScript": {
+      "inlay_hints": {
+        "enabled": true,
+        "show_parameter_hints": false,
+        "show_other_hints": true,
+        "show_type_hints": true
+      }
+    },
+    "Python": {
+      "format_on_save": "on",
+      "formatter": {
+        "language_server": {
+          "name": "ruff"
+        }
+      },
+      "language_servers": ["pyright", "ruff"]
+    }
+  },
+
+  // ------------------------------------------------------------------
+  // AI & AGENT
+  // ------------------------------------------------------------------
+  "agent": {
+    "default_model": {
+      "provider":"copilot_chat",
+      "model": "claude-sonnet-4"
+    },
+    "commit_message_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4"
+    }
+  },
+
+  // ------------------------------------------------------------------
+  // EXTENSIONS
+  // ------------------------------------------------------------------
   "auto_install_extensions": {
     "astro": true,
     "basher": true,
@@ -44,56 +131,12 @@
     "kdl": true,
     "latex": true,
     "lua": true,
-    "make":true,
+    "make": true,
     "markdown-oxide": true,
     "nu": true,
     "quadlet": true,
     "rainbow-csv": true,
     "toml": true,
     "xml": true
-  },
-  "base_keymap": "VSCode",
-  "tabs": {
-    "show_diagnostics": "errors",
-  },
-  "indent_guides": {
-    "enabled": true,
-    "coloring": "indent_aware",
-  },
-  "vim_mode": true,
-  "relative_line_numbers":"enabled",
-
-  "inlay_hints": {
-    "enabled": true,
-  },
-  "lsp": {
-    "tailwindcss-language-server": {
-      "settings": {
-        "classAttributes": ["class", "className", "ngClass", "styles"],
-      },
-    },
-  },
-  "languages": {
-    "TypeScript": {
-      "inlay_hints": {
-        "enabled": true,
-        "show_parameter_hints": false,
-        "show_other_hints": true,
-        "show_type_hints": true,
-      },
-    },
-    "Python": {
-      "format_on_save": "on",
-      "formatter": {
-        "language_server": {
-          "name": "ruff"
-        }
-      },
-      "language_servers": ["pyright", "ruff"],
-    },
-  },
-  "file_types": {
-    "Dockerfile": ["Dockerfile", "Dockerfile.*"],
-    "JSON": ["json", "jsonc", "*.code-snippets"],
-  },
+  }
 }
