@@ -32,7 +32,7 @@ alias nu-open = open
 alias open = ^open
 
 # ➤ Load SDKMAN wrapper
-source ~/.config/nushell/sdk-wrapper.nu
+# source ~/.config/nushell/sdk-wrapper.nu
 
 # Create .stow-global-ignore if it doesn't exist
 if not ($"($env.HOME)/.stow-global-ignore" | path exists) {

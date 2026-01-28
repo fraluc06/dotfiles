@@ -54,5 +54,5 @@ macos-auto-secure-input = true
 macos-secure-input-indication = true
 auto-update = download
 auto-update-channel = stable
-shell-integration-features = sudo
+shell-integration-features = sudo,ssh-terminfo,ssh-env
 #keybind = cmd+t=new_window
