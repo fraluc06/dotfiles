@@ -74,8 +74,6 @@ carapace _carapace nushell | save --force $"($nu.cache-dir)/carapace.nu"
 # ➤ Load zoxide initialization
 zoxide init nushell | save -f ~/.zoxide.nu
 
-# Aggiunta di rbenv al PATH
-$env.PATH = ($env.PATH | split row (char esep) | prepend '~/.rbenv/shims')
 # ➤ Mise en place
 let mise_path = $nu.default-config-dir | path join mise.nu
 ^mise activate nu | save $mise_path --force

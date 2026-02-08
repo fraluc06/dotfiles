@@ -1,2 +1,5 @@
 [tools]
 java = "graalvm-community-25.0.2"
+node = "latest"
+pnpm = "latest"
+ruby = "latest"

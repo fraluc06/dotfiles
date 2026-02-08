@@ -53,6 +53,6 @@ macos-window-shadow = true
 macos-auto-secure-input = true
 macos-secure-input-indication = true
 auto-update = download
-auto-update-channel = stable
+auto-update-channel = tip
 shell-integration-features = sudo,ssh-terminfo,ssh-env
 #keybind = cmd+t=new_window
