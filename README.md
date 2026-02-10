@@ -43,6 +43,7 @@ Brewfile                  # Homebrew package list for Brew Bundle
 Make sure you have installed:
 - **Git**
 - **Zsh**
+- **Nushell**
 - **Homebrew** (on macOS) or an equivalent package manager
 - **GNU Stow** for dotfile management
 
@@ -119,33 +120,6 @@ npm ls -g --json > npm-global-packages.json
 
 ---
 
-## 🐍 **Python Setup for University**
-
-### Install Python with pyenv
-
-Make sure you have `pyenv` and `pyenv-virtualenv` installed (it should be included in the `Brewfile`)
-**Tip:** You can check the latest available Python version with:
-```bash
-pyenv install --list
-```
-```bash
-brew install pyenv
-pyenv install 3.13
-pyenv global 3.13
-```
-### Creating the virtual environment for the University
-```bash
-pyenv virtualenv 3.13 uni-env
-pyenv activate uni-env
-```
-### Installing required packages
-```bash
-pip install -r ./requirements.txt
-```
-To make Intellij recognize the virtualenv with the Python plugin, add Python SDK -> Virtualenv Environment -> Existing Environment and select the path to the virtualenv you created, usually something like `~/.pyenv/versions/uni-env/bin/python`.
-N.B. If you haven't installed the Python plugin, you can do so from `File -> Settings -> Plugins` and search for "Python". 
-If it gives an error saying it can't find the SDK when you try to run a .py file, remember to create a module in `Project Structure -> Modules` and add the path to the virtualenv you created, usually something like `~/.pyenv/versions/uni-env/bin/python`.
-
 ## 🧩 **Included Plugins & Tools**
 
 ### **Zsh**
@@ -156,8 +130,6 @@ If it gives an error saying it can't find the SDK when you try to run a .py file
 - `forgit` : A utility tool powered by fzf for using git interactively.
 
 ### **Nushell**
-___**NOTE: replace `francesco` with your `username`**___
-
 - To set Nushell as default shell, run:
 
 ```bash
@@ -170,7 +142,7 @@ z Library/LaunchAgents &&
 </string></array>
 <key>RunAtLoad</key><true/>
 </dict>
-</plist>' > ~/Library/LaunchAgents/me.francesco.environment.plist`
+</plist>' > ~/Library/LaunchAgents/environment.plist`
 ```
 Then run:
 ```bash
