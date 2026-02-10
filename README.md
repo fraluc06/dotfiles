@@ -162,24 +162,13 @@ ___**NOTE: replace `francesco` with your `username`**___
 
 ```bash
 z Library/LaunchAgents &&
-`echo '<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
+`echo '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"><plist version="1.0">
 <dict>
-    <key>Label</key>
-    <string>me.francesco.environment</string>
-    <key>ProgramArguments</key>
-    <array>
-        <string>/bin/sh</string>
-        <string>-c</string>
-        <string>
-            launchctl setenv XDG_CONFIG_HOME /Users/francesco/.config/
-        </string>
-    </array>
-    <key>RunAtLoad</key>
-    <true/>
-    <key>ServiceIPC</key>
-    <false/>
+<key>Label</key><string>my.startup.shell_agnostic.environment</string>
+<key>ProgramArguments</key><array><string>sh</string><string>-c</string><string>
+  launchctl setenv XDG_CONFIG_HOME ~/.config
+</string></array>
+<key>RunAtLoad</key><true/>
 </dict>
 </plist>' > ~/Library/LaunchAgents/me.francesco.environment.plist`
 ```

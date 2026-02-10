@@ -1,3 +1,6 @@
+# Disable welcome banner
+$env.config = ($env.config | upsert show_banner false)
+
 # Catppuccin Mocha theme colors
 $env.FZF_DEFAULT_OPTS = $"
 --color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8
@@ -21,7 +24,7 @@ alias gc = git commit
 alias gcm = git commit -m
 alias gco = git checkout
 alias gb = git branch
-alias gl = git log --oneline --graph --all
+alias glo = git log --oneline --graph --all
 alias gd = git diff
 alias gp = git push
 alias gl = git pull
@@ -31,29 +34,28 @@ alias gr = git restore
 alias nu-open = open
 alias open = ^open
 
-# ➤ Load SDKMAN wrapper
-# source ~/.config/nushell/sdk-wrapper.nu
-
 # Create .stow-global-ignore if it doesn't exist
 if not ($"($env.HOME)/.stow-global-ignore" | path exists) {
     "\\.DS_Store" | save -f $"($env.HOME)/.stow-global-ignore"
 }
 
 # ➤ Load carapace completions
-source $"($nu.cache-dir)/carapace.nu"
-
-# Disable welcome banner
-$env.config = ($env.config | upsert show_banner false)
+$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
+mkdir ($nu.data-dir | path join "vendor/autoload")
+carapace _carapace nushell | save -f ($nu.data-dir | path join "vendor/autoload/carapace.nu")
 
 # ➤ Load zoxide
-source ~/.zoxide.nu
+mkdir ($nu.data-dir | path join "vendor/autoload")
+zoxide init nushell | save -f ($nu.data-dir | path join "vendor/autoload/zoxide.nu")
 
 # ➤ Load atuin
-source ~/.local/share/atuin/init.nu
+mkdir ($nu.data-dir | path join "vendor/autoload")
+atuin init nu | save -f ($nu.data-dir | path join "vendor/autoload/init.nu")
 
 # ➤ Load starship prompt
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 
-#➤ Source mise-en place configuration
-use ($nu.default-config-dir | path join mise.nu)
+# ➤ Load mise-en place configuration
+mkdir ($nu.data-dir | path join "vendor/autoload")
+^mise activate nu | save -f ($nu.data-dir | path join "vendor/autoload/mise.nu")
