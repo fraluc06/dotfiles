@@ -1,4 +1,4 @@
-#Tuckr directory
+# Tuckr directory
 $env.TUCKR_HOME = $env.HOME
 
 # Disable welcome banner
@@ -36,11 +36,6 @@ alias gr = git restore
 # Open alias to avoid conflict with nu's open command
 alias nu-open = open
 alias open = ^open
-
-# Create .stow-global-ignore if it doesn't exist
-if not ($"($env.HOME)/.stow-global-ignore" | path exists) {
-    "\\.DS_Store" | save -f $"($env.HOME)/.stow-global-ignore"
-}
 
 # ➤ Load carapace completions
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'

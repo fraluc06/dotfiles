@@ -45,7 +45,7 @@ Make sure you have installed:
 - **Zsh**
 - **Nushell**
 - **Homebrew** (on macOS) or an equivalent package manager
-- **GNU Stow** for dotfile management
+- **Tuckr** for dotfiles management
 
 ### **Installation Steps**
 
@@ -71,18 +71,18 @@ Make sure you have installed:
     cd ~/.dotfiles
     ```
 
-3. Use **GNU Stow** to symlink your configs automatically:
+3. Use **Tuckr** to symlink your configs automatically:
 
     ```bash
-    stow zsh
-    stow nvim
-    stow ghostty
+    tuckr zsh
+    tuckr nvim
+    tuckr ghostty
     # ...
     ```
     or all with one command
 
     ```bash
-    stow */ # Everything (the '/' ignores the README)
+    tuckr */ # Everything (the '/' ignores the README)
     ```
 
 4. Install all Homebrew packages and casks from your `Brewfile`:
