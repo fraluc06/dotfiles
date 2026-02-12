@@ -1,4 +1,4 @@
 .DS_Store
 .idea
 *.mdb
-/nushell/.config/nushell/history.txt
+/configs/nushell/.config/nushell/history.txt

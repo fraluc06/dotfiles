@@ -1,0 +1,1 @@
+/Users/francesco/.dotfiles/Configs/zsh/.zshrc
