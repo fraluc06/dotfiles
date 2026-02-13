@@ -24,14 +24,20 @@ This repository contains the configuration files I use daily on macOS/Linux, inc
 ## 🗂 **Repository Structure**
 
 ```bash
-.config/
-├── aerospace/               # Aerospace tiling manager configuration
-├── ghostty/              # Ghostty terminal config
-├── nvim/                 # Neovim config
-├── starship/             # Starship prompt config
-├── yazi/                 # yazi terminal file explorer config
-├── zsh/                  # Zsh configuration
-Brewfile                  # Homebrew package list for Brew Bundle
+dotfiles/
+├── configs/                 # Dotfiles go here
+│   ├── aerospace/           # Aerospace tiling manager
+│   ├── ghostty/             # Ghostty terminal
+│   ├── nvim/                # Neovim editor
+│   ├── nushell/             # Nushell
+│   ├── starship/            # Starship prompt
+│   ├── yazi/                # Yazi file manager
+│   ├── zellij/              # Zellij multiplexer
+│   ├── zsh/                 # Zsh shell
+│   └── ...                  # Other tool configs
+├── brewfile                 # Homebrew packages
+├── hooks/                   # Setup scripts go here
+└── secrets/                 # Encrypted files go here
 ```
 
 ---
