@@ -1,5 +1,5 @@
 # Tuckr directory
-$env.TUCKR_HOME = $env.HOME
+$env.TUCKR_HOME = ($env.HOME | path join "dotfiles")
 
 # Disable welcome banner
 $env.config = ($env.config | upsert show_banner false)
