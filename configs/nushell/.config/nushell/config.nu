@@ -1,3 +1,6 @@
+# OrbStack PATH
+$env.PATH = ($env.PATH | prepend ($env.HOME | path join ".orbstack/bin"))
+
 # Tuckr directory
 $env.TUCKR_HOME = ($env.HOME | path join "dotfiles")
 
