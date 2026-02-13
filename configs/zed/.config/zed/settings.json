@@ -124,6 +124,7 @@
   "auto_install_extensions": {
     "astro": true,
     "basher": true,
+    "caddyfile":true,
     "catppuccin": true,
     "catppuccin-icons": true,
     "codebook": true,
