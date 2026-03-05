@@ -10,6 +10,9 @@
   // ------------------------------------------------------------------
   // CORE & TELEMETRY
   // ------------------------------------------------------------------
+  "edit_predictions": {
+    "provider": "copilot"
+  },
   "agent_servers": {
     "opencode": {
       "type": "registry"
@@ -110,7 +113,7 @@
   "agent": {
     "default_model": {
       "provider":"copilot_chat",
-      "model": "claude-sonnet-4"
+      "model": "gpt-4o"
     },
     "commit_message_model": {
       "provider": "copilot_chat",
@@ -145,9 +148,9 @@
     "markdown-oxide": true,
     "nu": true,
     "opencode": true,
+    "php": true,
     "pylsp": true,
     "python-snippets": true,
-    "quadlet": true,
     "rainbow-csv": true,
     "ruby": true,
     "ruff": true,

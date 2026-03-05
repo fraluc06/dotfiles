@@ -11,6 +11,9 @@ fi
 export HOMEBREW_PREFIX="$(brew --prefix)"
 source "$HOMEBREW_PREFIX/opt/zinit/zinit.zsh"
 
+autoload -Uz compinit
+compinit
+
 # ========================================
 # === Environment Configuration ==========
 # ========================================

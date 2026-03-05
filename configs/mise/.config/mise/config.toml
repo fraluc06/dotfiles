@@ -1,4 +1,7 @@
 [tools]
+aws-cli = { version = "latest", symlink_bins = "true" }
+caddy = "latest"
+gemini-cli = "latest"
 go = "latest"
 java = "graalvm-community-25.0.2"
 node = "latest"

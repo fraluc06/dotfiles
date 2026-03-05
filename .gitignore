@@ -2,3 +2,4 @@
 .idea
 *.mdb
 /configs/nushell/.config/nushell/history.txt
+/Configs/aws/.aws/credentials
