@@ -1,7 +1,3 @@
-# ========================================
-# === Plugin Manager Setup (Zinit) =======
-# ========================================
-
 # ➤ Verifica se Zinit è già presente, altrimenti lo installa con Homebrew
 if [[ ! -f "/opt/homebrew/opt/zinit/zinit.zsh" ]]; then
   brew install zinit
@@ -13,10 +9,6 @@ source "$HOMEBREW_PREFIX/opt/zinit/zinit.zsh"
 
 autoload -Uz compinit
 compinit
-
-# ========================================
-# === Environment Configuration ==========
-# ========================================
 
 # ➤ Prompt Starship
 eval "$(starship init zsh)"
@@ -33,10 +25,6 @@ export FZF_DEFAULT_OPTS=" \
 
 # ➤ zoxide (navigazione intelligente tra directory)
 eval "$(zoxide init zsh)"
-
-# ========================================
-# === Plugin Zsh =========================
-# ========================================
 
 # ➤ Suggerimenti dinamici durante la digitazione
 zinit light zsh-users/zsh-autosuggestions
@@ -62,29 +50,6 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 # ➤ Atuin (cronologia della shell avanzata)
 zinit load atuinsh/atuin
 
-# ========================================
-# === SDKMAN! Setup ======================
-# ========================================
-
-# ➤ Installa SDKMAN! se non esiste
-# if [[ ! -d "$HOME/.sdkman" ]]; then
-#   echo "📦 Installazione SDKMAN..."
-#   curl -s "https://get.sdkman.io" | bash
-# fi
-
-# ➤ Inizializza SDKMAN!
-# export SDKMAN_DIR="${HOME}/.sdkman"
-# [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
-
-# ➤ Imposta JAVA_HOME in modo sicuro
-# if command -v sdk >/dev/null 2>&1; then
-#   export JAVA_HOME="${SDKMAN_DIR}/candidates/java/current"
-# fi
-
-# ========================================
-# === Python (anaconda) =====================
-# ========================================
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -100,10 +65,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# ========================================
-# === Aliases ============================
-# ========================================
-
 # ➤ Aggiorna tutti i pacchetti Homebrew
 alias update-all='brew update && brew upgrade && brew cleanup'
 
@@ -112,24 +73,17 @@ alias ls='eza'
 alias ll='eza -lA --icons --group-directories-first'
 alias la='eza -A --icons --group-directories-first'
 
-# ========================================
-# === LM Studio CLI ======================
-# ========================================
-
 # ➤ Aggiunge LM Studio CLI al PATH
 export PATH="$PATH:/Users/francesco/.lmstudio/bin"
 
-# ========================================
-# === Stow Global Ignore =================
-# ========================================
-# Controlla se ~/.stow-global-ignore esiste, altrimenti lo crea con \.DS_Store
-if [[ ! -f "$HOME/.stow-global-ignore" ]]; then
-    echo '\\.DS_Store' > "$HOME/.stow-global-ignore"
-fi
 export XDG_CONFIG_HOME="$HOME/.config"
+export TUCKR_HOME="$HOME/dotfiles"
 
+# ➤ Load carapace completions
 # ${UserConfigDir}/zsh/.zshrc
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 source <(carapace _carapace)
-zstyle ':completion:*:git:*' group-order 'main commands' 'alias commands' 'external commands'
+
+# ➤ Load mise-en place configuration
+eval "$(mise activate zsh)"
