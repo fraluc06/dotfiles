@@ -87,3 +87,6 @@ source <(carapace _carapace)
 
 # ➤ Load mise-en place configuration
 eval "$(mise activate zsh)"
+
+# ➤ Mullvad VPN CLI (per comando 'mullvad')
+export PATH="/usr/local/bin:$PATH"

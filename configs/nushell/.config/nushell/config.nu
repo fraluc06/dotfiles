@@ -1,5 +1,39 @@
+# ➤ CRITICAL: Convert System PATH string to a List
+# Without this, prepend fails because it receives a string, not a list.
+# $env.PATH = ($env.PATH | split row (char esep))
+
+# ➤ Set Homebrew prefix
+$env.HOMEBREW_PREFIX = "/opt/homebrew"
+
+# Add Homebrew to PATH
+$env.PATH = ($env.PATH | prepend $"($env.HOMEBREW_PREFIX)/bin")
+$env.PATH = ($env.PATH | prepend $"($env.HOMEBREW_PREFIX)/sbin")
+
 # OrbStack PATH
 $env.PATH = ($env.PATH | prepend ($env.HOME | path join ".orbstack/bin"))
+
+# ➤ Mullvad VPN CLI (per comando 'mullvad')
+$env.PATH = ($env.PATH | prepend '/usr/local/bin')
+
+# ➤ TeX Live PATH
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/Library/TeX/texbin')
+
+# ➤ Add LM Studio CLI to PATH
+let lmstudio_path = "/Users/francesco/.lmstudio/bin"
+if ($lmstudio_path | path exists) {
+    $env.PATH = ($env.PATH | prepend $lmstudio_path)
+}
+
+# ➤ conda initialization
+let conda_path = "/opt/anaconda3/bin"
+if ($conda_path | path exists) {
+    $env.PATH = ($env.PATH | prepend $conda_path)
+    $env.CONDA_EXE = $"($conda_path)/conda"
+    $env.CONDA_PREFIX = "/opt/anaconda3"
+    $env.CONDA_SHLVL = "1"
+    $env.CONDA_DEFAULT_ENV = "base"
+    $env.CONDA_PROMPT_MODIFIER = "(base) "
+}
 
 # Tuckr directory
 $env.TUCKR_HOME = ($env.HOME | path join "dotfiles")
@@ -22,23 +56,12 @@ def update-all [] {
     brew upgrade
 }
 
-# ➤ Git shortcuts
-alias g = git
-alias gs = git status
-alias ga = git add
-alias gc = git commit
-alias gcm = git commit -m
-alias gco = git checkout
-alias gb = git branch
-alias glo = git log --oneline --graph --all
-alias gd = git diff
-alias gp = git push
-alias gl = git pull
-alias gr = git restore
-
 # Open alias to avoid conflict with nu's open command
 alias nu-open = open
 alias open = ^open
+
+# Set default editor to Zed
+$env.EDITOR = 'zed'
 
 # ➤ Load carapace completions
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
@@ -60,3 +83,7 @@ starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.n
 # ➤ Load mise-en place configuration
 mkdir ($nu.data-dir | path join "vendor/autoload")
 ^mise activate nu | save -f ($nu.data-dir | path join "vendor/autoload/mise.nu")
+
+# History configuration
+$env.HISTORY_SIZE = 10000
+$env.HISTORY_FILE_SIZE = 1000000
