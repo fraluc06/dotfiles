@@ -36,7 +36,7 @@ if ($conda_path | path exists) {
 }
 
 # Tuckr directory
-$env.TUCKR_HOME = ($env.HOME | path join "dotfiles")
+$env.TUCKR_HOME = $env.HOME
 
 # Disable welcome banner
 $env.config = ($env.config | upsert show_banner false)

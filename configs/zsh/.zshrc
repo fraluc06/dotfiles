@@ -77,7 +77,7 @@ alias la='eza -A --icons --group-directories-first'
 export PATH="$PATH:/Users/francesco/.lmstudio/bin"
 
 export XDG_CONFIG_HOME="$HOME/.config"
-export TUCKR_HOME="$HOME/dotfiles"
+export TUCKR_HOME="$HOME"
 
 # ➤ Load carapace completions
 # ${UserConfigDir}/zsh/.zshrc
