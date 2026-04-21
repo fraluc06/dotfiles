@@ -1,0 +1,16 @@
+{
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    }
+  },
+  "general": {
+    "defaultApprovalMode": "default"
+  },
+  "ide": {
+    "hasSeenNudge": true
+  },
+  "ui": {
+    "theme": "/Users/francesco/.gemini/catppuccin-mocha.json"
+  }
+}

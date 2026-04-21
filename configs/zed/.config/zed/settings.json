@@ -27,6 +27,9 @@
     "provider": "copilot",
   },
   "agent_servers": {
+    "gemini": {
+      "type": "registry"
+    },
     "opencode": {
       "type": "registry",
     },

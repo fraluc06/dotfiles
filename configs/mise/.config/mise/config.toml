@@ -1,10 +1,10 @@
 [tools]
-aws-cli = { version = "latest", symlink_bins = "true" }
-bun = "latest"
-caddy = "latest"
-gemini-cli = "latest"
-go = "latest"
-java = "graalvm-community-25.0.2"
-node = "latest"
-pnpm = "latest"
-ruby = "latest"
+#aws-cli = { version = "latest", symlink_bins = "true" }
+#bun = "latest"
+#caddy = "latest"
+#gemini-cli = "latest"
+#go = "latest"
+#java = "graalvm-community-25.0.2"
+#node = "latest"
+#pnpm = "latest"
+#ruby = "latest"
