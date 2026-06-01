@@ -90,3 +90,4 @@ eval "$(mise activate zsh)"
 
 # ➤ Mullvad VPN CLI (per comando 'mullvad')
 export PATH="/usr/local/bin:$PATH"
+export HOMEBREW_REQUIRE_TAP_TRUST=1
