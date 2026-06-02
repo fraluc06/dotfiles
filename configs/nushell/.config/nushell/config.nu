@@ -24,17 +24,6 @@ if ($lmstudio_path | path exists) {
     $env.PATH = ($env.PATH | prepend $lmstudio_path)
 }
 
-# ➤ conda initialization
-let conda_path = "/opt/anaconda3/bin"
-if ($conda_path | path exists) {
-    $env.PATH = ($env.PATH | prepend $conda_path)
-    $env.CONDA_EXE = $"($conda_path)/conda"
-    $env.CONDA_PREFIX = "/opt/anaconda3"
-    $env.CONDA_SHLVL = "1"
-    $env.CONDA_DEFAULT_ENV = "base"
-    $env.CONDA_PROMPT_MODIFIER = "(base) "
-}
-
 # Tuckr directory
 $env.TUCKR_HOME = $env.HOME
 
