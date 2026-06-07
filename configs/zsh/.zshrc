@@ -1,14 +1,23 @@
-# ➤ Verifica se Zinit è già presente, altrimenti lo installa con Homebrew
-if [[ ! -f "/opt/homebrew/opt/zinit/zinit.zsh" ]]; then
+# ➤ Homebrew su Apple Silicon (macOS M4 Pro)
+export HOMEBREW_PREFIX="/opt/homebrew"
+
+# ➤ Verifica se Zinit è presente, altrimenti lo installa
+if [[ ! -f "$HOMEBREW_PREFIX/opt/zinit/zinit.zsh" ]]; then
   brew install zinit
 fi
 
 # ➤ Carica il plugin manager Zinit
-export HOMEBREW_PREFIX="$(brew --prefix)"
 source "$HOMEBREW_PREFIX/opt/zinit/zinit.zsh"
 
+# ➤ Velocizza il caricamento dei completamenti (compinit con cache)
 autoload -Uz compinit
-compinit
+setopt EXTENDED_GLOB
+if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.m-1) ]]; then
+  compinit -C
+else
+  compinit
+fi
+unsetopt EXTENDED_GLOB
 
 # ➤ Prompt Starship
 eval "$(starship init zsh)"
@@ -26,16 +35,7 @@ export FZF_DEFAULT_OPTS=" \
 # ➤ zoxide (navigazione intelligente tra directory)
 eval "$(zoxide init zsh)"
 
-# ➤ Suggerimenti dinamici durante la digitazione
-zinit light zsh-users/zsh-autosuggestions
-
-# ➤ Interfacce Git interattive con fzf
-zinit light wfxr/forgit
-
-# ➤ Completamento automatico con supporto fzf
-zinit light Aloxaf/fzf-tab
-
-# fzf-tab — Catppuccin Mocha
+# Configurazione fzf-tab (deve essere definita prima di caricare il plugin)
 zstyle ':fzf-tab:*' fzf-command fzf
 zstyle ':fzf-tab:*' fzf-flags \
   --color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8 \
@@ -44,11 +44,15 @@ zstyle ':fzf-tab:*' fzf-flags \
   --color=selected-bg:#45475A \
   --color=border:#6C7086,label:#CDD6F4
 
-# ➤ Evidenziazione sintattica (caricare per ultimo)
-zinit light zdharma-continuum/fast-syntax-highlighting
+# Carica fzf-tab in modo sincrono per garantire il corretto aggancio delle scorciatoie e della ricerca
+zinit light Aloxaf/fzf-tab
 
-# ➤ Atuin (cronologia della shell avanzata)
-zinit load atuinsh/atuin
+# ➤ Caricamento asincrono per gli altri plugin (Turbo Mode di Zinit)
+zinit wait lucid for \
+    zsh-users/zsh-autosuggestions \
+    wfxr/forgit \
+    zdharma-continuum/fast-syntax-highlighting \
+    atuinsh/atuin
 
 # ➤ Aggiorna tutti i pacchetti Homebrew
 alias update-all='brew update && brew upgrade && brew cleanup'
@@ -64,11 +68,15 @@ export PATH="$PATH:/Users/francesco/.lmstudio/bin"
 export XDG_CONFIG_HOME="$HOME/.config"
 export TUCKR_HOME="$HOME"
 
-# ➤ Load carapace completions
-# ${UserConfigDir}/zsh/.zshrc
+# ➤ Load carapace completions (ottimizzato usando la cache asincrona)
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
-source <(carapace _carapace)
+
+if [[ ! -f ~/.cache/carapace/init.zsh ]]; then
+  mkdir -p ~/.cache/carapace
+  carapace _carapace zsh > ~/.cache/carapace/init.zsh 2>/dev/null
+fi
+[[ -f ~/.cache/carapace/init.zsh ]] && source ~/.cache/carapace/init.zsh
 
 # ➤ Load mise-en place configuration
 eval "$(mise activate zsh)"
