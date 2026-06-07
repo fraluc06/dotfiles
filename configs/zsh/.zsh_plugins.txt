@@ -1,0 +1,5 @@
+Aloxaf/fzf-tab
+zsh-users/zsh-autosuggestions
+wfxr/forgit
+zdharma-continuum/fast-syntax-highlighting
+

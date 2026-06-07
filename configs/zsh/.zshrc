@@ -1,13 +1,8 @@
+#!/bin/zsh
 # ➤ Homebrew su Apple Silicon (macOS M4 Pro)
 export HOMEBREW_PREFIX="/opt/homebrew"
 
-# ➤ Verifica se Zinit è presente, altrimenti lo installa
-if [[ ! -f "$HOMEBREW_PREFIX/opt/zinit/zinit.zsh" ]]; then
-  brew install zinit
-fi
-
-# ➤ Carica il plugin manager Zinit
-source "$HOMEBREW_PREFIX/opt/zinit/zinit.zsh"
+# ➤ Antidote (verrà inizializzato di seguito)
 
 # ➤ Velocizza il caricamento dei completamenti (compinit con cache)
 autoload -Uz compinit
@@ -44,15 +39,17 @@ zstyle ':fzf-tab:*' fzf-flags \
   --color=selected-bg:#45475A \
   --color=border:#6C7086,label:#CDD6F4
 
-# Carica fzf-tab in modo sincrono per garantire il corretto aggancio delle scorciatoie e della ricerca
-zinit light Aloxaf/fzf-tab
+# ➤ Caricamento dei plugin con Antidote (approccio statico ultra-veloce)
+zsh_plugins_txt="${${(%):-%x}:A:h}/.zsh_plugins.txt"
+zsh_plugins_zsh="$HOME/.zsh_plugins.zsh"
 
-# ➤ Caricamento asincrono per gli altri plugin (Turbo Mode di Zinit)
-zinit wait lucid for \
-    zsh-users/zsh-autosuggestions \
-    wfxr/forgit \
-    zdharma-continuum/fast-syntax-highlighting \
-    atuinsh/atuin
+if [[ ! -f "$zsh_plugins_zsh" || "$zsh_plugins_txt" -nt "$zsh_plugins_zsh" ]]; then
+  source "$HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh"
+  antidote bundle < "$zsh_plugins_txt" > "$zsh_plugins_zsh"
+fi
+
+# Carica i plugin compilati
+source "$zsh_plugins_zsh"
 
 # ➤ Aggiorna tutti i pacchetti Homebrew
 alias update-all='brew update && brew upgrade && brew cleanup'
@@ -85,3 +82,6 @@ eval "$(mise activate zsh)"
 export PATH="/usr/local/bin:$PATH"
 export HOMEBREW_REQUIRE_TAP_TRUST=1
 export EDITOR="zed"
+
+# ➤ Inizializza Atuin (cronologia shell avanzata)
+eval "$(atuin init zsh)"
