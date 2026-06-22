@@ -19,7 +19,7 @@ $env.PATH = ($env.PATH | prepend '/usr/local/bin')
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/Library/TeX/texbin')
 
 # ➤ Add LM Studio CLI to PATH
-let lmstudio_path = "/Users/francesco/.lmstudio/bin"
+let lmstudio_path = ($nu.home | path join ".lmstudio" "bin")
 if ($lmstudio_path | path exists) {
     $env.PATH = ($env.PATH | prepend $lmstudio_path)
 }

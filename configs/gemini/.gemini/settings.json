@@ -11,6 +11,6 @@
     "hasSeenNudge": true
   },
   "ui": {
-    "theme": "/Users/francesco/.gemini/catppuccin-mocha.json"
+    "theme": "~/.gemini/catppuccin-mocha.json"
   }
 }

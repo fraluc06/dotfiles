@@ -67,7 +67,7 @@ alias ll='eza -lA --icons --group-directories-first'
 alias la='eza -A --icons --group-directories-first'
 
 # ➤ Aggiunge LM Studio CLI al PATH
-export PATH="$PATH:/Users/francesco/.lmstudio/bin"
+export PATH="$PATH:$HOME/.lmstudio/bin"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export TUCKR_HOME="$HOME"
