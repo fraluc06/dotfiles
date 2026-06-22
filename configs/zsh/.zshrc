@@ -43,13 +43,20 @@ zstyle ':fzf-tab:*' fzf-flags \
 zsh_plugins_txt="${${(%):-%x}:A:h}/.zsh_plugins.txt"
 zsh_plugins_zsh="$HOME/.zsh_plugins.zsh"
 
-if [[ ! -f "$zsh_plugins_zsh" || "$zsh_plugins_txt" -nt "$zsh_plugins_zsh" ]]; then
+if [[ ! -f "$zsh_plugins_zsh" || "$zsh_plugins_txt" -nt "$zsh_plugins_zsh" || ! -d "$HOME/Library/Caches/antidote/github.com" ]]; then
   source "$HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh"
   antidote bundle < "$zsh_plugins_txt" > "$zsh_plugins_zsh"
 fi
 
 # Carica i plugin compilati
 source "$zsh_plugins_zsh"
+
+# ➤ Lazy-load per il comando antidote (uso interattivo da terminale)
+antidote() {
+  unfunction antidote
+  source "$HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh"
+  antidote "$@"
+}
 
 # ➤ Aggiorna tutti i pacchetti Homebrew
 alias update-all='brew update && brew upgrade && brew cleanup'
@@ -80,8 +87,13 @@ eval "$(mise activate zsh)"
 
 # ➤ Mullvad VPN CLI (per comando 'mullvad')
 export PATH="/usr/local/bin:$PATH"
-export HOMEBREW_REQUIRE_TAP_TRUST=1
+
+export HOMEBREW_NO_REQUIRE_TAP_TRUST=1
+export HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=1
 export EDITOR="zed"
 
 # ➤ Inizializza Atuin (cronologia shell avanzata)
 eval "$(atuin init zsh)"
+
+# ➤ Proton pass-cli ssh-agent daemon
+export SSH_AUTH_SOCK="$HOME/.ssh/proton-pass-agent.sock"

@@ -61,7 +61,7 @@
   "ui_font_family": "JetBrainsMono Nerd Font Mono",
   "buffer_font_family": "JetBrainsMono Nerd Font Mono",
   "ui_font_size": 18,
-  "buffer_font_size": 16,
+  "buffer_font_size": 18.0,
 
   // Agent (AI Assistant) UI
   "agent_ui_font_size": 16,
