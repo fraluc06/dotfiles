@@ -25,19 +25,22 @@ This repository contains the configuration files I use daily on macOS/Linux, inc
 
 ```bash
 dotfiles/
-├── configs/                 # Dotfiles go here
+├── Configs/                 # Dotfiles go here
 │   ├── aerospace/           # Aerospace tiling manager
+│   ├── environment/         # launchd plist for XDG_CONFIG_HOME (GUI apps)
 │   ├── ghostty/             # Ghostty terminal
 │   ├── nvim/                # Neovim editor
 │   ├── nushell/             # Nushell
+│   ├── proton-pass/         # Proton Pass CLI SSH agent launchd plist
+│   ├── ssh/                 # SSH client config (~/.ssh/config)
 │   ├── starship/            # Starship prompt
 │   ├── yazi/                # Yazi file manager
 │   ├── zellij/              # Zellij multiplexer
 │   ├── zsh/                 # Zsh shell
 │   └── ...                  # Other tool configs
-├── brewfile                 # Homebrew packages
-├── hooks/                   # Setup scripts go here
-└── secrets/                 # Encrypted files go here
+├── Hooks/                   # Setup scripts go here (auto-run on `tuckr set`)
+├── Secrets/                 # Encrypted files go here
+└── brewfile                 # Homebrew packages
 ```
 
 ---
@@ -91,6 +94,14 @@ Make sure you have installed:
     tuckr */ # Everything (the '/' ignores the README)
     ```
 
+    For the SSH + launchd setup (SSH client config, Proton Pass CLI SSH agent daemon, and `XDG_CONFIG_HOME` for GUI apps), run:
+
+    ```bash
+    tuckr set ssh proton-pass environment
+    ```
+
+    This symlinks the configs **and** runs the posthooks, which auto-bootstrap the launchd agents (`com.proton.pass-cli.ssh-agent` and `my.startup.shell_agnostic.environment`). No manual `launchctl` commands needed.
+
 4. Install all Homebrew packages and casks from your `Brewfile`:
 
     ```bash
@@ -136,25 +147,20 @@ npm ls -g --json > npm-global-packages.json
 - `forgit` : A utility tool powered by fzf for using git interactively.
 
 ### **Nushell**
+- The `XDG_CONFIG_HOME` environment plist for GUI apps is managed by the `environment` tuckr group. Deploy it with:
+
+    ```bash
+    tuckr set environment
+    ```
+
+    The posthook auto-loads `~/Library/LaunchAgents/environment.plist` into launchd (sets `XDG_CONFIG_HOME` for GUI apps at login).
 - To set Nushell as default shell, run:
 
-```bash
-z Library/LaunchAgents &&
-`echo '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"><plist version="1.0">
-<dict>
-<key>Label</key><string>my.startup.shell_agnostic.environment</string>
-<key>ProgramArguments</key><array><string>sh</string><string>-c</string><string>
-  launchctl setenv XDG_CONFIG_HOME ~/.config
-</string></array>
-<key>RunAtLoad</key><true/>
-</dict>
-</plist>' > ~/Library/LaunchAgents/environment.plist`
-```
-Then run:
-```bash
-chsh -s /opt/homebrew/bin/nu
-```
-and finally reboot your machine.
+    ```bash
+    chsh -s /opt/homebrew/bin/nu
+    ```
+
+    then reboot your machine.
 
 ### **Terminal**
 - **Ghostty** with custom themes and fonts:
