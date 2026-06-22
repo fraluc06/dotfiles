@@ -1,130 +1,286 @@
-tap "anomalyco/tap", trusted: true
-tap "auto-explore/gitcomet", trusted: true
-tap "elio-fm/elio", trusted: true
-tap "fraluc06/ffmpeg-svt-av1-essential", trusted: true
+tap "anomalyco/tap"
+tap "auto-explore/gitcomet"
+tap "fraluc06/ffmpeg-svt-av1-essential"
 tap "fraluc06/tap", trusted: true
-tap "oven-sh/bun", trusted: true
+tap "homebrew/cask"
+tap "homebrew/core"
+tap "protonpass/tap"
+# Static checker for GitHub Actions workflow files
 brew "actionlint"
+# Simple, modern, secure file encryption
 brew "age"
+# Plugin manager for zsh, inspired by antigen and antibody
+brew "antidote"
+# Improved shell history for zsh, bash, fish and nushell
 brew "atuin"
+# Fast Node.js package manager
+brew "aube"
+# Automatic configure script builder
 brew "autoconf"
+# Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
+# Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
+# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Bash scripts that integrate bat with various command-line tools
 brew "bat-extras"
-brew "btop"
-brew "bzip2"
-brew "caddy"
-brew "carapace"
-brew "cmake"
-brew "docker-compose"
-brew "doxygen"
-brew "duf"
-brew "eza"
-brew "fastfetch"
-brew "fd"
-brew "fzf"
-brew "gh"
+# General-purpose data compression with high compression ratio
 brew "xz"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
+# Freely available high-quality data compressor
+brew "bzip2"
+# Powerful, enterprise-ready, open source web server with automatic HTTPS
+brew "caddy"
+# Multi-shell multi-command argument completer
+brew "carapace"
+# Cross-platform make
+brew "cmake"
+# Isolated development environments using Docker
+brew "docker-compose"
+# Generate documentation for several programming languages
+brew "doxygen"
+# Disk Usage/Free Utility - a better 'df' alternative
+brew "duf"
+# Batteries-included terminal file manager with rich previews
+brew "elio"
+# Modern, maintained replacement for ls
+brew "eza"
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GitHub command-line tool
+brew "gh"
+# Interpreter for PostScript and PDF
 brew "ghostscript"
+# Distributed revision control system
 brew "git"
+# Render markdown on the CLI
 brew "glow"
+# Library for command-line editing
 brew "readline"
+# GNU Privacy Guard (OpenPGP)
 brew "gnupg"
+# Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Library access to GnuPG
 brew "gpgme"
+# C++ bindings for gpgme
 brew "gpgmepp"
+# Numerical library for C and C++
 brew "gsl"
-brew "libtool"
-brew "imagemagick"
-brew "jj"
-brew "jq"
-brew "krb5"
-brew "lazygit"
-brew "lazymake"
-brew "libyaml"
-brew "mas"
-brew "mise"
-brew "mole"
-brew "nasm"
-brew "ncdu"
-brew "neovim"
-brew "ninja"
-brew "nushell"
-brew "onefetch"
-brew "ouch"
-brew "pastel"
-brew "pdfcpu"
-brew "pinact"
-brew "pkgconf"
-brew "pnpm"
-brew "poppler"
+# Command-line interface for SQLite
 brew "sqlite"
-brew "python-tk@3.12"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+# Simple zero-configuration command-line HTTP server
+brew "http-server"
+# Generic library support script
+brew "libtool"
+# Tools and libraries to manipulate images in select formats
+brew "imagemagick"
+# Git-compatible distributed version control system
+brew "jj"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Network authentication protocol
+brew "krb5"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Modern TUI for Makefiles
+brew "lazymake"
+# YAML Parser
+brew "libyaml"
+# Mac App Store command-line interface
+brew "mas"
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
+# Deep clean and optimize your Mac
+brew "mole"
+# Netwide Assembler (NASM) is an 80x86 assembler
+brew "nasm"
+# NCurses Disk Usage
+brew "ncdu"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Small build system for use with gyp or CMake
+brew "ninja"
+# Modern shell for the GitHub era
+brew "nushell"
+# Command-line Git information tool
+brew "onefetch"
+# Drop-in replacement for Terraform. Infrastructure as Code Tool
+brew "opentofu"
+# Painless compression and decompression for your terminal
+brew "ouch"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
+# Command-line tool to generate, analyze, convert and manipulate colors
+brew "pastel"
+# PDF processor written in Go
+brew "pdfcpu"
+# Pins GitHub Actions to full hashes and versions
+brew "pinact"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
+# Fast, disk space efficient package manager
+brew "pnpm"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.14"
+# Software environment for statistical computing
+brew "r"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
+# Simple and powerful SSH keys manager
 brew "skm"
+# Cross-shell prompt for astronauts
 brew "starship"
+# Feature rich terminal file transfer and explorer
 brew "termscp"
+# Official tldr client written in Rust
 brew "tlrc"
+# Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Super powered replacement for GNU Stow
 brew "tuckr"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# Pluggable terminal workspace, with terminal multiplexer as the base feature
 brew "zellij"
+# Flexible and fast Zsh plugin manager
 brew "zinit"
+# Find security issues in GitHub Actions setups
 brew "zizmor"
+# Shell extension to navigate your filesystem faster
 brew "zoxide"
+# The AI coding agent built for the terminal.
 brew "anomalyco/tap/opencode"
-brew "elio-fm/elio/elio"
+# SVT-AV1 encoder CLI fork with FFMS2 support for direct video input
 brew "fraluc06/ffmpeg-svt-av1-essential/svt-av1-essential"
+# Simple CLI tool to generate and manage temporary email addresses with TUI
 brew "fraluc06/tap/burnmail"
-brew "fraluc06/tap/md-tui"
+# Command-line interface for Filen encrypted cloud storage
+brew "fraluc06/tap/filen-cli", trusted: true
+# Blazing-fast batch processing tool for managing anime/TV series MKV libraries
 brew "fraluc06/tap/mkvtea"
-brew "oven-sh/bun/bun"
+# Proton Pass CLI - Command-line interface for Proton Pass
+brew "protonpass/tap/pass-cli", trusted: true
+# Secure, peer-to-peer file transfer app
+cask "altersend"
+# Terminal interface for Antigravity agents
 cask "antigravity-cli"
+# App for managing battery charging
 cask "batfi"
+# Image, video and clipboard optimiser
 cask "clop"
+# Database management tool
 cask "dbx"
+# Voice and text chat software
 cask "discord"
+# Monitor resolution and settings manager
 cask "displaybuddy"
+# Downloads videos from different websites
 cask "downie"
+# Desktop client for Filen.io
 cask "filen"
+# Per-application volume mixer, equalizer, and audio router
 cask "finetune"
 cask "font-jetbrains-mono-nerd-font"
+# Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Fast, resource-efficient Git GUI written in Rust
 cask "auto-explore/gitcomet/gitcomet"
+# Web browser
+cask "google-chrome"
+# Chromium-based web browser
+cask "helium-browser"
+# Free and open-source media player
 cask "iina"
+# iOS Sideloading Companion
 cask "iloader"
+# Java IDE by JetBrains
 cask "intellij-idea"
+# Utility that shows the latest app updates
 cask "latest"
+# Discover, download, and run local LLMs
 cask "lm-studio"
+# Open-source cross-platform alternative to AirDrop
 cask "localsend"
+# Support for Logitech G gear
+cask "logitech-g-hub"
+# Screenshot and screen recording tool
 cask "macshot"
+# Full TeX Live distribution without GUI applications
 cask "mactex-no-gui"
+# Tool to create bootable USB installers
 cask "macusb"
+# Utility to extend trackpad functionality
 cask "middleclick"
+# Deep clean, analyze, and optimize app
 cask "mole-app"
+# VPN client
 cask "mullvad-vpn"
+# Lightweight code editor
 cask "notepadexe"
+# Document editor
 cask "onlyoffice"
+# Desktop and web interface for OpenCode AI agent
+cask "openchamber"
+# AI coding agent desktop client
+cask "opencode-desktop"
+# Replacement for Docker Desktop
 cask "orbstack"
+# WebKit based web browser
 cask "orion"
+# Converts and edits video, audio or image files
+cask "permute"
+# Minecraft launcher
 cask "prismlauncher"
+# Desktop client for Proton Pass
 cask "proton-pass"
+# Quick Look generator for Markdown files
 cask "qlmarkdown"
+# Control your tools with a few keystrokes
 cask "raycast"
+# 7-Zip derivative GUI
 cask "shichizip"
+# Video, audio and image converter
 cask "shutter-encoder"
+# Music streaming service
 cask "spotify"
+# Messaging app with a focus on speed and security
 cask "telegram"
+# JDK from the Eclipse Foundation (Adoptium)
 cask "temurin"
+# Terminal-first AI-native developer workspace
+cask "terax"
+# Menu bar manager
 cask "thaw@beta"
+# Markdown knowledgebase manager
+cask "tolaria"
+# File transfer application
 cask "transmit"
+# Virtual machines UI using QEMU
 cask "utm"
+# Open-source code editor
 cask "visual-studio-code"
+# Live wallpaper app
 cask "wallspace"
+# Native desktop client for WhatsApp
 cask "whatsapp"
+# Window manager
 cask "wins"
+# REST, GraphQL and gRPC client
 cask "yaak"
+# Multiplayer code editor
 cask "zed"
 mas "Folder Quick Look", id: 6753110395
 mas "Shareful", id: 1522267256
