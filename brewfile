@@ -4,7 +4,6 @@ tap "fraluc06/ffmpeg-svt-av1-essential"
 tap "fraluc06/tap", trusted: true
 tap "homebrew/cask"
 tap "homebrew/core"
-tap "protonpass/tap"
 # Static checker for GitHub Actions workflow files
 brew "actionlint"
 # Simple, modern, secure file encryption
@@ -131,12 +130,20 @@ brew "pkgconf"
 brew "pnpm"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
+# Command-line interface for Proton Pass
+brew "proton-pass-cli"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.14"
+# Python interface to Tcl/Tk
+brew "python-tk@3.14"
 # Software environment for statistical computing
 brew "r"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
+# Intuitive find & replace CLI
+brew "sd"
 # 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
 # Simple and powerful SSH keys manager
@@ -171,14 +178,14 @@ brew "fraluc06/tap/burnmail"
 brew "fraluc06/tap/filen-cli", trusted: true
 # Blazing-fast batch processing tool for managing anime/TV series MKV libraries
 brew "fraluc06/tap/mkvtea"
-# Proton Pass CLI - Command-line interface for Proton Pass
-brew "protonpass/tap/pass-cli", trusted: true
 # Secure, peer-to-peer file transfer app
 cask "altersend"
 # Terminal interface for Antigravity agents
 cask "antigravity-cli"
 # App for managing battery charging
 cask "batfi"
+# C and C++ IDE
+cask "clion"
 # Image, video and clipboard optimiser
 cask "clop"
 # Database management tool
@@ -198,6 +205,8 @@ cask "font-jetbrains-mono-nerd-font"
 cask "ghostty"
 # Fast, resource-efficient Git GUI written in Rust
 cask "auto-explore/gitcomet/gitcomet"
+# Go (golang) IDE
+cask "goland"
 # Web browser
 cask "google-chrome"
 # Chromium-based web browser
@@ -234,22 +243,28 @@ cask "notepadexe"
 cask "onlyoffice"
 # Desktop and web interface for OpenCode AI agent
 cask "openchamber"
-# AI coding agent desktop client
-cask "opencode-desktop"
 # Replacement for Docker Desktop
 cask "orbstack"
 # WebKit based web browser
 cask "orion"
 # Converts and edits video, audio or image files
 cask "permute"
+# PHP IDE by JetBrains
+cask "phpstorm"
 # Minecraft launcher
 cask "prismlauncher"
 # Desktop client for Proton Pass
 cask "proton-pass"
+# IDE for professional Python development
+cask "pycharm"
 # Quick Look generator for Markdown files
 cask "qlmarkdown"
+# Disk space analyzer
+cask "radix"
 # Control your tools with a few keystrokes
 cask "raycast"
+# Ruby on Rails IDE
+cask "rubymine"
 # 7-Zip derivative GUI
 cask "shichizip"
 # Video, audio and image converter
@@ -274,6 +289,8 @@ cask "utm"
 cask "visual-studio-code"
 # Live wallpaper app
 cask "wallspace"
+# JavaScript IDE
+cask "webstorm"
 # Native desktop client for WhatsApp
 cask "whatsapp"
 # Window manager
