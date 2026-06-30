@@ -28,6 +28,8 @@ brew "bat-extras"
 brew "xz"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
+# Incredibly fast JavaScript runtime, bundler, test runner, and package manager
+brew "bun"
 # Freely available high-quality data compressor
 brew "bzip2"
 # Powerful, enterprise-ready, open source web server with automatic HTTPS
@@ -36,6 +38,8 @@ brew "caddy"
 brew "carapace"
 # Cross-platform make
 brew "cmake"
+# Container runtimes on MacOS (and Linux) with minimal setup
+brew "colima"
 # Isolated development environments using Docker
 brew "docker-compose"
 # Generate documentation for several programming languages
@@ -182,6 +186,10 @@ brew "fraluc06/tap/mkvtea"
 cask "altersend"
 # Terminal interface for Antigravity agents
 cask "antigravity-cli"
+# Application uninstaller
+cask "appcleaner"
+# Dynamic Island for the MacBook notch
+cask "atoll"
 # App for managing battery charging
 cask "batfi"
 # C and C++ IDE
@@ -194,6 +202,8 @@ cask "dbx"
 cask "discord"
 # Monitor resolution and settings manager
 cask "displaybuddy"
+# Widgets for your dock
+cask "dockspace"
 # Downloads videos from different websites
 cask "downie"
 # Desktop client for Filen.io
@@ -201,14 +211,11 @@ cask "filen"
 # Per-application volume mixer, equalizer, and audio router
 cask "finetune"
 cask "font-jetbrains-mono-nerd-font"
+cask "font-maple-mono-nf"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
-# Fast, resource-efficient Git GUI written in Rust
-cask "auto-explore/gitcomet/gitcomet"
 # Go (golang) IDE
 cask "goland"
-# Web browser
-cask "google-chrome"
 # Chromium-based web browser
 cask "helium-browser"
 # Free and open-source media player
@@ -223,8 +230,6 @@ cask "latest"
 cask "lm-studio"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
-# Support for Logitech G gear
-cask "logitech-g-hub"
 # Screenshot and screen recording tool
 cask "macshot"
 # Full TeX Live distribution without GUI applications
