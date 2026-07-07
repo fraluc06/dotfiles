@@ -61,10 +61,10 @@ antidote() {
 # ➤ Aggiorna tutti i pacchetti Homebrew
 alias update-all='brew update && brew upgrade && brew cleanup'
 
-# ➤ eza (un'alternativa a ls con colori e icone)
-alias ls='eza'
-alias ll='eza -lA --icons --group-directories-first'
-alias la='eza -A --icons --group-directories-first'
+# ➤ lsd (un'alternativa a ls con colori e icone)
+alias ls='lsd'
+alias ll='lsd -lA --group-directories-first'
+alias la='lsd -A --group-directories-first'
 
 # ➤ Aggiunge LM Studio CLI al PATH
 export PATH="$PATH:$HOME/.lmstudio/bin"

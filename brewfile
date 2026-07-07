@@ -1,5 +1,4 @@
 tap "anomalyco/tap"
-tap "auto-explore/gitcomet"
 tap "fraluc06/ffmpeg-svt-av1-essential"
 tap "fraluc06/tap", trusted: true
 tap "homebrew/cask"
@@ -76,12 +75,18 @@ brew "gpgme"
 brew "gpgmepp"
 # Numerical library for C and C++
 brew "gsl"
+# Post-modern modal text editor
+brew "helix"
+# Agent multiplexer that lives in your terminal
+brew "herdr"
 # Command-line interface for SQLite
 brew "sqlite"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node"
 # Simple zero-configuration command-line HTTP server
 brew "http-server"
+# Review-first terminal diff viewer for agent-authored changesets
+brew "hunk"
 # Generic library support script
 brew "libtool"
 # Tools and libraries to manipulate images in select formats
@@ -98,6 +103,8 @@ brew "lazygit"
 brew "lazymake"
 # YAML Parser
 brew "libyaml"
+# Clone of ls with colorful output, file type icons, and more
+brew "lsd"
 # Mac App Store command-line interface
 brew "mas"
 # Polyglot runtime manager (asdf rust clone)
@@ -154,6 +161,8 @@ brew "sevenzip"
 brew "skm"
 # Cross-shell prompt for astronauts
 brew "starship"
+# Interactive TUI for Homebrew
+brew "taproom"
 # Feature rich terminal file transfer and explorer
 brew "termscp"
 # Official tldr client written in Rust
@@ -211,9 +220,10 @@ cask "filen"
 # Per-application volume mixer, equalizer, and audio router
 cask "finetune"
 cask "font-jetbrains-mono-nerd-font"
-cask "font-maple-mono-nf"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Git GUI
+cask "gitcomet"
 # Go (golang) IDE
 cask "goland"
 # Chromium-based web browser
@@ -222,8 +232,8 @@ cask "helium-browser"
 cask "iina"
 # iOS Sideloading Companion
 cask "iloader"
-# Java IDE by JetBrains
-cask "intellij-idea"
+# JetBrains tools manager
+cask "jetbrains-toolbox"
 # Utility that shows the latest app updates
 cask "latest"
 # Discover, download, and run local LLMs
@@ -244,6 +254,8 @@ cask "mole-app"
 cask "mullvad-vpn"
 # Lightweight code editor
 cask "notepadexe"
+# VPN client
+cask "obscura-vpn"
 # Document editor
 cask "onlyoffice"
 # Desktop and web interface for OpenCode AI agent
@@ -264,6 +276,8 @@ cask "proton-pass"
 cask "pycharm"
 # Quick Look generator for Markdown files
 cask "qlmarkdown"
+# Thumbnails, static previews, cover art and metadata for video files
+cask "quicklook-video"
 # Disk space analyzer
 cask "radix"
 # Control your tools with a few keystrokes
@@ -276,6 +290,8 @@ cask "shichizip"
 cask "shutter-encoder"
 # Music streaming service
 cask "spotify"
+# Quicklook extension for source files
+cask "syntax-highlight"
 # Messaging app with a focus on speed and security
 cask "telegram"
 # JDK from the Eclipse Foundation (Adoptium)

@@ -7,11 +7,11 @@ Personal configurations for a modern, productive, and minimal shell.
 Meant to be used with my **.zshrc** on macOS.
 This repository contains the configuration files I use daily on macOS/Linux, including:
 
-- ⚡ **Zsh** with custom plugins and prompt, managed by Zinit
+- ⚡ **Zsh** with custom plugins and prompt, managed by Antidote
 - 📝 **Neovim** as my favourite editor within the terminal
 - 🪞 **Ghostty** as terminal emulator
 - 🛠️ Other CLI tools (SDKMAN, fnm, Starship, etc.)
-- 🍺 **Homebrew** package management via `Brewfile`  **([Homebrew Bundle, brew bundle and Brewfile](https://docs.brew.sh/Brew-Bundle-and-Brewfile))**
+- 🍺 **Homebrew** package management via `brewfile`  **([Homebrew Bundle, brew bundle and Brewfile](https://docs.brew.sh/Brew-Bundle-and-Brewfile))**
 
 ---
 
@@ -102,45 +102,26 @@ Make sure you have installed:
 
     This symlinks the configs **and** runs the posthooks, which auto-bootstrap the launchd agents (`com.proton.pass-cli.ssh-agent` and `my.startup.shell_agnostic.environment`). No manual `launchctl` commands needed.
 
-4. Install all Homebrew packages and casks from your `Brewfile`:
+4. Install all Homebrew packages and casks from your `brewfile`:
 
     ```bash
-    brew bundle --file=~/dotfiles/Brewfile
-    ```
-
-5. Install npm packages from the JSON file (requires `jq`):
-    ```bash
-    bat npm-global-packages.json | jq -r '.dependencies | keys[]' | xargs npm install -g
+    brew bundle --file=~/dotfiles/brewfile
     ```
 
 ---
 
 ## 📦 Exporting Packages
 
-This section explains how to export the package lists for Homebrew and npm.
-
-### Homebrew
-
-To update the `Brewfile` with all currently installed packages, run:
+To update the `brewfile` with all currently installed packages, run:
 
 ```bash
-brew bundle dump --file=./Brewfile --force
+brew bundle dump --file=./brewfile --force
 ```
-
-### NPM
-
-To save a list of globally installed npm packages, run:
-
-```bash
-npm ls -g --json > npm-global-packages.json
-```
-
----
 
 ## 🧩 **Included Plugins & Tools**
 
 ### **Zsh**
-- Managed with `Zinit` for optimal plugin loading
+- Managed with `Antidote` for optimal plugin loading
 - `zsh-autosuggestions`: Dynamic suggestions while typing
 - `fzf-tab`: Replace zsh's default completion selection menu with fzf
 - `fast-syntax-highlighting`: Syntax highlighting for commands
