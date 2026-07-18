@@ -3,6 +3,7 @@ name = Francesco Lucarelli
 email = francesco06lucarelli@gmail.com
 signingkey = ~/.ssh/id_ed25519.pub
 [core]
+pager = hunk pager
 autocrlf = input
 [credential "https://github.com"]
 helper =
