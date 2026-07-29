@@ -39,7 +39,7 @@ zstyle ':fzf-tab:*' fzf-flags \
 
 # ➤ Antidote (zsh plugin manager) — plugins listed in ~/.zsh_plugins.txt
 source "$HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh"
-antidote load
+antidote load "$HOME/.zsh_plugins.txt"
 
 # ➤ Update all Homebrew packages
 alias update-all='brew update && brew upgrade && brew cleanup'
@@ -84,3 +84,40 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
 # pnpm end
+
+# >>> elio shell integration >>>
+elio() {
+    case "${1-}" in
+        shell|-*)
+            command elio "$@"
+            return $?
+            ;;
+    esac
+
+    local arg tmp cwd status_code
+    for arg in "$@"; do
+        case "$arg" in
+            --chooser-file|--chooser-file=*)
+                command elio "$@"
+                return $?
+                ;;
+        esac
+    done
+
+    tmp="$(mktemp -t "elio-cwd.XXXXXX")" || return
+    command elio --cwd-file "$tmp" "$@"
+    status_code=$?
+
+    if [ -s "$tmp" ]; then
+        cwd="$(cat -- "$tmp")"
+        rm -f -- "$tmp"
+        if [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && [ -d "$cwd" ]; then
+            cd -- "$cwd" || return $?
+        fi
+    else
+        rm -f -- "$tmp"
+    fi
+
+    return "$status_code"
+}
+# <<< elio shell integration <<<

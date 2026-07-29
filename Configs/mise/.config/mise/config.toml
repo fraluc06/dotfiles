@@ -1,10 +1,2 @@
 [tools]
-#aws-cli = { version = "latest", symlink_bins = "true" }
-#bun = "latest"
-#caddy = "latest"
-#gemini-cli = "latest"
-#go = "latest"
-#java = "graalvm-community-25.0.2"
-#node = "latest"
-#pnpm = "latest"
-#ruby = "latest"
+nub = { version = "latest", allow_builds = ["@nubjs/nub"] }

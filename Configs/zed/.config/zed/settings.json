@@ -10,6 +10,10 @@
   // ------------------------------------------------------------------
   // CORE & TELEMETRY
   // ------------------------------------------------------------------
+  "terminal": {
+    "font_family": "Maple Mono Normal NF"
+  },
+  "helix_mode": true,
   "diff_view_style": "unified",
   "project_panel": {
     "dock": "left"
@@ -72,7 +76,7 @@
   // EDITOR BEHAVIOR & KEYMAPS
   // ------------------------------------------------------------------
   "base_keymap": "JetBrains",
-  "vim_mode": true,
+  "vim_mode": false,
 
   // Visuals in Editor
   "relative_line_numbers": "enabled", // Sintassi moderna per i numeri relativi

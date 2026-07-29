@@ -37,5 +37,8 @@ tab = "all"
 nbsp = "•"
 tab = "→"
 
+[editor.file-picker]
+hidden = false
+
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"]

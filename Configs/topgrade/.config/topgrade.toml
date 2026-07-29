@@ -28,7 +28,7 @@
 # sudo_command = "sudo"
 
 # Disable specific steps - same options as the command line flag
-disable = ["ruby_gems", "gem"]
+disable = ["ruby_gems", "gem", "pip3", "pnpm","bun_packages"]
 
 # Run these steps before all others
 # first = ["chezmoi"]

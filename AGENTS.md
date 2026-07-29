@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Personal dotfiles repo managed with **tuckr** (GNU Stow replacement). macOS-first. No build, tests, lint, or CI exist — verification is visual/manual.
+
 
 ## Repo layout
 
