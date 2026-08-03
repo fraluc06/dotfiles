@@ -17,3 +17,5 @@ format = ssh
 gpgsign = true
 [gpg "ssh"]
 	program = ~/.ssh/git-ssh-sign-wrapper
+[core]
+	autocrlf = input

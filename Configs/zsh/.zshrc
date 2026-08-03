@@ -68,8 +68,7 @@ fi
 # ➤ mise (runtime version manager)
 eval "$(mise activate zsh)"
 
-export HOMEBREW_NO_REQUIRE_TAP_TRUST=1
-export HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=1
+#export HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=1
 export EDITOR="zed"
 
 # ➤ Atuin (enhanced shell history)
@@ -121,3 +120,6 @@ elio() {
     return "$status_code"
 }
 # <<< elio shell integration <<<
+
+# Added by Unsloth installer
+export PATH="$HOME/.local/bin:$PATH"
