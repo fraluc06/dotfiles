@@ -11,8 +11,6 @@ brew "age"
 brew "antidote"
 # Improved shell history for zsh, bash, fish and nushell
 brew "atuin"
-# Fast Node.js package manager
-brew "aube"
 # Automatic configure script builder
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -27,8 +25,6 @@ brew "bat-extras"
 brew "xz"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
-# Incredibly fast JavaScript runtime, bundler, test runner, and package manager
-brew "bun"
 # Freely available high-quality data compressor
 brew "bzip2"
 # Powerful, enterprise-ready, open source web server with automatic HTTPS
@@ -39,10 +35,10 @@ brew "carapace"
 brew "choose-rust"
 # Cross-platform make
 brew "cmake"
+# Highly configurable, multi-protocol DNS forwarding proxy
+brew "ctrld"
 # Isolated development environments using Docker
 brew "docker-compose"
-# Generate documentation for several programming languages
-brew "doxygen"
 # Opinionated Dockerfile linter
 brew "droast"
 # YAML Parser
@@ -121,8 +117,6 @@ brew "noodle"
 brew "nushell"
 # Command-line Git information tool
 brew "onefetch"
-# Drop-in replacement for Terraform. Infrastructure as Code Tool
-brew "opentofu"
 # Painless compression and decompression for your terminal
 brew "ouch"
 # Swiss-army knife of markup format conversion
@@ -135,8 +129,6 @@ brew "pdfcpu"
 brew "pinact"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
-# Fast, disk space efficient package manager
-brew "pnpm"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Command-line interface for Proton Pass
@@ -179,6 +171,10 @@ brew "tuicr"
 brew "typst"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# Your CLI home video recorder
+brew "vhs"
 # Validate and execute GitHub Actions workflows locally
 brew "wrkflw"
 # Pluggable terminal workspace, with terminal multiplexer as the base feature
@@ -259,8 +255,6 @@ cask "mole-app"
 cask "mullvad-vpn"
 # Lightweight code editor
 cask "notepadexe"
-# VPN client
-cask "obscura-vpn"
 # Document editor
 cask "onlyoffice"
 # Desktop and web interface for OpenCode AI agent
@@ -281,8 +275,6 @@ cask "qlmarkdown"
 cask "quicklook-video"
 # Disk space analyzer
 cask "radix"
-# Control your tools with a few keystrokes
-cask "raycast"
 # Ruby on Rails IDE
 cask "rubymine"
 # 7-Zip derivative GUI based on mcmilk/7-Zip-zstd
@@ -360,3 +352,5 @@ vscode "rangav.vscode-thunder-client"
 vscode "unifiedjs.vscode-mdx"
 vscode "xabikos.javascriptsnippets"
 vscode "yandeu.five-server"
+go "cmd/go"
+go "cmd/gofmt"
