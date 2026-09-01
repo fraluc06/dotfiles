@@ -27,6 +27,7 @@ This repository contains the configuration files I use daily on macOS/Linux, inc
 dotfiles/
 ├── Configs/                 # Dotfiles go here
 │   ├── aerospace/           # Aerospace tiling manager
+│   ├── brew-backup/         # launchd plist for automated Brewfile backup
 │   ├── environment/         # launchd plist for XDG_CONFIG_HOME (GUI apps)
 │   ├── ghostty/             # Ghostty terminal
 │   ├── nvim/                # Neovim editor
@@ -101,6 +102,14 @@ Make sure you have installed:
     ```
 
     This symlinks the configs **and** runs the posthooks, which auto-bootstrap the launchd agents (`com.proton.pass-cli.ssh-agent` and `my.startup.shell_agnostic.environment`). No manual `launchctl` commands needed.
+
+    To also keep your `Brewfile` up to date automatically, run:
+
+    ```bash
+    tuckr set brew-backup
+    ```
+
+    It installs a launchd agent that runs `brew bundle dump` every `INTERVAL_HOURS` (default 6h) and optionally commits/pushes changes. Edit `Hooks/brew-backup/config.sh` to change the interval, remote, or push behavior.
 
 4. Install all Homebrew packages and casks from your `brewfile`:
 
