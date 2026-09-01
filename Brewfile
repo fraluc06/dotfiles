@@ -223,7 +223,6 @@ cask "dockspace"
 cask "downie"
 # Desktop client for Filen.io
 cask "filen"
-cask "font-jetbrains-mono-nerd-font"
 cask "font-maple-mono-normal-nf"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
