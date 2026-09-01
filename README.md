@@ -162,7 +162,7 @@ brew bundle dump --force
 ### **Terminal**
 - **Ghostty** with custom themes and fonts:
   - **[Catppuccin Mocha](https://github.com/catppuccin/)**: Catppuccin is a pastel theme with four warm flavors and 26 eye-candy colors, ideal for coding, designing, and other creative tasks.
-  - **[JetBrains Mono Nerd Font](https://www.nerdfonts.com/font-downloads)**: A monospaced font with programming ligatures and Nerd Font glyphs for an enhanced coding experience
+  - **[Maple Mono Normal NF](https://font.subf.dev/en/)**: A rounded monospaced font with Nerd Font glyphs and cursive italics for an enhanced coding experience
 
 ---
 
