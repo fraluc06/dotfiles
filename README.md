@@ -109,7 +109,7 @@ Make sure you have installed:
     tuckr set brew-backup
     ```
 
-    It installs a launchd agent that runs `brew bundle dump` **once a day** at the time set in `Hooks/brew-backup/config.sh` (`RUN_HOUR`/`RUN_MINUTE`, default 10:00) and optionally commits/pushes changes. If the Mac is asleep at that time, the backup runs at wake-up. Edit `Hooks/brew-backup/config.sh` to change the schedule, remote, or push behavior, then re-run `tuckr set brew-backup`.
+    It installs a launchd agent that runs `brew bundle dump` **once a day** at the time set in `Hooks/brew-backup/config.sh` (`RUN_HOUR`/`RUN_MINUTE`, default 03:00) and optionally commits/pushes changes. If the Mac is asleep at that time, the backup runs at wake-up. Edit `Hooks/brew-backup/config.sh` to change the schedule, remote, or push behavior, then re-run `tuckr set brew-backup`.
 
     To remove the agent later, run:
 
