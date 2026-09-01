@@ -4,7 +4,7 @@
 
 # Time of day when the backup runs (24h format).
 # If the Mac is asleep at that time, launchd runs it at wake-up.
-RUN_HOUR=10
+RUN_HOUR=3
 RUN_MINUTE=0
 
 # Path to the Brewfile inside your dotfiles repository
