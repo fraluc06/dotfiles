@@ -11,7 +11,7 @@ This repository contains the configuration files I use daily on macOS/Linux, inc
 - 📝 **Neovim** as my favourite editor within the terminal
 - 🪞 **Ghostty** as terminal emulator
 - 🛠️ Other CLI tools (SDKMAN, fnm, Starship, etc.)
-- 🍺 **Homebrew** package management via `brewfile`  **([Homebrew Bundle, brew bundle and Brewfile](https://docs.brew.sh/Brew-Bundle-and-Brewfile))**
+- 🍺 **Homebrew** package management via `Brewfile`  **([Homebrew Bundle, brew bundle and Brewfile](https://docs.brew.sh/Brew-Bundle-and-Brewfile))**
 
 ---
 
@@ -41,7 +41,7 @@ dotfiles/
 │   └── ...                  # Other tool configs
 ├── Hooks/                   # Setup scripts go here (auto-run on `tuckr set`)
 ├── Secrets/                 # Encrypted files go here
-└── brewfile                 # Homebrew packages
+└── Brewfile                 # Homebrew packages
 ```
 
 ---
@@ -118,20 +118,20 @@ Make sure you have installed:
     tuckr rm brew-backup
     ```
 
-4. Install all Homebrew packages and casks from your `brewfile`:
+4. Install all Homebrew packages and casks from your `Brewfile`:
 
     ```bash
-    brew bundle --file=~/dotfiles/brewfile
+    cd ~/dotfiles && brew bundle
     ```
 
 ---
 
 ## 📦 Exporting Packages
 
-To update the `brewfile` with all currently installed packages, run:
+To update the `Brewfile` with all currently installed packages, run:
 
 ```bash
-brew bundle dump --file=./brewfile --force
+brew bundle dump --force
 ```
 
 ## 🧩 **Included Plugins & Tools**

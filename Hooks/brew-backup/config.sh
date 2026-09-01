@@ -8,7 +8,7 @@ RUN_HOUR=3
 RUN_MINUTE=0
 
 # Path to the Brewfile inside your dotfiles repository
-BREWFILE_PATH="$HOME/dotfiles/brewfile"
+BREWFILE_PATH="$HOME/dotfiles/Brewfile"
 
 # Git remote to push to when the Brewfile changes (e.g. origin, codeberg)
 GIT_REMOTE="origin"
