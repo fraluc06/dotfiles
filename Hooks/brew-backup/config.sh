@@ -3,7 +3,7 @@
 # This file is sourced by both the backup script and the tuckr posthook.
 
 # How often to run brew bundle dump (in hours)
-INTERVAL_HOURS=6
+INTERVAL_HOURS=24
 
 # Path to the Brewfile inside your dotfiles repository
 BREWFILE_PATH="$HOME/dotfiles/Brewfile"

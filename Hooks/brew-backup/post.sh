@@ -7,7 +7,8 @@ set -e
 
 CONFIG_DIR="$(cd "$(dirname "$0")" && pwd)"
 CONFIG_FILE="$CONFIG_DIR/config.sh"
-SRC_PLIST="/Users/francesco/dotfiles/Configs/brew-backup/Library/LaunchAgents/com.fraluc06.brew-backup.plist"
+DOTFILES_DIR="$(cd "$CONFIG_DIR/../.." && pwd)"
+SRC_PLIST="$DOTFILES_DIR/Configs/brew-backup/Library/LaunchAgents/com.fraluc06.brew-backup.plist"
 DST_PLIST="$HOME/Library/LaunchAgents/com.fraluc06.brew-backup.plist"
 LABEL="com.fraluc06.brew-backup"
 DOMAIN="gui/$(id -u)"
@@ -33,7 +34,7 @@ fi
 
 # Remove the symlink/file created by tuckr and write a customized plist at the destination
 rm -f "$DST_PLIST"
-sed -e "s|<integer>21600</integer>|<integer>${INTERVAL_SECONDS}</integer>|" "$SRC_PLIST" > "$DST_PLIST"
+sed -e "s#{{HOME}}#$HOME#g" -e "s|<integer>21600</integer>|<integer>${INTERVAL_SECONDS}</integer>|" "$SRC_PLIST" > "$DST_PLIST"
 
 echo "[brew-backup] Generated $DST_PLIST with StartInterval=${INTERVAL_SECONDS}s (${INTERVAL_HOURS}h)"
 
