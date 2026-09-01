@@ -14,12 +14,25 @@ fi
 
 . "$CONFIG_FILE"
 
+# launchd agents get a minimal PATH (/usr/bin:/bin:/usr/sbin:/sbin).
+# Use Homebrew's git (first in PATH) so SSH signing via gpg.ssh.program works.
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+
 LOG_FILE="$HOME/Library/Logs/brew-backup.log"
 mkdir -p "$(dirname "$LOG_FILE")"
 
+# When run by launchd, stdout is already redirected to LOG_FILE by the plist
+# (StandardOutPath/StandardErrorPath). Append manually only when running from
+# a terminal, so lines are never written twice.
 log() {
-  echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" | tee -a "$LOG_FILE"
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*"
 }
+
+if [ -t 1 ]; then
+  log() {
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" | tee -a "$LOG_FILE"
+  }
+fi
 
 log "Starting brew bundle dump"
 

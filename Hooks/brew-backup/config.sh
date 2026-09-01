@@ -1,12 +1,14 @@
 #!/bin/sh
 # Configuration for the automated brew bundle dump
-# This file is sourced by both the backup script and the tuckr posthook.
+# This file is sourced by the tuckr posthook (and can be sourced manually).
 
-# How often to run brew bundle dump (in hours)
-INTERVAL_HOURS=24
+# Time of day when the backup runs (24h format).
+# If the Mac is asleep at that time, launchd runs it at wake-up.
+RUN_HOUR=10
+RUN_MINUTE=0
 
 # Path to the Brewfile inside your dotfiles repository
-BREWFILE_PATH="$HOME/dotfiles/Brewfile"
+BREWFILE_PATH="$HOME/dotfiles/brewfile"
 
 # Git remote to push to when the Brewfile changes (e.g. origin, codeberg)
 GIT_REMOTE="origin"
