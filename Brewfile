@@ -3,6 +3,8 @@ tap "fraluc06/ffmpeg-svt-av1-essential", trusted: true
 tap "fraluc06/tap", trusted: true
 tap "homebrew/cask"
 tap "homebrew/core"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
 # Static checker for GitHub Actions workflow files
 brew "actionlint"
 # Simple, modern, secure file encryption
@@ -83,6 +85,8 @@ brew "libtool"
 brew "imagemagick"
 # GPU powered yet browserless tool to help you quickly view markdown files
 brew "inlyne"
+# AI coding agent harness for the terminal
+brew "jcode"
 # Git-compatible distributed version control system
 brew "jj"
 # New file format for still image compression
@@ -99,6 +103,8 @@ brew "lazymake"
 brew "lsd"
 # Mac App Store command-line interface
 brew "mas"
+# Unified display of technical and tag data for audio/video
+brew "media-info"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
 # Deep clean and optimize your Mac
@@ -111,8 +117,6 @@ brew "ncdu"
 brew "neovim"
 # Small build system for use with gyp or CMake
 brew "ninja"
-# Terminal REST client
-brew "noodle"
 # Modern shell for the GitHub era
 brew "nushell"
 # Command-line Git information tool
@@ -192,11 +196,11 @@ brew "fraluc06/ffmpeg-svt-av1-essential/ffmpeg", trusted: true
 # SVT-AV1 encoder CLI fork with FFMS2 support for direct video input
 brew "fraluc06/ffmpeg-svt-av1-essential/svt-av1-essential", trusted: true
 # Simple CLI tool to generate and manage temporary email addresses with TUI
-brew "fraluc06/tap/burnmail"
+brew "fraluc06/tap/burnmail", trusted: true
 # Command-line interface for Filen encrypted cloud storage
-brew "fraluc06/tap/filen-cli"
+brew "fraluc06/tap/filen-cli", trusted: true
 # Blazing-fast batch processing tool for managing anime/TV series MKV libraries
-brew "fraluc06/tap/mkvtea"
+brew "fraluc06/tap/mkvtea", trusted: true
 # Secure, peer-to-peer file transfer app
 cask "altersend"
 # Terminal interface for Antigravity agents
@@ -207,8 +211,6 @@ cask "atoll"
 cask "batfi"
 # Web browser focusing on privacy
 cask "brave-browser"
-# C and C++ IDE
-cask "clion"
 # Image, video and clipboard optimiser
 cask "clop"
 # Database management tool
@@ -221,8 +223,6 @@ cask "dockspace"
 cask "downie"
 # Desktop client for Filen.io
 cask "filen"
-# Per-application volume mixer, equalizer, and audio router
-cask "finetune"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-maple-mono-normal-nf"
 # Terminal emulator that uses platform-native UI and GPU acceleration
@@ -245,8 +245,6 @@ cask "localsend"
 cask "macusb"
 # Display technical and tag data for video and audio files
 cask "mediainfo"
-# Utility to extend trackpad functionality
-cask "middleclick"
 # GUI including a set of tools to create, alter and inspect Matroska files (MKV)
 cask "mkvtoolnix-app"
 # Deep clean, analyze, and optimize app
@@ -293,14 +291,10 @@ cask "thaw@beta"
 cask "tolaria"
 # File transfer application
 cask "transmit"
-# Virtual machines UI using QEMU
-cask "utm"
 # Open-source code editor
 cask "visual-studio-code"
 # Live wallpaper app
 cask "wallspace"
-# JavaScript IDE
-cask "webstorm"
 # Native desktop client for WhatsApp
 cask "whatsapp"
 # Window manager
