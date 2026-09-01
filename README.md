@@ -111,6 +111,13 @@ Make sure you have installed:
 
     It installs a launchd agent that runs `brew bundle dump` every `INTERVAL_HOURS` (default 6h) and optionally commits/pushes changes. Edit `Hooks/brew-backup/config.sh` to change the interval, remote, or push behavior.
 
+    To remove the agent later, run:
+
+    ```bash
+    ./Hooks/brew-backup/uninstall.sh
+    tuckr rm brew-backup
+    ```
+
 4. Install all Homebrew packages and casks from your `brewfile`:
 
     ```bash
