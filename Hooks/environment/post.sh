@@ -1,9 +1,9 @@
 #!/bin/sh
-# Auto-load environment.plist into launchd after symlinking
+# Auto-load my.startup.shell_agnostic.environment.plist into launchd after symlinking
 # Sets XDG_CONFIG_HOME (and any other env vars) for GUI apps on login
 # Runs on: tuckr set environment
 
-PLIST="$HOME/Library/LaunchAgents/environment.plist"
+PLIST="$HOME/Library/LaunchAgents/my.startup.shell_agnostic.environment.plist"
 LABEL="my.startup.shell_agnostic.environment"
 DOMAIN="gui/$(id -u)"
 

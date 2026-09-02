@@ -150,7 +150,7 @@ brew bundle dump --force
     tuckr set environment
     ```
 
-    The posthook auto-loads `~/Library/LaunchAgents/environment.plist` into launchd (sets `XDG_CONFIG_HOME` for GUI apps at login).
+    The posthook auto-loads `~/Library/LaunchAgents/my.startup.shell_agnostic.environment.plist` into launchd (sets `XDG_CONFIG_HOME` for GUI apps at login).
 - To set Nushell as default shell, run:
 
     ```bash
