@@ -183,8 +183,6 @@ brew "vhs"
 brew "wrkflw"
 # Pluggable terminal workspace, with terminal multiplexer as the base feature
 brew "zellij"
-# Flexible and fast Zsh plugin manager
-brew "zinit"
 # Find security issues in GitHub Actions setups
 brew "zizmor"
 # Shell extension to navigate your filesystem faster
