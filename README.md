@@ -1,17 +1,13 @@
-
----
-
 ## 📁 ***My Dotfiles***
 
-Personal configurations for a modern, productive, and minimal shell.
-Meant to be used with my **.zshrc** on macOS.
-This repository contains the configuration files I use daily on macOS/Linux, including:
+My daily configuration files for a modern, productive, and minimal shell on macOS (Apple Silicon), built around my **.zshrc**:
 
-- ⚡ **Zsh** with custom plugins and prompt, managed by Antidote
-- 📝 **Neovim** as my favourite editor within the terminal
+- ⚡ **Zsh** with custom plugins, managed by Antidote
+- ✨ **Starship** prompt, **Atuin** shell history, **zoxide** and **fzf** for navigation
+- 📝 **Neovim** (and Zed) as editors
 - 🪞 **Ghostty** as terminal emulator
-- 🛠️ Other CLI tools (SDKMAN, fnm, Starship, etc.)
-- 🍺 **Homebrew** package management via `Brewfile`  **([Homebrew Bundle, brew bundle and Brewfile](https://docs.brew.sh/Brew-Bundle-and-Brewfile))**
+- 🛠️ Other CLI tools (mise, yazi, btop, etc.)
+- 🍺 **Homebrew** package management via `Brewfile` **([Homebrew Bundle, brew bundle and Brewfile](https://docs.brew.sh/Brew-Bundle-and-Brewfile))**
 
 ---
 
@@ -25,23 +21,9 @@ This repository contains the configuration files I use daily on macOS/Linux, inc
 
 ```bash
 dotfiles/
-├── Configs/                 # Dotfiles go here
-│   ├── aerospace/           # Aerospace tiling manager
-│   ├── brew-backup/         # launchd plist for automated Brewfile backup
-│   ├── environment/         # launchd plist for XDG_CONFIG_HOME (GUI apps)
-│   ├── ghostty/             # Ghostty terminal
-│   ├── nvim/                # Neovim editor
-│   ├── nushell/             # Nushell
-│   ├── proton-pass/         # Proton Pass CLI SSH agent launchd plist
-│   ├── ssh/                 # SSH client config (~/.ssh/config)
-│   ├── starship/            # Starship prompt
-│   ├── yazi/                # Yazi file manager
-│   ├── zellij/              # Zellij multiplexer
-│   ├── zsh/                 # Zsh shell
-│   └── ...                  # Other tool configs
-├── Hooks/                   # Setup scripts go here (auto-run on `tuckr set`)
-├── Secrets/                 # Encrypted files go here
-└── Brewfile                 # Homebrew packages
+├── Configs/   # Dotfiles; each Configs/<name>/ subdirectory is one tuckr group
+├── Hooks/     # Setup scripts (auto-run on `tuckr set`): brew-backup, environment, proton-pass
+└── Brewfile   # Homebrew packages
 ```
 
 ---
@@ -53,46 +35,34 @@ dotfiles/
 Make sure you have installed:
 - **Git**
 - **Zsh**
-- **Nushell**
-- **Homebrew** (on macOS) or an equivalent package manager
+- **Homebrew** (on macOS)
 - **Tuckr** for dotfiles management
 
 ### **Installation Steps**
 
-1. Clone your dotfiles repository into a folder in your home directory:
+1. Clone your dotfiles repository into a folder in your home directory (the `brew-backup` hook expects `~/dotfiles`):
 
     ```bash
-    git clone https://github.com/fraluc06/dotfiles.git ~/.dotfiles
+    git clone https://github.com/fraluc06/dotfiles.git ~/dotfiles && cd ~/dotfiles
     ```
-    or via SSH:
+    or via gh CLI:
 
     ```bash
-    git clone git@github.com:fraluc06/dotfiles.git ~/.dotfiles
-    ```
-   or via gh CLI:
-
-    ```bash
-    gh repo clone git@github.com:fraluc06/dotfiles.git ~/.dotfiles
+    gh repo clone fraluc06/dotfiles ~/dotfiles && cd ~/dotfiles
     ```
 
-2. Change into the dotfiles directory:
+2. Use **Tuckr** to symlink your configs automatically:
 
     ```bash
-    cd ~/.dotfiles
-    ```
-
-3. Use **Tuckr** to symlink your configs automatically:
-
-    ```bash
-    tuckr zsh
-    tuckr nvim
-    tuckr ghostty
+    tuckr add zsh
+    tuckr add nvim
+    tuckr add ghostty
     # ...
     ```
-    or all with one command
+    or all with one command (escape the `*` so the shell passes it to tuckr):
 
     ```bash
-    tuckr */ # Everything (the '/' ignores the README)
+    tuckr add \*
     ```
 
     For the SSH + launchd setup (SSH client config, Proton Pass CLI SSH agent daemon, and `XDG_CONFIG_HOME` for GUI apps), run:
@@ -103,65 +73,35 @@ Make sure you have installed:
 
     This symlinks the configs **and** runs the posthooks, which auto-bootstrap the launchd agents (`com.proton.pass-cli.ssh-agent` and `my.startup.shell_agnostic.environment`). No manual `launchctl` commands needed.
 
-    To also keep your `Brewfile` up to date automatically, run:
+    To also keep your `Brewfile` up to date automatically, run `tuckr set brew-backup`. It installs a launchd agent that runs `brew bundle dump` once a day (default 03:00, if the Mac is asleep it runs at wake-up) and commits/pushes changes. Schedule, remote and push behavior are set in `Hooks/brew-backup/config.sh`.
+
+3. Install all Homebrew packages and casks from your `Brewfile`:
 
     ```bash
-    tuckr set brew-backup
+    brew bundle
     ```
 
-    It installs a launchd agent that runs `brew bundle dump` **once a day** at the time set in `Hooks/brew-backup/config.sh` (`RUN_HOUR`/`RUN_MINUTE`, default 03:00) and optionally commits/pushes changes. If the Mac is asleep at that time, the backup runs at wake-up. Edit `Hooks/brew-backup/config.sh` to change the schedule, remote, or push behavior, then re-run `tuckr set brew-backup`.
-
-    To remove the agent later, run:
+    To refresh the `Brewfile` manually instead of waiting for the daily backup:
 
     ```bash
-    ./Hooks/brew-backup/uninstall.sh
-    tuckr rm brew-backup
+    brew bundle dump --file=./Brewfile --force
     ```
-
-4. Install all Homebrew packages and casks from your `Brewfile`:
-
-    ```bash
-    cd ~/dotfiles && brew bundle
-    ```
-
----
-
-## 📦 Exporting Packages
-
-To update the `Brewfile` with all currently installed packages, run:
-
-```bash
-brew bundle dump --force
-```
 
 ## 🧩 **Included Plugins & Tools**
 
-### **Zsh**
+### **Zsh** (default shell)
 - Managed with `Antidote` for optimal plugin loading
 - `zsh-autosuggestions`: Dynamic suggestions while typing
 - `fzf-tab`: Replace zsh's default completion selection menu with fzf
 - `fast-syntax-highlighting`: Syntax highlighting for commands
 - `forgit` : A utility tool powered by fzf for using git interactively.
 
-### **Nushell**
-- The `XDG_CONFIG_HOME` environment plist for GUI apps is managed by the `environment` tuckr group. Deploy it with:
-
-    ```bash
-    tuckr set environment
-    ```
-
-    The posthook auto-loads `~/Library/LaunchAgents/my.startup.shell_agnostic.environment.plist` into launchd (sets `XDG_CONFIG_HOME` for GUI apps at login).
-- To set Nushell as default shell, run:
-
-    ```bash
-    chsh -s /opt/homebrew/bin/nu
-    ```
-
-    then reboot your machine.
+### **Nushell** (optional)
+- Nushell configs live in the `nushell` group, but the main shell is Zsh. The `XDG_CONFIG_HOME` launchd setup (`environment` group) is shell-agnostic and is covered in the setup steps above.
 
 ### **Terminal**
 - **Ghostty** with custom themes and fonts:
-  - **[Catppuccin Mocha](https://github.com/catppuccin/)**: Catppuccin is a pastel theme with four warm flavors and 26 eye-candy colors, ideal for coding, designing, and other creative tasks.
+  - **[Catppuccin](https://github.com/catppuccin/)**: Ghostty is configured for automatic theme switching (`theme = light:Catppuccin Latte,dark:Catppuccin Mocha`), but macOS is kept in dark mode, so **Catppuccin Mocha** is effectively always active. Wherever a tool supports themes, Catppuccin Mocha is used.
   - **[Maple Mono Normal NF](https://font.subf.dev/en/)**: A rounded monospaced font with Nerd Font glyphs and cursive italics for an enhanced coding experience
 
 ---

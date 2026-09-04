@@ -5,8 +5,8 @@
 ## Repo layout
 
 - `Configs/<group>/...` — each **direct subdirectory is one tuckr group**. Group name = folder name, **case-sensitive and lowercase** (e.g. `zsh`, `proton-pass`, `environment`). Do not rename `Configs/` itself to lowercase — that casing is intentional and was deliberately normalized.
-- `Hooks/<group>/post.sh` — setup scripts run **only by `tuckr set <group>`** (not `tuckr add`). `tuckr unset` runs cleanup. Only `environment` and `proton-pass` have hooks.
-- `Secrets/` — encrypted `*.mdb` files produced by `tuckr encrypt` (gitignored). Plain credentials (e.g. `aws/credentials`, nushell `history.txt`, `*.log`) are gitignored, not committed.
+- `Hooks/<group>/post.sh` — setup scripts run **only by `tuckr set <group>`** (not `tuckr add`). `tuckr unset` runs cleanup. Three groups have hooks: `environment`, `proton-pass`, and `brew-backup`.
+- `Secrets/` — encrypted `*.mdb` files produced by `tuckr encrypt` (gitignored). Plain credentials (e.g. `aws/credentials`, nushell `history.txt`, `*.log`) are gitignored, not committed. Currently empty in this checkout.
 
 ## Working on a config
 
@@ -18,9 +18,9 @@
 
 ## Hook quirks (do not hand-edit run state)
 
-- `environment/post.sh` and `proton-pass/post.sh` bootstrap launchd agents into `gui/$(id -u)`. They no-op if the agent is already loaded.
-- For `proton-pass`, this is intentional: re-bootstrapping would interrupt the running SSH agent. To apply a plist change manually: `launchctl bootout "$DOMAIN/$LABEL" && launchctl bootstrap "$DOMAIN" "$PLIST"`.
-- `Hooks/*/post.sh` defaults are symlinks of plists into `~/Library/LaunchAgents/`.
+- `environment/post.sh`, `proton-pass/post.sh`, and `brew-backup/post.sh` all bootstrap launchd agents into `gui/$(id -u)`.
+- `environment` re-runs are safe: if the agent is already loaded it restarts it via `launchctl kickstart -k` to refresh env vars. `proton-pass` no-ops when already loaded — re-bootstrapping would interrupt the running SSH agent. To apply a plist change manually: `launchctl bootout "$DOMAIN/$LABEL" && launchctl bootstrap "$DOMAIN" "$PLIST"`.
+- `brew-backup/post.sh` is different: it reads `Hooks/brew-backup/config.sh` (`RUN_HOUR`, `RUN_MINUTE`, `BREWFILE_PATH`, `GIT_REMOTE`, `PUSH_ENABLED`), **deletes** the tuckr symlink and writes a customized plist (sed of `{{HOME}}`/`{{HOUR}}`/`{{MINUTE}}` placeholders) to `~/Library/LaunchAgents/com.fraluc06.brew-backup.plist`, then bootstraps it. `environment`/`proton-pass` plists are plain tuckr symlinks. To uninstall brew-backup: `./Hooks/brew-backup/uninstall.sh` then `tuckr rm brew-backup`.
 
 ## Zsh plugins use `antidote`, NOT Zinit
 
