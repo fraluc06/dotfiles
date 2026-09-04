@@ -9,13 +9,9 @@ My daily configuration files for a modern, productive, and minimal shell on macO
 - 🛠️ Other CLI tools (mise, yazi, btop, etc.)
 - 🍺 **Homebrew** package management via `Brewfile` **([Homebrew Bundle, brew bundle and Brewfile](https://docs.brew.sh/Brew-Bundle-and-Brewfile))**
 
----
-
 ## 📸 **Terminal Preview**
 
 ![Ghostty Preview](./preview.png)
-
----
 
 ## 🗂 **Repository Structure**
 
@@ -25,8 +21,6 @@ dotfiles/
 ├── Hooks/     # Setup scripts (auto-run on `tuckr set`): brew-backup, environment, proton-pass
 └── Brewfile   # Homebrew packages
 ```
-
----
 
 ## 🚀 **Quick Setup**
 
@@ -104,10 +98,6 @@ Make sure you have installed:
   - **[Catppuccin](https://github.com/catppuccin/)**: Ghostty is configured for automatic theme switching (`theme = light:Catppuccin Latte,dark:Catppuccin Mocha`), but macOS is kept in dark mode, so **Catppuccin Mocha** is effectively always active. Wherever a tool supports themes, Catppuccin Mocha is used.
   - **[Maple Mono Normal NF](https://font.subf.dev/en/)**: A rounded monospaced font with Nerd Font glyphs and cursive italics for an enhanced coding experience
 
----
-
 ## 📜 **License**
 
 MIT – Free to use, modify, and distribute with attribution.
-
----
