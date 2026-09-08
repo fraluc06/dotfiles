@@ -304,6 +304,7 @@ mas "Edist", id: 6791705076
 mas "Folder Quick Look", id: 6753110395
 mas "Parchment", id: 6779987526
 mas "PDFgear", id: 6469021132
+mas "Proton Pass for Safari", id: 6502835663
 mas "Shareful", id: 1522267256
 mas "Xcode", id: 497799835
 vscode "aaron-bond.better-comments"
