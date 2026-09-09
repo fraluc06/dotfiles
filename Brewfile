@@ -302,6 +302,7 @@ cask "yaak"
 cask "zed"
 mas "Edist", id: 6791705076
 mas "Folder Quick Look", id: 6753110395
+mas "Nought", id: 6785636339
 mas "Parchment", id: 6779987526
 mas "PDFgear", id: 6469021132
 mas "Proton Pass for Safari", id: 6502835663
