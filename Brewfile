@@ -234,8 +234,6 @@ cask "helium-browser"
 cask "iina"
 # iOS Sideloading Companion
 cask "iloader"
-# Utility that shows the latest app updates
-cask "latest"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
 # Tool to create bootable USB installers
