@@ -288,8 +288,12 @@ cask "thaw@beta"
 cask "tolaria"
 # File transfer application
 cask "transmit"
+# Application launcher and command palette
+cask "vicinae"
 # Open-source code editor
 cask "visual-studio-code"
+# Menu bar toolkit with keep-awake, system monitor and volume mixer
+cask "vorssaint"
 # Live wallpaper app
 cask "wallspace"
 # Native desktop client for WhatsApp
@@ -304,7 +308,6 @@ mas "Edist", id: 6791705076
 mas "Folder Quick Look", id: 6753110395
 mas "Nought", id: 6785636339
 mas "Parchment", id: 6779987526
-mas "PDFgear", id: 6469021132
 mas "Proton Pass for Safari", id: 6502835663
 mas "Shareful", id: 1522267256
 mas "Xcode", id: 497799835
