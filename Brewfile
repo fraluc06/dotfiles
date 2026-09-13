@@ -252,6 +252,8 @@ cask "mullvad-vpn"
 cask "notepadexe"
 # Document editor
 cask "onlyoffice"
+# Cross-platform GUI for youtube-dl made in Electron and node.js
+cask "open-video-downloader"
 # Desktop and web interface for OpenCode AI agent
 cask "openchamber"
 # Replacement for Docker Desktop
