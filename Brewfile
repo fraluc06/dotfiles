@@ -217,8 +217,6 @@ cask "clop"
 cask "dbx"
 # Voice and text chat software
 cask "discord"
-# Widgets for your dock
-cask "dockspace"
 # Downloads videos from different websites
 cask "downie"
 # Desktop client for Filen.io
@@ -254,8 +252,6 @@ cask "notepadexe"
 cask "onlyoffice"
 # Cross-platform GUI for youtube-dl made in Electron and node.js
 cask "open-video-downloader"
-# Desktop and web interface for OpenCode AI agent
-cask "openchamber"
 # Replacement for Docker Desktop
 cask "orbstack"
 # WebKit based web browser
@@ -292,8 +288,6 @@ cask "tolaria"
 cask "transmit"
 # Application launcher and command palette
 cask "vicinae"
-# Open-source code editor
-cask "visual-studio-code"
 # Menu bar toolkit with keep-awake, system monitor and volume mixer
 cask "vorssaint"
 # Live wallpaper app
@@ -310,43 +304,5 @@ mas "Edist", id: 6791705076
 mas "Folder Quick Look", id: 6753110395
 mas "Nought", id: 6785636339
 mas "Parchment", id: 6779987526
-mas "Proton Pass for Safari", id: 6502835663
 mas "Shareful", id: 1522267256
 mas "Xcode", id: 497799835
-vscode "aaron-bond.better-comments"
-vscode "adpyke.codesnap"
-vscode "asispts.neo-git-graph"
-vscode "astro-build.astro-vscode"
-vscode "catppuccin.catppuccin-vsc"
-vscode "dbaeumer.vscode-eslint"
-vscode "ecmel.vscode-html-css"
-vscode "esbenp.prettier-vscode"
-vscode "formulahendry.code-runner"
-vscode "github.vscode-github-actions"
-vscode "hediet.vscode-drawio"
-vscode "james-yu.latex-workshop"
-vscode "kevinrose.vsc-python-indent"
-vscode "ms-azuretools.vscode-containers"
-vscode "ms-ceintl.vscode-language-pack-it"
-vscode "ms-toolsai.jupyter"
-vscode "ms-toolsai.jupyter-keymap"
-vscode "ms-toolsai.jupyter-renderers"
-vscode "ms-toolsai.vscode-jupyter-cell-tags"
-vscode "ms-toolsai.vscode-jupyter-slideshow"
-vscode "ms-vscode-remote.remote-containers"
-vscode "ms-vscode-remote.remote-ssh"
-vscode "ms-vscode-remote.remote-ssh-edit"
-vscode "ms-vscode-remote.remote-wsl"
-vscode "ms-vscode-remote.vscode-remote-extensionpack"
-vscode "ms-vscode.remote-explorer"
-vscode "ms-vscode.remote-server"
-vscode "mtxr.sqltools"
-vscode "myriad-dreamin.tinymist"
-vscode "oderwat.indent-rainbow"
-vscode "onlyati.quadlet-lsp"
-vscode "pkief.material-icon-theme"
-vscode "pkief.material-product-icons"
-vscode "rangav.vscode-thunder-client"
-vscode "unifiedjs.vscode-mdx"
-vscode "xabikos.javascriptsnippets"
-vscode "yandeu.five-server"
