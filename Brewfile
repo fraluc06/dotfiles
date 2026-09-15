@@ -37,8 +37,14 @@ brew "carapace"
 brew "choose-rust"
 # Cross-platform make
 brew "cmake"
+# Container runtimes on MacOS (and Linux) with minimal setup
+brew "colima"
 # Highly configurable, multi-protocol DNS forwarding proxy
 brew "ctrld"
+# Pack, ship and run any application as a lightweight container
+brew "docker"
+# Docker CLI plugin for extended build capabilities with BuildKit
+brew "docker-buildx"
 # Isolated development environments using Docker
 brew "docker-compose"
 # Opinionated Dockerfile linter
