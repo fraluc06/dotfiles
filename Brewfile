@@ -49,8 +49,6 @@ brew "docker-buildx"
 brew "docker-compose"
 # Opinionated Dockerfile linter
 brew "droast"
-# YAML Parser
-brew "libyaml"
 # Disk Usage/Free Utility - a better 'df' alternative
 brew "duf"
 # Batteries-included terminal file manager with rich previews
@@ -105,6 +103,8 @@ brew "krb5"
 brew "lazygit"
 # Modern TUI for Makefiles
 brew "lazymake"
+# YAML Parser
+brew "libyaml"
 # Clone of ls with colorful output, file type icons, and more
 brew "lsd"
 # Mac App Store command-line interface
@@ -147,8 +147,6 @@ brew "proton-pass-cli"
 brew "sqlite"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.14"
-# Generic machine emulator and virtualizer
-brew "qemu"
 # SVG rendering tool and library
 brew "resvg"
 # Search tool like grep and The Silver Searcher
