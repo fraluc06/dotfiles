@@ -232,6 +232,8 @@ cask "iina"
 cask "iloader"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
+# Screenshot and screen recording tool
+cask "macshot"
 # Tool to create bootable USB installers
 cask "macusb"
 # Display technical and tag data for video and audio files
