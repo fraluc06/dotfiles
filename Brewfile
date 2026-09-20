@@ -1,3 +1,4 @@
+tap "abue-ammar/tinycast", trusted: true
 tap "anomalyco/tap", trusted: true
 tap "fraluc06/ffmpeg-svt-av1-essential", trusted: true
 tap "fraluc06/tap", trusted: true
@@ -185,8 +186,8 @@ brew "zellij"
 brew "zizmor"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
-# The AI coding agent built for the terminal.
-brew "anomalyco/tap/opencode", trusted: true
+# OpenCode V2 - the AI coding agent for the terminal
+brew "anomalyco/tap/opencode-v2"
 # Play, record, convert, and stream audio and video (with SVT-AV1-Essential)
 brew "fraluc06/ffmpeg-svt-av1-essential/ffmpeg", trusted: true
 # SVT-AV1 encoder CLI fork with FFMS2 support for direct video input
@@ -280,6 +281,8 @@ cask "telegram"
 cask "terax"
 # Menu bar manager
 cask "thaw@beta"
+# Tiny, fully native launcher, hotkeys, and clipboard history
+cask "abue-ammar/tinycast/tinycast", trusted: true
 # Markdown knowledgebase manager
 cask "tolaria"
 # File transfer application
