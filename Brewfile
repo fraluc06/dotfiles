@@ -287,8 +287,6 @@ cask "abue-ammar/tinycast/tinycast", trusted: true
 cask "tolaria"
 # File transfer application
 cask "transmit"
-# Application launcher and command palette
-cask "vicinae"
 # Menu bar toolkit with keep-awake, system monitor and volume mixer
 cask "vorssaint"
 # Live wallpaper app
@@ -301,7 +299,6 @@ cask "wins"
 cask "yaak"
 # Multiplayer code editor
 cask "zed"
-mas "Edist", id: 6791705076
 mas "Folder Quick Look", id: 6753110395
 mas "Nought", id: 6785636339
 mas "Parchment", id: 6779987526
