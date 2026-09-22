@@ -251,6 +251,8 @@ cask "notepadexe"
 cask "onlyoffice"
 # Cross-platform GUI for youtube-dl made in Electron and node.js
 cask "open-video-downloader"
+# Unofficial desktop GUI for OpenCode
+cask "openwork"
 # Replacement for Docker Desktop
 cask "orbstack"
 # WebKit based web browser
