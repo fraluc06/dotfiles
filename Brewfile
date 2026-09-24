@@ -227,6 +227,8 @@ cask "gitcomet"
 cask "goland"
 # Chromium-based web browser
 cask "helium-browser"
+# Tool to run Windows games
+cask "highball"
 # Free and open-source media player
 cask "iina"
 # iOS Sideloading Companion
