@@ -66,6 +66,8 @@ brew "glow"
 brew "readline"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
+# Fast linters runner for Go
+brew "golangci-lint"
 # Library access to GnuPG
 brew "gpgme"
 # C++ bindings for gpgme
