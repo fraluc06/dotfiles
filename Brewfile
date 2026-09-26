@@ -138,10 +138,6 @@ brew "pkgconf"
 brew "poppler"
 # Command-line interface for Proton Pass
 brew "proton-pass-cli"
-# Command-line interface for SQLite
-brew "sqlite"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.14"
 # SVG rendering tool and library
 brew "resvg"
 # Search tool like grep and The Silver Searcher
@@ -152,6 +148,8 @@ brew "sd"
 brew "sevenzip"
 # Simple and powerful SSH keys manager
 brew "skm"
+# Command-line interface for SQLite
+brew "sqlite"
 # Cross-shell prompt for astronauts
 brew "starship"
 # Modern and pretty fancy file manager for the terminal
