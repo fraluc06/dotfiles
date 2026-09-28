@@ -40,6 +40,8 @@ brew "choose-rust"
 brew "cmake"
 # Highly configurable, multi-protocol DNS forwarding proxy
 brew "ctrld"
+# Predictive ghost-text autosuggestions for zsh
+brew "deja"
 # Opinionated Dockerfile linter
 brew "droast"
 # Disk Usage/Free Utility - a better 'df' alternative
