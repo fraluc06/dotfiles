@@ -24,8 +24,6 @@ brew "openssl@3"
 brew "bat"
 # Bash scripts that integrate bat with various command-line tools
 brew "bat-extras"
-# General-purpose data compression with high compression ratio
-brew "xz"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
 # Freely available high-quality data compressor
@@ -58,6 +56,8 @@ brew "fd"
 brew "fzf"
 # GitHub command-line tool
 brew "gh"
+# General-purpose data compression with high compression ratio
+brew "xz"
 # Interpreter for PostScript and PDF
 brew "ghostscript"
 # Distributed revision control system
@@ -68,8 +68,6 @@ brew "glow"
 brew "readline"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
-# Fast linters runner for Go
-brew "golangci-lint"
 # Library access to GnuPG
 brew "gpgme"
 # C++ bindings for gpgme
