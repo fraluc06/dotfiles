@@ -265,6 +265,8 @@ cask "radix"
 cask "rubymine"
 # 7-Zip derivative GUI based on mcmilk/7-Zip-zstd
 cask "shichizip-zs"
+# Video, audio and image converter
+cask "shutter-encoder"
 # Music streaming service
 cask "spotify"
 # Quicklook extension for source files
