@@ -24,6 +24,8 @@ brew "openssl@3"
 brew "bat"
 # Bash scripts that integrate bat with various command-line tools
 brew "bat-extras"
+# General-purpose data compression with high compression ratio
+brew "xz"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
 # Freely available high-quality data compressor
@@ -56,8 +58,6 @@ brew "fd"
 brew "fzf"
 # GitHub command-line tool
 brew "gh"
-# General-purpose data compression with high compression ratio
-brew "xz"
 # Interpreter for PostScript and PDF
 brew "ghostscript"
 # Distributed revision control system
@@ -198,16 +198,10 @@ brew "fraluc06/tap/burnmail", trusted: true
 brew "fraluc06/tap/filen-cli", trusted: true
 # Blazing-fast batch processing tool for managing anime/TV series MKV libraries
 brew "fraluc06/tap/mkvtea", trusted: true
-# Secure, peer-to-peer file transfer app
-cask "altersend"
 # Terminal interface for Antigravity agents
 cask "antigravity-cli"
-# Dynamic Island for the MacBook notch
-cask "atoll"
 # App for managing battery charging
 cask "batfi"
-# Web browser focusing on privacy
-cask "brave-browser"
 # Image, video and clipboard optimiser
 cask "clop"
 # Database management tool
@@ -225,10 +219,6 @@ cask "ghostty"
 cask "gitcomet"
 # Go (golang) IDE
 cask "goland"
-# Chromium-based web browser
-cask "helium-browser"
-# Tool to run Windows games
-cask "highball"
 # Free and open-source media player
 cask "iina"
 # iOS Sideloading Companion
