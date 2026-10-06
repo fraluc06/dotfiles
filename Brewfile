@@ -288,5 +288,6 @@ cask "zed"
 mas "Folder Quick Look", id: 6753110395
 mas "Nought", id: 6785636339
 mas "Parchment", id: 6779987526
+mas "ScreenZen", id: 1541027222
 mas "Shareful", id: 1522267256
 mas "Xcode", id: 497799835
