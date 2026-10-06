@@ -67,7 +67,7 @@ Make sure you have installed:
 
     This symlinks the configs **and** runs the posthooks, which auto-bootstrap the launchd agents (`com.proton.pass-cli.ssh-agent` and `my.startup.shell_agnostic.environment`). No manual `launchctl` commands needed.
 
-    To also keep your `Brewfile` up to date automatically, run `tuckr set brew-backup`. It installs a launchd agent that runs `brew bundle dump` once a day (default 03:00, if the Mac is asleep it runs at wake-up) and commits/pushes changes. Schedule, remote and push behavior are set in `Hooks/brew-backup/config.sh`.
+    To also keep your `Brewfile` up to date automatically, run `tuckr set brew-backup`. It installs a launchd agent that runs `brew bundle dump` once a day (default 03:00, if the Mac is asleep it runs at wake-up) and commits/pushes changes. Schedule, remote and push behavior are set in `Hooks/brew-backup/config.sh`. Note: this hook writes a generated plist (not a symlink) to `~/Library/LaunchAgents`; if a later plain `tuckr add` replaces it with a symlink, the agent breaks at the next reboot — recover with `tuckr set brew-backup`.
 
 3. Install all Homebrew packages and casks from your `Brewfile`:
 

@@ -21,6 +21,7 @@
 - `environment/post.sh`, `proton-pass/post.sh`, and `brew-backup/post.sh` all bootstrap launchd agents into `gui/$(id -u)`.
 - `environment` re-runs are safe: if the agent is already loaded it restarts it via `launchctl kickstart -k` to refresh env vars. `proton-pass` no-ops when already loaded — re-bootstrapping would interrupt the running SSH agent. To apply a plist change manually: `launchctl bootout "$DOMAIN/$LABEL" && launchctl bootstrap "$DOMAIN" "$PLIST"`.
 - `brew-backup/post.sh` is different: it reads `Hooks/brew-backup/config.sh` (`RUN_HOUR`, `RUN_MINUTE`, `BREWFILE_PATH`, `GIT_REMOTE`, `PUSH_ENABLED`), **deletes** the tuckr symlink and writes a customized plist (sed of `{{HOME}}`/`{{HOUR}}`/`{{MINUTE}}` placeholders) to `~/Library/LaunchAgents/com.fraluc06.brew-backup.plist`, then bootstraps it. `environment`/`proton-pass` plists are plain tuckr symlinks. To uninstall brew-backup: `./Hooks/brew-backup/uninstall.sh` then `tuckr rm brew-backup`.
+- **Gotcha**: a plain `tuckr add`/link of `Configs/brew-backup` recreates the `~/Library/LaunchAgents` symlink, overwriting the generated plist. It keeps working until the next logout/reboot, then launchd reloads the raw template (`{{HOME}}` etc. unresolved) and the agent fails with exit 78 (`EX_CONFIG`). Fix: `tuckr set brew-backup` again (or `Hooks/brew-backup/post.sh`).
 
 ## Zsh plugins use `antidote`, NOT Zinit
 
