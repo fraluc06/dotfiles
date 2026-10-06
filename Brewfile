@@ -84,8 +84,6 @@ brew "libtool"
 brew "imagemagick"
 # GPU powered yet browserless tool to help you quickly view markdown files
 brew "inlyne"
-# AI coding agent harness for the terminal
-brew "jcode"
 # Git-compatible distributed version control system
 brew "jj"
 # New file format for still image compression
@@ -208,8 +206,6 @@ cask "clop"
 cask "dbx"
 # Voice and text chat software
 cask "discord"
-# Downloads videos from different websites
-cask "downie"
 # Desktop client for Filen.io
 cask "filen"
 cask "font-maple-mono-normal-nf"
@@ -237,20 +233,14 @@ cask "mkvtoolnix-app"
 cask "mole-app"
 # VPN client
 cask "mullvad-vpn"
-# Lightweight code editor
-cask "notepadexe"
 # Document editor
 cask "onlyoffice"
 # Cross-platform GUI for youtube-dl made in Electron and node.js
 cask "open-video-downloader"
-# Unofficial desktop GUI for OpenCode
-cask "openwork"
 # Replacement for Docker Desktop
 cask "orbstack"
 # WebKit based web browser
 cask "orion"
-# Converts and edits video, audio or image files
-cask "permute"
 # Desktop client for Proton Pass
 cask "proton-pass"
 # IDE for professional Python development
