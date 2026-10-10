@@ -209,6 +209,7 @@ cask "discord"
 # Desktop client for Filen.io
 cask "filen"
 cask "font-maple-mono-normal-nf"
+cask "genoffice"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Git GUI
@@ -239,6 +240,8 @@ cask "open-video-downloader"
 cask "orbstack"
 # WebKit based web browser
 cask "orion"
+# Image editor
+cask "photocraft"
 # Desktop client for Proton Pass
 cask "proton-pass"
 # IDE for professional Python development
