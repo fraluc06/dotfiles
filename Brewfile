@@ -4,6 +4,7 @@ tap "fraluc06/ffmpeg-svt-av1-essential", trusted: true
 tap "fraluc06/tap", trusted: true
 tap "homebrew/cask"
 tap "homebrew/core"
+tap "omlahore/tap"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Static checker for GitHub Actions workflow files
@@ -24,6 +25,8 @@ brew "openssl@3"
 brew "bat"
 # Bash scripts that integrate bat with various command-line tools
 brew "bat-extras"
+# General-purpose data compression with high compression ratio
+brew "xz"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
 # Freely available high-quality data compressor
@@ -56,8 +59,6 @@ brew "fd"
 brew "fzf"
 # GitHub command-line tool
 brew "gh"
-# General-purpose data compression with high compression ratio
-brew "xz"
 # Interpreter for PostScript and PDF
 brew "ghostscript"
 # Distributed revision control system
@@ -106,6 +107,8 @@ brew "mas"
 brew "media-info"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
+# Matroska media files manipulation tools
+brew "mkvtoolnix"
 # Deep clean and optimize your Mac
 brew "mole"
 # Netwide Assembler (NASM) is an 80x86 assembler
@@ -196,6 +199,8 @@ brew "fraluc06/tap/burnmail", trusted: true
 brew "fraluc06/tap/filen-cli", trusted: true
 # Blazing-fast batch processing tool for managing anime/TV series MKV libraries
 brew "fraluc06/tap/mkvtea", trusted: true
+# Debloat macOS: turn off Apple Intelligence, analytics, ads and pop-ups
+brew "omlahore/tap/removemacai", trusted: true
 # Terminal interface for Antigravity agents
 cask "antigravity-cli"
 # App for managing battery charging
@@ -204,11 +209,18 @@ cask "batfi"
 cask "clop"
 # Database management tool
 cask "dbx"
+# Presentation editor
+cask "deckcraft"
 # Voice and text chat software
 cask "discord"
+# Downloads videos from different websites
+cask "downie"
 # Desktop client for Filen.io
 cask "filen"
+# Video editor
+cask "filmcraft"
 cask "font-maple-mono-normal-nf"
+# Open-source AI office suite
 cask "genoffice"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
@@ -216,6 +228,8 @@ cask "ghostty"
 cask "gitcomet"
 # Go (golang) IDE
 cask "goland"
+# Spreadsheet editor
+cask "gridcraft"
 # Free and open-source media player
 cask "iina"
 # iOS Sideloading Companion
@@ -240,6 +254,8 @@ cask "open-video-downloader"
 cask "orbstack"
 # WebKit based web browser
 cask "orion"
+# PDF editor
+cask "pdfcraft"
 # Image editor
 cask "photocraft"
 # Desktop client for Proton Pass
@@ -282,6 +298,8 @@ cask "wallspace"
 cask "whatsapp"
 # Window manager
 cask "wins"
+# Word processor
+cask "wordcraft"
 # REST, GraphQL and gRPC client
 cask "yaak"
 # Multiplayer code editor
