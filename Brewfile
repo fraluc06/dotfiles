@@ -4,7 +4,6 @@ tap "fraluc06/ffmpeg-svt-av1-essential", trusted: true
 tap "fraluc06/tap", trusted: true
 tap "homebrew/cask"
 tap "homebrew/core"
-tap "omlahore/tap"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Static checker for GitHub Actions workflow files
@@ -199,8 +198,6 @@ brew "fraluc06/tap/burnmail", trusted: true
 brew "fraluc06/tap/filen-cli", trusted: true
 # Blazing-fast batch processing tool for managing anime/TV series MKV libraries
 brew "fraluc06/tap/mkvtea", trusted: true
-# Debloat macOS: turn off Apple Intelligence, analytics, ads and pop-ups
-brew "omlahore/tap/removemacai", trusted: true
 # Terminal interface for Antigravity agents
 cask "antigravity-cli"
 # App for managing battery charging
@@ -209,12 +206,8 @@ cask "batfi"
 cask "clop"
 # Database management tool
 cask "dbx"
-# Presentation editor
-cask "deckcraft"
 # Voice and text chat software
 cask "discord"
-# Downloads videos from different websites
-cask "downie"
 # Desktop client for Filen.io
 cask "filen"
 # Video editor
@@ -228,8 +221,6 @@ cask "ghostty"
 cask "gitcomet"
 # Go (golang) IDE
 cask "goland"
-# Spreadsheet editor
-cask "gridcraft"
 # Free and open-source media player
 cask "iina"
 # iOS Sideloading Companion
@@ -246,8 +237,6 @@ cask "mkvtoolnix-app"
 cask "mole-app"
 # VPN client
 cask "mullvad-vpn"
-# Document editor
-cask "onlyoffice"
 # Cross-platform GUI for youtube-dl made in Electron and node.js
 cask "open-video-downloader"
 # Replacement for Docker Desktop
@@ -298,14 +287,11 @@ cask "wallspace"
 cask "whatsapp"
 # Window manager
 cask "wins"
-# Word processor
-cask "wordcraft"
 # REST, GraphQL and gRPC client
 cask "yaak"
 # Multiplayer code editor
 cask "zed"
 mas "Folder Quick Look", id: 6753110395
-mas "Nought", id: 6785636339
 mas "Parchment", id: 6779987526
 mas "ScreenZen", id: 1541027222
 mas "Shareful", id: 1522267256
