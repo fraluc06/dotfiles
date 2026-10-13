@@ -2,6 +2,9 @@
 # ➤ Homebrew on Apple Silicon (hard-coded to avoid a slow `brew --prefix` call)
 export HOMEBREW_PREFIX="/opt/homebrew"
 
+# ➤ PATH hygiene: `path` is kept unique, so nested shells can't accumulate duplicates
+typeset -U path PATH
+
 # ➤ Faster completion startup: reuse the cached .zcompdump, rebuild it at most once a day
 autoload -Uz compinit
 setopt EXTENDED_GLOB
@@ -12,8 +15,17 @@ else
 fi
 unsetopt EXTENDED_GLOB
 
-# ➤ Starship prompt
-eval "$(starship init zsh)"
+# ➤ Starship prompt (init script cached on disk to avoid running `starship` on every startup)
+if (( $+commands[starship] )); then
+  _cache="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/starship-init.zsh"
+  _cfg="${XDG_CONFIG_HOME:-$HOME/.config}/starship.toml"
+  if [[ ! -s "$_cache" || "$_cache" -ot ${commands[starship]} || ( -e "$_cfg" && "$_cache" -ot "$_cfg" ) ]]; then
+    mkdir -p "${_cache:h}"
+    starship init zsh >| "$_cache"
+  fi
+  source "$_cache"
+  unset _cache _cfg
+fi
 
 # ➤ fzf (fuzzy finder for files, searches and history)
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
@@ -41,6 +53,16 @@ zstyle ':fzf-tab:*' fzf-flags \
 source "$HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh"
 antidote load "$HOME/.zsh_plugins.txt"
 
+# ➤ fast-syntax-highlighting — Catppuccin Mocha theme (~/.config/fsh, tuckr group "fsh")
+# fsh is loaded deferred, so chain this task too: zsh-defer runs it right after the plugin.
+if [[ -r ${XDG_CONFIG_HOME:-$HOME/.config}/fsh/catppuccin-mocha.ini ]]; then
+  if (( ${+functions[zsh-defer]} )); then
+    zsh-defer fast-theme -q XDG:catppuccin-mocha
+  else
+    fast-theme -q XDG:catppuccin-mocha 2>/dev/null
+  fi
+fi
+
 # ➤ Update all Homebrew packages
 alias update-all='brew update && brew upgrade && brew cleanup'
 
@@ -65,24 +87,26 @@ if [[ ! -f ~/.cache/carapace/init.zsh ]]; then
 fi
 [[ -f ~/.cache/carapace/init.zsh ]] && source ~/.cache/carapace/init.zsh
 
-# ➤ mise (runtime version manager)
-eval "$(mise activate zsh)"
+# ➤ mise (runtime version manager) — shims instead of `mise activate` (much faster startup)
+path=("$HOME/.local/share/mise/shims" $path)
 
 #export HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=1
 export EDITOR="zed"
 
-# ➤ Atuin (enhanced shell history)
-eval "$(atuin init zsh)"
+# ➤ Atuin (enhanced shell history) — init script cached on disk to avoid running `atuin` on every startup
+if (( $+commands[atuin] )); then
+  _cache="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/atuin-init.zsh"
+  _cfg="${XDG_CONFIG_HOME:-$HOME/.config}/atuin/config.toml"
+  if [[ ! -s "$_cache" || "$_cache" -ot ${commands[atuin]} || ( -e "$_cfg" && "$_cache" -ot "$_cfg" ) ]]; then
+    mkdir -p "${_cache:h}"
+    atuin init zsh >| "$_cache"
+  fi
+  source "$_cache"
+  unset _cache _cfg
+fi
 
 # ➤ Proton Pass SSH agent socket
 export SSH_AUTH_SOCK="$HOME/.ssh/proton-pass-agent.sock"
-# pnpm
-export PNPM_HOME="/Users/francesco/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME/bin:"*) ;;
-  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
-esac
-# pnpm end
 
 # >>> elio shell integration >>>
 elio() {
