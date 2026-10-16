@@ -292,7 +292,10 @@ cask "yaak"
 # Multiplayer code editor
 cask "zed"
 mas "Folder Quick Look", id: 6753110395
+mas "Kagi for Safari", id: 1622835804
 mas "Parchment", id: 6779987526
+mas "Proton Pass for Safari", id: 6502835663
 mas "ScreenZen", id: 1541027222
 mas "Shareful", id: 1522267256
+mas "Wipr", id: 1662217862
 mas "Xcode", id: 497799835
