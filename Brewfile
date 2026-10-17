@@ -202,6 +202,8 @@ brew "fraluc06/tap/mkvtea", trusted: true
 cask "antigravity-cli"
 # App for managing battery charging
 cask "batfi"
+# E-books management software
+cask "calibre"
 # Image, video and clipboard optimiser
 cask "clop"
 # Database management tool
