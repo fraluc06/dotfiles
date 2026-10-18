@@ -4,6 +4,7 @@ tap "fraluc06/ffmpeg-svt-av1-essential", trusted: true
 tap "fraluc06/tap", trusted: true
 tap "homebrew/cask"
 tap "homebrew/core"
+tap "nikitabobko/tap"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Static checker for GitHub Actions workflow files
