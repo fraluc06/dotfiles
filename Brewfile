@@ -4,7 +4,6 @@ tap "fraluc06/ffmpeg-svt-av1-essential", trusted: true
 tap "fraluc06/tap", trusted: true
 tap "homebrew/cask"
 tap "homebrew/core"
-tap "nikitabobko/tap"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Static checker for GitHub Actions workflow files
@@ -295,10 +294,7 @@ cask "yaak"
 # Multiplayer code editor
 cask "zed"
 mas "Folder Quick Look", id: 6753110395
-mas "Kagi for Safari", id: 1622835804
 mas "Parchment", id: 6779987526
-mas "Proton Pass for Safari", id: 6502835663
 mas "ScreenZen", id: 1541027222
 mas "Shareful", id: 1522267256
-mas "Wipr", id: 1662217862
 mas "Xcode", id: 497799835
