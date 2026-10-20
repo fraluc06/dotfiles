@@ -1,4 +1,3 @@
-tap "abue-ammar/tinycast", trusted: true
 tap "anomalyco/tap", trusted: true
 tap "fraluc06/ffmpeg-svt-av1-essential", trusted: true
 tap "fraluc06/tap", trusted: true
@@ -78,6 +77,8 @@ brew "gsl"
 brew "helix"
 # Agent multiplexer that lives in your terminal
 brew "herdr"
+# Spell checker and morphological analyzer
+brew "hunspell"
 # Generic library support script
 brew "libtool"
 # Tools and libraries to manipulate images in select formats
@@ -275,12 +276,12 @@ cask "telegram"
 cask "terax"
 # Menu bar manager
 cask "thaw@beta"
-# Tiny, fully native launcher, hotkeys, and clipboard history
-cask "abue-ammar/tinycast/tinycast", trusted: true
 # Markdown knowledgebase manager
 cask "tolaria"
 # File transfer application
 cask "transmit"
+# Application launcher and command palette
+cask "vicinae"
 # Menu bar toolkit with keep-awake, system monitor and volume mixer
 cask "vorssaint"
 # Live wallpaper app
