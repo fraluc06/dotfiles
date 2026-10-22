@@ -262,8 +262,8 @@ cask "quicklook-video"
 cask "radix"
 # Ruby on Rails IDE
 cask "rubymine"
-# 7-Zip derivative GUI based on mcmilk/7-Zip-zstd
-cask "shichizip-zs"
+# 7-Zip derivative GUI
+cask "shichizip"
 # Video, audio and image converter
 cask "shutter-encoder"
 # Music streaming service
