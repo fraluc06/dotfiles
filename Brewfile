@@ -45,8 +45,6 @@ brew "deja"
 brew "droast"
 # Disk Usage/Free Utility - a better 'df' alternative
 brew "duf"
-# Batteries-included terminal file manager with rich previews
-brew "elio"
 # Modern, maintained replacement for ls
 brew "eza"
 # Like neofetch, but much faster because written mostly in C
@@ -193,8 +191,6 @@ brew "anomalyco/tap/opencode-v2"
 brew "fraluc06/ffmpeg-svt-av1-essential/ffmpeg", trusted: true
 # SVT-AV1 encoder CLI fork with FFMS2 support for direct video input
 brew "fraluc06/ffmpeg-svt-av1-essential/svt-av1-essential", trusted: true
-# Simple CLI tool to generate and manage temporary email addresses with TUI
-brew "fraluc06/tap/burnmail", trusted: true
 # Command-line interface for Filen encrypted cloud storage
 brew "fraluc06/tap/filen-cli", trusted: true
 # Blazing-fast batch processing tool for managing anime/TV series MKV libraries
@@ -232,10 +228,6 @@ cask "iloader"
 cask "localsend"
 # Tool to create bootable USB installers
 cask "macusb"
-# Display technical and tag data for video and audio files
-cask "mediainfo"
-# GUI including a set of tools to create, alter and inspect Matroska files (MKV)
-cask "mkvtoolnix-app"
 # Deep clean, analyze, and optimize app
 cask "mole-app"
 # VPN client
@@ -262,10 +254,8 @@ cask "quicklook-video"
 cask "radix"
 # Ruby on Rails IDE
 cask "rubymine"
-# 7-Zip derivative GUI
-cask "shichizip"
-# Video, audio and image converter
-cask "shutter-encoder"
+# 7-Zip derivative GUI based on mcmilk/7-Zip-zstd
+cask "shichizip-zs"
 # Music streaming service
 cask "spotify"
 # Quicklook extension for source files
