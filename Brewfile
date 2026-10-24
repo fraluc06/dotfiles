@@ -186,7 +186,7 @@ brew "zizmor"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # OpenCode V2 - the AI coding agent for the terminal
-brew "anomalyco/tap/opencode-v2"
+brew "anomalyco/tap/opencode-v2", trusted: true
 # Play, record, convert, and stream audio and video (with SVT-AV1-Essential)
 brew "fraluc06/ffmpeg-svt-av1-essential/ffmpeg", trusted: true
 # SVT-AV1 encoder CLI fork with FFMS2 support for direct video input
