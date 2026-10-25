@@ -1,5 +1,5 @@
 Aloxaf/fzf-tab
-zsh-users/zsh-autosuggestions
+Giammarco-Ferranti/deja
 wfxr/forgit
 zdharma-continuum/fast-syntax-highlighting kind:defer
 

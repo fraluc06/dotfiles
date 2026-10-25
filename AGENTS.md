@@ -14,7 +14,7 @@
 2. Re-deploy: `tuckr add <group>` (or `tuckr set <group>` if it has hooks).
 3. Check state with `tuckr status` / `tuckr ls hooks`.
 
-`TUCKR_HOME="$HOME"` is exported in `.zshrc`; `tuckr` resolves the dotfiles dir from its registered path — it is **not** implied by the current working directory.
+`TUCKR_HOME="$HOME"` is exported in `.zshenv`; `tuckr` resolves the dotfiles dir as `$TUCKR_HOME/dotfiles`, so the repo must stay at `~/dotfiles`. It is **not** implied by the current working directory.
 
 ## Hook quirks (do not hand-edit run state)
 
@@ -29,10 +29,11 @@ The loader is **antidote**, sourced from `$HOMEBREW_PREFIX/opt/antidote/share/an
 
 ## Other conventions/gotchas
 
-- **Keep paths portable**: use `$HOME`, `$HOMEBREW_PREFIX` (`/opt/homebrew`, Apple Silicon), `$XDG_CONFIG_HOME`. Avoid hard-coded absolute usernames. (`HOMEBREW_PREFIX` itself is hard-coded to `/opt/homebrew` in `.zshrc` — a deliberate Apple-Silicon assumption.)
+- **Keep paths portable**: use `$HOME`, `$HOMEBREW_PREFIX` (`/opt/homebrew`, Apple Silicon), `$XDG_CONFIG_HOME`. Avoid hard-coded absolute usernames. (`HOMEBREW_PREFIX` itself is hard-coded to `/opt/homebrew` in `.zshenv` — a deliberate Apple-Silicon assumption.)
 - **Brewfile is `Brewfile` (Homebrew default name, capitalized)**. Regenerated via `brew bundle dump --file=./Brewfile --force` (also what the `brew-backup` launchd agent does daily), not hand-edited. It was briefly lowercase `brewfile` before commit `4c969ee` renamed it back.
 - **Git commits are SSH-signed**: `gpg.format = ssh`, signing wrapper at `~/.ssh/git-ssh-sign-wrapper`, key `~/.ssh/id_ed25519.pub`. Credentials delegated to `gh auth git-credential`.
-- **`.zshrc` sets `SSH_AUTH_SOCK="$HOME/.ssh/proton-pass-agent.sock"`** — the agent socket is served by the `proton-pass` launchd daemon above. SSH config (`Configs/ssh/`) and the proton-pass plist are deployed together: `tuckr set ssh proton-pass environment`.
+- **`.zshenv` sets `SSH_AUTH_SOCK="$HOME/.ssh/proton-pass-agent.sock"`** — the agent socket is served by the `proton-pass` launchd daemon above. SSH config (`Configs/ssh/`) and the proton-pass plist are deployed together: `tuckr set ssh proton-pass environment`.
+- **PATH split**: `~/.zshenv` adds `~/.local/bin` and Homebrew; `~/.zprofile` re-adds `~/.local/bin` **after** `brew shellenv`, because macOS `/etc/zprofile` runs `path_helper`, which rebuilds PATH from the system dirs and would otherwise drop it in login shells. mise uses `mise activate` in `.zshrc` (not shims), so tool versions and env vars such as `GOROOT` follow the current directory; non-interactive shells, which never source `.zshrc`, fall back to the mise shims directory from `.zshenv`.
 - Two Git remotes: `origin` (GitHub) and `codeberg`. Both pushed manually; no release automation.
 
 ## README conventions worth preserving
