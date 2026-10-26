@@ -37,8 +37,6 @@ brew "carapace"
 brew "choose-rust"
 # Cross-platform make
 brew "cmake"
-# Highly configurable, multi-protocol DNS forwarding proxy
-brew "ctrld"
 # Predictive ghost-text autosuggestions for zsh
 brew "deja"
 # Opinionated Dockerfile linter
