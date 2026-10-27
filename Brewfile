@@ -115,6 +115,8 @@ brew "ncdu"
 brew "neovim"
 # Small build system for use with gyp or CMake
 brew "ninja"
+# Terminal REST client with file-based collections
+brew "noodle"
 # Modern shell for the GitHub era
 brew "nushell"
 # Command-line Git information tool
