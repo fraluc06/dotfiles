@@ -10,10 +10,11 @@
   // ------------------------------------------------------------------
   // CORE & TELEMETRY
   // ------------------------------------------------------------------
+  "cli_default_open_behavior": "new_window",
   "terminal": {
     "font_family": "Maple Mono Normal NF"
   },
-  "helix_mode": true,
+  "helix_mode": false,
   "diff_view_style": "unified",
   "project_panel": {
     "dock": "left"

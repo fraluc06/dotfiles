@@ -1,6 +1,6 @@
 [user]
 name = Francesco Lucarelli
-email = francesco06lucarelli@gmail.com
+email = 67560467+fraluc06@users.noreply.github.com
 signingkey = ~/.ssh/id_ed25519.pub
 autocrlf = input
 [credential "https://github.com"]
@@ -17,5 +17,6 @@ format = ssh
 gpgsign = true
 [gpg "ssh"]
 	program = ~/.ssh/git-ssh-sign-wrapper
+	allowedSignersFile = /Users/francesco/.ssh/allowed_signers
 [core]
 	autocrlf = input
