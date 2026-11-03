@@ -66,12 +66,12 @@
   // Font Configuration
   "ui_font_family": "Maple Mono Normal NF",
   "buffer_font_family": "Maple Mono Normal NF",
-  "ui_font_size": 18,
+  "ui_font_size": 18.0,
   "buffer_font_size": 18.0,
 
   // Agent (AI Assistant) UI
-  "agent_ui_font_size": 16,
-  "agent_buffer_font_size": 16,
+  "agent_ui_font_size": 16.0,
+  "agent_buffer_font_size": 18.0,
 
   // ------------------------------------------------------------------
   // EDITOR BEHAVIOR & KEYMAPS
