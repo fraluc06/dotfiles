@@ -28,6 +28,8 @@ unset FZF_CATPPUCCIN
 eval "$(fzf --zsh)"
 
 # ➤ Antidote (zsh plugin manager) — plugins listed in ~/.zsh_plugins.txt
+# zsh-autosuggestions: Tab stays with fzf-tab, accept with →, partial accept with Ctrl+→
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#6C7086'
 source "$HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh"
 antidote load "$HOME/.zsh_plugins.txt"
 

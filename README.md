@@ -86,7 +86,7 @@ Make sure you have installed:
 ### **Zsh** (default shell)
 - Managed with `Antidote` for optimal plugin loading
 - Environment variables live in `.zshenv` (sourced by every zsh, scripts included); login-shell PATH setup (Homebrew, OrbStack) lives in `.zprofile`
-- `deja`: Predictive inline autosuggestions while typing
+- `zsh-autosuggestions`: Predictive inline autosuggestions while typing
 - `fzf-tab`: Replace zsh's default completion selection menu with fzf
 - `fast-syntax-highlighting`: Syntax highlighting for commands
 - `forgit` : A utility tool powered by fzf for using git interactively.
