@@ -1,14 +1,13 @@
 #!/bin/sh
 # tuckr posthook for brew-backup
 # Runs on: tuckr set brew-backup
-# Generates the launchd plist from the template in Configs/ and bootstraps the agent.
+# Generates the launchd plist from the local template and bootstraps the agent.
 
 set -e
 
 CONFIG_DIR="$(cd "$(dirname "$0")" && pwd)"
 CONFIG_FILE="$CONFIG_DIR/config.sh"
-DOTFILES_DIR="$(cd "$CONFIG_DIR/../.." && pwd)"
-SRC_PLIST="$DOTFILES_DIR/Configs/brew-backup/Library/LaunchAgents/com.fraluc06.brew-backup.plist"
+SRC_PLIST="$CONFIG_DIR/com.fraluc06.brew-backup.plist"
 DST_PLIST="$HOME/Library/LaunchAgents/com.fraluc06.brew-backup.plist"
 LABEL="com.fraluc06.brew-backup"
 DOMAIN="gui/$(id -u)"

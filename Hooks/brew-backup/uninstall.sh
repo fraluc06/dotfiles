@@ -1,6 +1,6 @@
 #!/bin/sh
 # Uninstall the brew-backup launchd agent.
-# Run this before `tuckr rm brew-backup` to cleanly remove the generated plist.
+# The group is hooks-only, so no `tuckr rm` is needed.
 
 set -e
 

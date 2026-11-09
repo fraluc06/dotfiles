@@ -20,8 +20,8 @@
 
 - `environment/post.sh`, `proton-pass/post.sh`, and `brew-backup/post.sh` all bootstrap launchd agents into `gui/$(id -u)`.
 - `environment` re-runs are safe: if the agent is already loaded it restarts it via `launchctl kickstart -k` to refresh env vars. `proton-pass` no-ops when already loaded — re-bootstrapping would interrupt the running SSH agent. To apply a plist change manually: `launchctl bootout "$DOMAIN/$LABEL" && launchctl bootstrap "$DOMAIN" "$PLIST"`.
-- `brew-backup/post.sh` is different: it reads `Hooks/brew-backup/config.sh` (`RUN_HOUR`, `RUN_MINUTE`, `BREWFILE_PATH`, `GIT_REMOTE`, `PUSH_ENABLED`), **deletes** the tuckr symlink and writes a customized plist (sed of `{{HOME}}`/`{{HOUR}}`/`{{MINUTE}}` placeholders) to `~/Library/LaunchAgents/com.fraluc06.brew-backup.plist`, then bootstraps it. `environment`/`proton-pass` plists are plain tuckr symlinks. To uninstall brew-backup: `./Hooks/brew-backup/uninstall.sh` then `tuckr rm brew-backup`.
-- **Gotcha**: a plain `tuckr add`/link of `Configs/brew-backup` recreates the `~/Library/LaunchAgents` symlink, overwriting the generated plist. It keeps working until the next logout/reboot, then launchd reloads the raw template (`{{HOME}}` etc. unresolved) and the agent fails with exit 78 (`EX_CONFIG`). Fix: `tuckr set brew-backup` again (or `Hooks/brew-backup/post.sh`).
+- `brew-backup` is a **hooks-only group**: its plist template lives in `Hooks/brew-backup/com.fraluc06.brew-backup.plist`, deliberately outside `Configs/`. The posthook reads `Hooks/brew-backup/config.sh` (`RUN_HOUR`, `RUN_MINUTE`, `BREWFILE_PATH`, `GIT_REMOTE`, `PUSH_ENABLED`), writes a customized plist (sed of `{{HOME}}`/`{{HOUR}}`/`{{MINUTE}}` placeholders) to `~/Library/LaunchAgents/com.fraluc06.brew-backup.plist`, then bootstraps it. `environment`/`proton-pass` plists are plain tuckr symlinks. To uninstall brew-backup: `./Hooks/brew-backup/uninstall.sh`.
+- Do **not** recreate `Configs/brew-backup`: a tuckr symlink would overwrite the generated plist, and after the next logout/reboot launchd would load the raw template (`{{HOME}}` etc. unresolved) and fail with exit 78 (`EX_CONFIG`). Keeping the group hooks-only makes `tuckr add \*` safe. Reapply configuration changes with `tuckr set brew-backup` (or `Hooks/brew-backup/post.sh`).
 
 ## Zsh plugins use `antidote`, NOT Zinit
 
@@ -41,4 +41,4 @@ The loader is **antidote**, sourced from `$HOMEBREW_PREFIX/opt/antidote/share/an
 - Plugin loader is **antidote**, NOT Zinit. Default shell is **Zsh**; Nushell is optional and must not be documented as the main shell.
 - Brewfile is `Brewfile` (capitalized); regenerate via `brew bundle dump --file=./Brewfile --force`, not hand-edited.
 - The repo lives at `~/dotfiles` (not `~/.dotfiles`): the `brew-backup` hook hard-codes `$HOME/dotfiles/Brewfile` in `Hooks/brew-backup/config.sh`.
-- To uninstall the brew-backup agent (no longer in README): `./Hooks/brew-backup/uninstall.sh && tuckr rm brew-backup`.
+- To uninstall the brew-backup agent (no longer in README): `./Hooks/brew-backup/uninstall.sh`; the group is hooks-only, so there are no tuckr symlinks to remove.
