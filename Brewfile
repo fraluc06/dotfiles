@@ -29,20 +29,18 @@ brew "xz"
 brew "btop"
 # Freely available high-quality data compressor
 brew "bzip2"
-# Powerful, enterprise-ready, open source web server with automatic HTTPS
-brew "caddy"
 # Multi-shell multi-command argument completer
 brew "carapace"
 # Human-friendly and fast alternative to cut and (sometimes) awk
 brew "choose-rust"
 # Cross-platform make
 brew "cmake"
-# Predictive ghost-text autosuggestions for zsh
-brew "deja"
 # Opinionated Dockerfile linter
 brew "droast"
 # Disk Usage/Free Utility - a better 'df' alternative
 brew "duf"
+# Perl lib for reading and writing EXIF metadata
+brew "exiftool"
 # Modern, maintained replacement for ls
 brew "eza"
 # Like neofetch, but much faster because written mostly in C
@@ -101,6 +99,8 @@ brew "lsd"
 brew "mas"
 # Unified display of technical and tag data for audio/video
 brew "media-info"
+# Modern and intuitive terminal-based text editor
+brew "micro"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
 # Matroska media files manipulation tools
@@ -199,8 +199,6 @@ brew "fraluc06/tap/mkvtea", trusted: true
 cask "antigravity-cli"
 # App for managing battery charging
 cask "batfi"
-# E-books management software
-cask "calibre"
 # Image, video and clipboard optimiser
 cask "clop"
 # Database management tool
@@ -218,14 +216,14 @@ cask "genoffice"
 cask "ghostty"
 # Git GUI
 cask "gitcomet"
-# Go (golang) IDE
-cask "goland"
 # Free and open-source media player
 cask "iina"
 # iOS Sideloading Companion
 cask "iloader"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
+# Ventoy installer and disk image flasher
+cask "mactoy"
 # Tool to create bootable USB installers
 cask "macusb"
 # Deep clean, analyze, and optimize app
@@ -244,16 +242,12 @@ cask "pdfcraft"
 cask "photocraft"
 # Desktop client for Proton Pass
 cask "proton-pass"
-# IDE for professional Python development
-cask "pycharm"
 # Quick Look generator for Markdown files
 cask "qlmarkdown"
 # Thumbnails, static previews, cover art and metadata for video files
 cask "quicklook-video"
 # Disk space analyzer
 cask "radix"
-# Ruby on Rails IDE
-cask "rubymine"
 # 7-Zip derivative GUI based on mcmilk/7-Zip-zstd
 cask "shichizip-zs"
 # Music streaming service
@@ -266,12 +260,14 @@ cask "telegram"
 cask "terax"
 # Menu bar manager
 cask "thaw@beta"
+# Application launcher and productivity tool
+cask "tinycast"
 # Markdown knowledgebase manager
 cask "tolaria"
 # File transfer application
 cask "transmit"
-# Application launcher and command palette
-cask "vicinae"
+# Open-source code editor
+cask "visual-studio-code"
 # Menu bar toolkit with keep-awake, system monitor and volume mixer
 cask "vorssaint"
 # Live wallpaper app
@@ -288,3 +284,42 @@ mas "Folder Quick Look", id: 6753110395
 mas "Parchment", id: 6779987526
 mas "ScreenZen", id: 1541027222
 mas "Shareful", id: 1522267256
+vscode "aaron-bond.better-comments"
+vscode "adpyke.codesnap"
+vscode "asispts.neo-git-graph"
+vscode "astro-build.astro-vscode"
+vscode "catppuccin.catppuccin-vsc"
+vscode "dbaeumer.vscode-eslint"
+vscode "ecmel.vscode-html-css"
+vscode "esbenp.prettier-vscode"
+vscode "formulahendry.code-runner"
+vscode "github.vscode-github-actions"
+vscode "hediet.vscode-drawio"
+vscode "james-yu.latex-workshop"
+vscode "kevinrose.vsc-python-indent"
+vscode "ms-azuretools.vscode-containers"
+vscode "ms-ceintl.vscode-language-pack-it"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-python.vscode-python-envs"
+vscode "ms-toolsai.jupyter"
+vscode "ms-toolsai.jupyter-keymap"
+vscode "ms-toolsai.jupyter-renderers"
+vscode "ms-toolsai.vscode-jupyter-cell-tags"
+vscode "ms-toolsai.vscode-jupyter-slideshow"
+vscode "ms-vscode-remote.remote-containers"
+vscode "ms-vscode-remote.remote-ssh"
+vscode "ms-vscode-remote.remote-ssh-edit"
+vscode "ms-vscode-remote.remote-wsl"
+vscode "ms-vscode-remote.vscode-remote-extensionpack"
+vscode "ms-vscode.remote-explorer"
+vscode "ms-vscode.remote-server"
+vscode "myriad-dreamin.tinymist"
+vscode "oderwat.indent-rainbow"
+vscode "onlyati.quadlet-lsp"
+vscode "pkief.material-icon-theme"
+vscode "pkief.material-product-icons"
+vscode "unifiedjs.vscode-mdx"
+vscode "xabikos.javascriptsnippets"
+vscode "yandeu.five-server"
