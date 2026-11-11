@@ -214,12 +214,14 @@ cask "font-maple-mono-normal-nf"
 cask "genoffice"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
-# Git GUI
-cask "gitcomet"
+# Spreadsheet editor
+cask "gridcraft"
 # Free and open-source media player
 cask "iina"
 # iOS Sideloading Companion
 cask "iloader"
+# Agentic development environment
+cask "jetbrains-air"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
 # Ventoy installer and disk image flasher
