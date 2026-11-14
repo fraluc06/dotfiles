@@ -195,8 +195,6 @@ brew "fraluc06/ffmpeg-svt-av1-essential/svt-av1-essential", trusted: true
 brew "fraluc06/tap/filen-cli", trusted: true
 # Blazing-fast batch processing tool for managing anime/TV series MKV libraries
 brew "fraluc06/tap/mkvtea", trusted: true
-# Terminal interface for Antigravity agents
-cask "antigravity-cli"
 # App for managing battery charging
 cask "batfi"
 # Image, video and clipboard optimiser
