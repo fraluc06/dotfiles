@@ -67,10 +67,18 @@ git commit -m "chore(brew): automatic backup $(date '+%Y-%m-%d %H:%M:%S')" || tr
 
 if [ "$PUSH_ENABLED" = "true" ] && [ -n "$GIT_REMOTE" ]; then
   if git remote | grep -qx "$GIT_REMOTE"; then
-    if git push "$GIT_REMOTE"; then
+    BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+    if git push --quiet "$GIT_REMOTE" "$BRANCH"; then
       log "Pushed to $GIT_REMOTE"
+    elif git fetch --quiet "$GIT_REMOTE" "$BRANCH" 2>/dev/null &&
+         [ "$(git rev-parse HEAD)" = "$(git rev-parse FETCH_HEAD)" ]; then
+      # The push landed but the client lost the confirmation (dropped connection).
+      # Don't report a false failure; just sync the stale tracking ref.
+      git update-ref "refs/remotes/$GIT_REMOTE/$BRANCH" HEAD
+      log "Push reached $GIT_REMOTE despite client error (verified via fetch)"
     else
-      log "WARNING: git push to $GIT_REMOTE failed"
+      log "ERROR: git push to $GIT_REMOTE failed"
+      exit 1
     fi
   else
     log "WARNING: remote $GIT_REMOTE not found, skipping push"
