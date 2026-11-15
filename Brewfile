@@ -79,6 +79,8 @@ brew "libtool"
 brew "imagemagick"
 # GPU powered yet browserless tool to help you quickly view markdown files
 brew "inlyne"
+# AI coding agent harness for the terminal
+brew "jcode"
 # Git-compatible distributed version control system
 brew "jj"
 # New file format for still image compression
@@ -201,6 +203,8 @@ cask "batfi"
 cask "clop"
 # Database management tool
 cask "dbx"
+# Presentation editor
+cask "deckcraft"
 # Voice and text chat software
 cask "discord"
 # Desktop client for Filen.io
@@ -276,6 +280,8 @@ cask "wallspace"
 cask "whatsapp"
 # Window manager
 cask "wins"
+# Word processor
+cask "wordcraft"
 # REST, GraphQL and gRPC client
 cask "yaak"
 # Multiplayer code editor
@@ -323,3 +329,5 @@ vscode "pkief.material-product-icons"
 vscode "unifiedjs.vscode-mdx"
 vscode "xabikos.javascriptsnippets"
 vscode "yandeu.five-server"
+go "cmd/go"
+go "cmd/gofmt"
