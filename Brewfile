@@ -236,8 +236,6 @@ cask "mole-app"
 cask "mullvad-vpn"
 # Cross-platform GUI for youtube-dl made in Electron and node.js
 cask "open-video-downloader"
-# Replacement for Docker Desktop
-cask "orbstack"
 # WebKit based web browser
 cask "orion"
 # PDF editor
@@ -329,5 +327,3 @@ vscode "pkief.material-product-icons"
 vscode "unifiedjs.vscode-mdx"
 vscode "xabikos.javascriptsnippets"
 vscode "yandeu.five-server"
-go "cmd/go"
-go "cmd/gofmt"
