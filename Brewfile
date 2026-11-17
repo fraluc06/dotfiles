@@ -222,8 +222,8 @@ cask "gridcraft"
 cask "iina"
 # iOS Sideloading Companion
 cask "iloader"
-# Agentic development environment
-cask "jetbrains-air"
+# Container runtime that runs Docker images in a Linux VM
+cask "fraluc06/tap/kiri", trusted: true
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
 # Ventoy installer and disk image flasher
@@ -256,6 +256,8 @@ cask "shichizip-zs"
 cask "spotify"
 # Quicklook extension for source files
 cask "syntax-highlight"
+# Minimal GUI for AI code agents
+cask "t3-code"
 # Messaging app with a focus on speed and security
 cask "telegram"
 # Terminal-first AI-native developer workspace
