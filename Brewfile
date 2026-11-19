@@ -286,6 +286,8 @@ cask "wordcraft"
 cask "yaak"
 # Multiplayer code editor
 cask "zed"
+# WebKit-based browser with built-in AI tools
+cask "zephium"
 mas "Folder Quick Look", id: 6753110395
 mas "Parchment", id: 6779987526
 mas "ScreenZen", id: 1541027222
