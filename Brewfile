@@ -201,7 +201,6 @@ brew "fraluc06/tap/mkvtea", trusted: true
 cask "batfi"
 # Image, video and clipboard optimiser
 cask "clop"
-cask "craft-anything"
 # Database management tool
 cask "dbx"
 # Presentation editor
