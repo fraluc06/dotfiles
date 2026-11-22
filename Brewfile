@@ -1,3 +1,4 @@
+tap "66hex/frame", "https://github.com/66HEX/homebrew-frame"
 tap "anomalyco/tap", trusted: true
 tap "fraluc06/ffmpeg-svt-av1-essential", trusted: true
 tap "fraluc06/tap", trusted: true
@@ -212,6 +213,8 @@ cask "filen"
 # Video editor
 cask "filmcraft"
 cask "font-maple-mono-normal-nf"
+# High-performance media conversion utility
+cask "66hex/frame/frame", trusted: true
 # Open-source AI office suite
 cask "genoffice"
 # Terminal emulator that uses platform-native UI and GPU acceleration
