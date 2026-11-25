@@ -4,6 +4,7 @@ tap "fraluc06/ffmpeg-svt-av1-essential", trusted: true
 tap "fraluc06/tap", trusted: true
 tap "homebrew/cask"
 tap "homebrew/core"
+tap "libracoder/kiri"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Static checker for GitHub Actions workflow files
@@ -144,14 +145,14 @@ brew "proton-pass-cli"
 brew "resvg"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Command-line interface for SQLite
+brew "sqlite"
 # Intuitive find & replace CLI
 brew "sd"
 # 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
 # Simple and powerful SSH keys manager
 brew "skm"
-# Command-line interface for SQLite
-brew "sqlite"
 # Cross-shell prompt for astronauts
 brew "starship"
 # Modern and pretty fancy file manager for the terminal
@@ -192,6 +193,10 @@ brew "zoxide"
 brew "anomalyco/tap/opencode-v2", trusted: true
 # Play, record, convert, and stream audio and video (with SVT-AV1-Essential)
 brew "fraluc06/ffmpeg-svt-av1-essential/ffmpeg", trusted: true
+# C library for HDR10+ metadata parsing and writing
+brew "fraluc06/ffmpeg-svt-av1-essential/hdr10plus-rs", trusted: true
+# C library for Dolby Vision metadata parsing and writing
+brew "fraluc06/ffmpeg-svt-av1-essential/libdovi", trusted: true
 # SVT-AV1 encoder CLI fork with FFMS2 support for direct video input
 brew "fraluc06/ffmpeg-svt-av1-essential/svt-av1-essential", trusted: true
 # Command-line interface for Filen encrypted cloud storage
@@ -221,12 +226,14 @@ cask "genoffice"
 cask "ghostty"
 # Spreadsheet editor
 cask "gridcraft"
+# Speech to text application
+cask "handy"
 # Free and open-source media player
 cask "iina"
 # iOS Sideloading Companion
 cask "iloader"
-# Container runtime that runs Docker images in a Linux VM
-cask "fraluc06/tap/kiri", trusted: true
+# Container runtime compatible with the Docker CLI, Compose and buildx
+cask "libracoder/kiri/kiri", trusted: true
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
 # Ventoy installer and disk image flasher
@@ -261,6 +268,8 @@ cask "spotify"
 cask "syntax-highlight"
 # Minimal GUI for AI code agents
 cask "t3-code"
+# Minimal GUI for AI code agents
+cask "t3-code@nightly"
 # Messaging app with a focus on speed and security
 cask "telegram"
 # Terminal-first AI-native developer workspace
