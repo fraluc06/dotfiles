@@ -267,8 +267,6 @@ cask "spotify"
 # Quicklook extension for source files
 cask "syntax-highlight"
 # Minimal GUI for AI code agents
-cask "t3-code"
-# Minimal GUI for AI code agents
 cask "t3-code@nightly"
 # Messaging app with a focus on speed and security
 cask "telegram"
