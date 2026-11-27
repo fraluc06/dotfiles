@@ -145,14 +145,14 @@ brew "proton-pass-cli"
 brew "resvg"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Command-line interface for SQLite
-brew "sqlite"
 # Intuitive find & replace CLI
 brew "sd"
 # 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
 # Simple and powerful SSH keys manager
 brew "skm"
+# Command-line interface for SQLite
+brew "sqlite"
 # Cross-shell prompt for astronauts
 brew "starship"
 # Modern and pretty fancy file manager for the terminal
