@@ -161,6 +161,8 @@ brew "superfile"
 brew "taproom"
 # Feature rich terminal file transfer and explorer
 brew "termscp"
+# Enables extra languages support for Tesseract
+brew "tesseract-lang"
 # Services for Typst
 brew "tinymist"
 # Official tldr client written in Rust
@@ -205,6 +207,8 @@ brew "fraluc06/tap/filen-cli", trusted: true
 brew "fraluc06/tap/mkvtea", trusted: true
 # App for managing battery charging
 cask "batfi"
+# Web browser focusing on privacy
+cask "brave-browser"
 # Image, video and clipboard optimiser
 cask "clop"
 # Database management tool
@@ -280,6 +284,8 @@ cask "tinycast"
 cask "tolaria"
 # File transfer application
 cask "transmit"
+# Virtual machines UI using QEMU
+cask "utm"
 # Open-source code editor
 cask "visual-studio-code"
 # Menu bar toolkit with keep-awake, system monitor and volume mixer
